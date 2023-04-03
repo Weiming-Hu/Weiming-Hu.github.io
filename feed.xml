@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://weiming-hu.github.io//about/feed.xml" rel="self" type="application/atom+xml" /><link href="https://weiming-hu.github.io//about/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-03T20:26:54+00:00</updated><id>https://weiming-hu.github.io//about/feed.xml</id><title type="html">blank</title><subtitle>Open source, open mind, open world ...
-</subtitle><entry><title type="html">Personal Code Signature</title><link href="https://weiming-hu.github.io//about/blog/2023/personal-signature/" rel="alternate" type="text/html" title="Personal Code Signature" /><published>2023-02-05T12:00:00+00:00</published><updated>2023-02-05T12:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2023/personal-signature</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2023/personal-signature/"><![CDATA[<p>I posted here my template for source code header signature.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://weiming-hu.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://weiming-hu.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-03T20:52:02+00:00</updated><id>https://weiming-hu.github.io//feed.xml</id><title type="html">blank</title><subtitle>Open source, open mind, open world ...
+</subtitle><entry><title type="html">Personal Code Signature</title><link href="https://weiming-hu.github.io//blog/2023/personal-signature/" rel="alternate" type="text/html" title="Personal Code Signature" /><published>2023-02-05T12:00:00+00:00</published><updated>2023-02-05T12:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2023/personal-signature</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2023/personal-signature/"><![CDATA[<p>I posted here my template for source code header signature.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#############################################################
 # Author: Weiming Hu &lt;weiminghu@ucsd.edu&gt;                   #
@@ -34,7 +34,7 @@
 #
 # [Summary of the source code file]
 #
-</code></pre></div></div>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[Source code header]]></summary></entry><entry><title type="html">Storing Offline Data for Cartopy</title><link href="https://weiming-hu.github.io//about/blog/2022/offline-cartopy/" rel="alternate" type="text/html" title="Storing Offline Data for Cartopy" /><published>2022-09-06T00:00:00+00:00</published><updated>2022-09-06T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2022/offline-cartopy</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2022/offline-cartopy/"><![CDATA[<p>If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy</a> ahead of time, rather than having the module to download it at hoc using the slow Internet connection.</p>
+</code></pre></div></div>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[Source code header]]></summary></entry><entry><title type="html">Storing Offline Data for Cartopy</title><link href="https://weiming-hu.github.io//blog/2022/offline-cartopy/" rel="alternate" type="text/html" title="Storing Offline Data for Cartopy" /><published>2022-09-06T00:00:00+00:00</published><updated>2022-09-06T00:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2022/offline-cartopy</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2022/offline-cartopy/"><![CDATA[<p>If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy</a> ahead of time, rather than having the module to download it at hoc using the slow Internet connection.</p>
 
 <p>These discussions can be helpful for setting this up:</p>
 
@@ -42,7 +42,7 @@
   <li><a href="https://github.com/SciTools/cartopy/issues/1298#issuecomment-959209777">Natural Earth downloads timing out</a></li>
   <li><a href="https://stackoverflow.com/questions/32365410/location-of-stored-offline-data-for-cartopy">Location of stored offline data for cartopy</a></li>
   <li><a href="https://github.com/SciTools/cartopy/issues/734">Add new Natural Earth shapefiles manually and use as a feature</a></li>
-</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for cartopy ahead of time, rather than having the module to download it at hoc using the slow Internet connection.]]></summary></entry><entry><title type="html">Scholarly Poster Guidelines</title><link href="https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines/" rel="alternate" type="text/html" title="Scholarly Poster Guidelines" /><published>2021-09-03T00:00:00+00:00</published><updated>2021-09-03T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines/"><![CDATA[<p>This is a curated list of guidelines for scholarly posters.</p>
+</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for cartopy ahead of time, rather than having the module to download it at hoc using the slow Internet connection.]]></summary></entry><entry><title type="html">Scholarly Poster Guidelines</title><link href="https://weiming-hu.github.io//blog/2021/scholarly-poster-guidelines/" rel="alternate" type="text/html" title="Scholarly Poster Guidelines" /><published>2021-09-03T00:00:00+00:00</published><updated>2021-09-03T00:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2021/scholarly-poster-guidelines</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2021/scholarly-poster-guidelines/"><![CDATA[<p>This is a curated list of guidelines for scholarly posters.</p>
 
 <ul>
   <li>
@@ -66,7 +66,7 @@
 <ul>
   <li><a href="https://scripps.ucsd.edu/portal/employee-resources/scripps-oceanography-brand-guidelines">Scripps Institution of Oceanography</a></li>
   <li><a href="https://www.ems.psu.edu/resources-faculty-and-staff/marketing-and-communications">Penn State College of Earth and Mineral Sciences</a> or the <a href="https://www.ems.psu.edu/resources-faculty-and-staff/marketing-and-communications">university mark</a></li>
-</ul>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[My curated list of guidelines for making scholarly posters]]></summary></entry><entry><title type="html">Understanding Value Swapping in Python</title><link href="https://weiming-hu.github.io//about/blog/2021/understand-swap/" rel="alternate" type="text/html" title="Understanding Value Swapping in Python" /><published>2021-08-05T00:00:00+00:00</published><updated>2021-08-05T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/understand-swap</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/understand-swap/"><![CDATA[<h2 id="introduction">Introduction</h2>
+</ul>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[My curated list of guidelines for making scholarly posters]]></summary></entry><entry><title type="html">Understanding Value Swapping in Python</title><link href="https://weiming-hu.github.io//blog/2021/understand-swap/" rel="alternate" type="text/html" title="Understanding Value Swapping in Python" /><published>2021-08-05T00:00:00+00:00</published><updated>2021-08-05T00:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2021/understand-swap</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2021/understand-swap/"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p><a href="https://www.python.org/">Python</a> has some very nice <a href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntax sugars</a> that really come in handy when we program. One such example is swapping values. It is probably one of the first things you learn and this feature is always touted to show Python’s convenience and readability. The idea is that, instead of relying on a third variable, you can directly swap two values. Nice and easy!</p>
 
@@ -872,7 +872,7 @@
 
 <p>I hope you now understand the differences between these swapping scenarios. Differences in instructions potentially affect the performance. And when swapping values in arrays, you need to pay extra attention to cases where values are changing “in real time”.</p>
 
-<p>Please let me know if you have any questions or suggestions. I enjoyed writing this post and I hope this post can help you understand Python a little bit better.</p>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[How Python swaps values might surprise you]]></summary></entry><entry><title type="html">FAQ: Dedicated Server for Don’t Starve Together (2021 Version)</title><link href="https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server/" rel="alternate" type="text/html" title="FAQ: Dedicated Server for Don’t Starve Together (2021 Version)" /><published>2021-06-16T18:00:00+00:00</published><updated>2021-06-16T18:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server/"><![CDATA[<p>This post is a memo for the problems I encountered during setting up a dedicated server for <a href="https://www.klei.com/games/dont-starve-together">Don’t Starve Together</a>.</p>
+<p>Please let me know if you have any questions or suggestions. I enjoyed writing this post and I hope this post can help you understand Python a little bit better.</p>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[How Python swaps values might surprise you]]></summary></entry><entry><title type="html">FAQ: Dedicated Server for Don’t Starve Together (2021 Version)</title><link href="https://weiming-hu.github.io//blog/2021/DST-Dedicated-Server/" rel="alternate" type="text/html" title="FAQ: Dedicated Server for Don’t Starve Together (2021 Version)" /><published>2021-06-16T18:00:00+00:00</published><updated>2021-06-16T18:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2021/DST-Dedicated-Server</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2021/DST-Dedicated-Server/"><![CDATA[<p>This post is a memo for the problems I encountered during setting up a dedicated server for <a href="https://www.klei.com/games/dont-starve-together">Don’t Starve Together</a>.</p>
 
 <h3 id="what-is-my-setup-for-the-dedicated-server">What is my setup for the dedicated server?</h3>
 
@@ -923,7 +923,7 @@
 
 <h3 id="still-have-questions">Still have questions?</h3>
 
-<p>Please leave a comment. Thank you!</p>]]></content><author><name></name></author><category term="Game" /><summary type="html"><![CDATA[Dont't starve together!]]></summary></entry><entry><title type="html">Creating User Clone of NCAR Package Library for JupyterHub</title><link href="https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter/" rel="alternate" type="text/html" title="Creating User Clone of NCAR Package Library for JupyterHub" /><published>2021-02-09T12:00:00+00:00</published><updated>2021-02-09T12:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter/"><![CDATA[<h2 id="motivation">Motivation</h2>
+<p>Please leave a comment. Thank you!</p>]]></content><author><name></name></author><category term="Game" /><summary type="html"><![CDATA[Dont't starve together!]]></summary></entry><entry><title type="html">Creating User Clone of NCAR Package Library for JupyterHub</title><link href="https://weiming-hu.github.io//blog/2021/user-NPL-jupyter/" rel="alternate" type="text/html" title="Creating User Clone of NCAR Package Library for JupyterHub" /><published>2021-02-09T12:00:00+00:00</published><updated>2021-02-09T12:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2021/user-NPL-jupyter</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2021/user-NPL-jupyter/"><![CDATA[<h2 id="motivation">Motivation</h2>
 
 <p>This posts documented how I created a user clone of NCAR package library (NPL) for use with JupyterHub. I want to do this because:</p>
 
@@ -1030,7 +1030,7 @@ pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span
 
 <h2 id="issues">Issues</h2>
 
-<p>Please feel free to comment if you have found other modules that should be checked for version consistency. Thank you!</p>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[User clone of NPL for JupyterHub]]></summary></entry><entry><title type="html">Cartopy Study Notes (on NCAR Cheyenne)</title><link href="https://weiming-hu.github.io//about/blog/2020/cartopy-note/" rel="alternate" type="text/html" title="Cartopy Study Notes (on NCAR Cheyenne)" /><published>2020-12-01T11:00:00+00:00</published><updated>2020-12-01T11:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/cartopy-note</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/cartopy-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
+<p>Please feel free to comment if you have found other modules that should be checked for version consistency. Thank you!</p>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[User clone of NPL for JupyterHub]]></summary></entry><entry><title type="html">Cartopy Study Notes (on NCAR Cheyenne)</title><link href="https://weiming-hu.github.io//blog/2020/cartopy-note/" rel="alternate" type="text/html" title="Cartopy Study Notes (on NCAR Cheyenne)" /><published>2020-12-01T11:00:00+00:00</published><updated>2020-12-01T11:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2020/cartopy-note</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2020/cartopy-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
 
 <ul>
   <li><a href="#setup">Setup</a>
@@ -1203,7 +1203,7 @@ pip uninstall shapely<span class="p">;</span> pip <span class="nb">install</span
   <li><a href="http://xarray.pydata.org/en/stable/examples/visualization_gallery.html?highlight=projection#Multiple-plots-and-map-projections">Deal with projections with <code class="language-plaintext highlighter-rouge">xarray</code></a></li>
   <li><a href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">Cartopy projection list</a></li>
   <li><a href="https://scitools.org.uk/cartopy/docs/v0.15/crs/index.html#coordinate-reference-systems-in-cartopy">Coordinate reference systems in Cartopy</a></li>
-</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Cartopy]]></summary></entry><entry><title type="html">Scalable Post-Processing with Dask and xarray</title><link href="https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask/" rel="alternate" type="text/html" title="Scalable Post-Processing with Dask and xarray" /><published>2020-11-25T11:00:00+00:00</published><updated>2020-11-25T11:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask/"><![CDATA[<!-- vim-markdown-toc GFM -->
+</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Cartopy]]></summary></entry><entry><title type="html">Scalable Post-Processing with Dask and xarray</title><link href="https://weiming-hu.github.io//blog/2020/scalable-xarray-dask/" rel="alternate" type="text/html" title="Scalable Post-Processing with Dask and xarray" /><published>2020-11-25T11:00:00+00:00</published><updated>2020-11-25T11:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2020/scalable-xarray-dask</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2020/scalable-xarray-dask/"><![CDATA[<!-- vim-markdown-toc GFM -->
 
 <ul>
   <li><a href="#introduction">Introduction</a></li>
@@ -1245,13 +1245,13 @@ Dask and xarray to analyze ensemble simulation output from Parallel Analog Ensem
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-1400.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-1400.webp" />
     
 
     <!-- Fallback to the original file -->
-    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+    <img src="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
 
   </picture>
 
@@ -1418,13 +1418,13 @@ pip <span class="nb">install </span>graphviz    <span class="c"># For generating
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-1400.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-1400.webp" />
     
 
     <!-- Fallback to the original file -->
-    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+    <img src="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
 
   </picture>
 
@@ -1572,13 +1572,13 @@ client = distributed.Client(cluster)
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-1400.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-1400.webp" />
     
 
     <!-- Fallback to the original file -->
-    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+    <img src="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
 
   </picture>
 
@@ -1614,13 +1614,13 @@ client = distributed.Client(cluster)
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-1400.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-1400.webp" />
     
 
     <!-- Fallback to the original file -->
-    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+    <img src="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
 
   </picture>
 
@@ -1647,13 +1647,13 @@ client = distributed.Client(cluster)
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-480.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-800.webp" />
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-1400.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-1400.webp" />
     
 
     <!-- Fallback to the original file -->
-    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+    <img src="/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
 
   </picture>
 
@@ -1686,7 +1686,7 @@ client = distributed.Client(cluster)
   <li><a href="https://jobqueue.dask.org/en/latest/talks-and-tutorials.html#talks-and-tutorials">Talks and tutorials</a> provided by Dask-jobqueue</li>
   <li><a href="https://jobqueue.dask.org/en/latest/">Documentation</a> of Dask-jobqueue</li>
   <li><a href="http://xarray.pydata.org/en/stable/">Documentation</a> of xarray</li>
-</ol>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[Analyze ensemble simulations with Dask and xarray]]></summary></entry><entry><title type="html">Matplotlib Study Note</title><link href="https://weiming-hu.github.io//about/blog/2020/matplotlib-note/" rel="alternate" type="text/html" title="Matplotlib Study Note" /><published>2020-11-24T14:00:00+00:00</published><updated>2020-11-24T14:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/matplotlib-note</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/matplotlib-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
+</ol>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[Analyze ensemble simulations with Dask and xarray]]></summary></entry><entry><title type="html">Matplotlib Study Note</title><link href="https://weiming-hu.github.io//blog/2020/matplotlib-note/" rel="alternate" type="text/html" title="Matplotlib Study Note" /><published>2020-11-24T14:00:00+00:00</published><updated>2020-11-24T14:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2020/matplotlib-note</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2020/matplotlib-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
 
 <ul>
   <li><a href="#resources">Resources</a></li>
@@ -1785,7 +1785,7 @@ client = distributed.Client(cluster)
   <li><strong>Lines</strong>: Set <code class="language-plaintext highlighter-rouge">rcParams['path.simplify']</code> and <code class="language-plaintext highlighter-rouge">rcParams['path.simplify_threshold']</code> to speed up line segment redering.</li>
   <li><strong>Legends</strong>: Specifically provide a location for legends to avoid the expensive default operation of finding the best location.</li>
   <li><strong>Presets</strong>: Use the <code class="language-plaintext highlighter-rouge">fast</code> style for automatic simplification.</li>
-</ol>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Matplotlib]]></summary></entry><entry><title type="html">HPC with RADICAL EnTK on NCAR Cheyenne</title><link href="https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup/" rel="alternate" type="text/html" title="HPC with RADICAL EnTK on NCAR Cheyenne" /><published>2020-11-13T18:00:00+00:00</published><updated>2020-11-13T18:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup/"><![CDATA[<ul>
+</ol>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Matplotlib]]></summary></entry><entry><title type="html">HPC with RADICAL EnTK on NCAR Cheyenne</title><link href="https://weiming-hu.github.io//blog/2020/EnTK-Cheyenne-Setup/" rel="alternate" type="text/html" title="HPC with RADICAL EnTK on NCAR Cheyenne" /><published>2020-11-13T18:00:00+00:00</published><updated>2020-11-13T18:00:00+00:00</updated><id>https://weiming-hu.github.io//blog/2020/EnTK-Cheyenne-Setup</id><content type="html" xml:base="https://weiming-hu.github.io//blog/2020/EnTK-Cheyenne-Setup/"><![CDATA[<ul>
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#setting-up">Setting Up</a>
     <ul>

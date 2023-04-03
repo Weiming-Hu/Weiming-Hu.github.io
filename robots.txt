@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://weiming-hu.github.io//about/sitemap.xml
+Sitemap: https://weiming-hu.github.io//sitemap.xml
