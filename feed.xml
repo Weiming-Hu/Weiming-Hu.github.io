@@ -1,444 +1,2019 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://alshedivat.github.io/al-folio/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alshedivat.github.io/al-folio/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-03T20:23:44+00:00</updated><id>https://alshedivat.github.io/al-folio/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">a post with giscus comments</title><link href="https://alshedivat.github.io/al-folio/blog/2022/giscus-comments/" rel="alternate" type="text/html" title="a post with giscus comments" /><published>2022-12-10T15:59:00+00:00</published><updated>2022-12-10T15:59:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2022/giscus-comments</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2022/giscus-comments/"><![CDATA[<p>This post shows how to add GISCUS comments.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><summary type="html"><![CDATA[an example of a blog post with giscus comments]]></summary></entry><entry><title type="html">Displaying External Posts on Your al-folio Blog</title><link href="https://alshedivat.github.io/al-folio/blog/2022/displaying-external-posts-on-your-al-folio-blog/" rel="alternate" type="text/html" title="Displaying External Posts on Your al-folio Blog" /><published>2022-04-23T23:20:09+00:00</published><updated>2022-04-23T23:20:09+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2022/displaying-external-posts-on-your-al-folio-blog</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2022/displaying-external-posts-on-your-al-folio-blog/"><![CDATA[]]></content><author><name></name></author></entry><entry><title type="html">a post with redirect</title><link href="https://alshedivat.github.io/al-folio/blog/2022/redirect/" rel="alternate" type="text/html" title="a post with redirect" /><published>2022-02-01T17:39:00+00:00</published><updated>2022-02-01T17:39:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2022/redirect</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2022/redirect/"><![CDATA[<p>Redirecting to another page.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[you can also redirect to assets like pdf]]></summary></entry><entry><title type="html">a post with diagrams</title><link href="https://alshedivat.github.io/al-folio/blog/2021/diagrams/" rel="alternate" type="text/html" title="a post with diagrams" /><published>2021-07-04T17:39:00+00:00</published><updated>2021-07-04T17:39:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2021/diagrams</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2021/diagrams/"><![CDATA[<p>This theme supports generating various diagrams from a text description using <a href="https://github.com/zhustec/jekyll-diagrams" target="\_blank">jekyll-diagrams</a> plugin.
-Below, we generate a few examples of such diagrams using languages such as <a href="https://mermaid-js.github.io/mermaid/" target="\_blank">mermaid</a>, <a href="https://plantuml.com/" target="\_blank">plantuml</a>, <a href="https://vega.github.io/vega-lite/" target="\_blank">vega-lite</a>, etc.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://weiming-hu.github.io//about/feed.xml" rel="self" type="application/atom+xml" /><link href="https://weiming-hu.github.io//about/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-04-03T20:26:54+00:00</updated><id>https://weiming-hu.github.io//about/feed.xml</id><title type="html">blank</title><subtitle>Open source, open mind, open world ...
+</subtitle><entry><title type="html">Personal Code Signature</title><link href="https://weiming-hu.github.io//about/blog/2023/personal-signature/" rel="alternate" type="text/html" title="Personal Code Signature" /><published>2023-02-05T12:00:00+00:00</published><updated>2023-02-05T12:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2023/personal-signature</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2023/personal-signature/"><![CDATA[<p>I posted here my template for source code header signature.</p>
 
-<p><strong>Note:</strong> different diagram-generation packages require external dependencies to be installed on your machine.
-Also, be mindful of that because of diagram generation the fist time you build your Jekyll website after adding new diagrams will be SLOW.
-For any other details, please refer to <a href="https://github.com/zhustec/jekyll-diagrams" target="\_blank">jekyll-diagrams</a> README.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#############################################################
+# Author: Weiming Hu &lt;weiminghu@ucsd.edu&gt;                   #
+#                                                           #
+#         Center for Western Weather and Water Extremes     #
+#         Scripps Institution of Oceanography               #
+#         UC San Diego                                      #
+#                                                           #
+#         https://weiming-hu.github.io/                     #
+#         https://cw3e.ucsd.edu/                            #
+#                _                                          #
+#              (`  ).                   _                   #
+#             (     ).              .:(`  )`.               #
+#            _(       '`.          :(   .    )              #
+#        .=(`(      .   )     .--  `.  (    ) )             #
+#       ((    (..__.:'-'   .+(   )   ` _`  ) )              #
+#       `(       ) )       (   .  )     (   )  ._           #
+#         ` __.:'   )     (   (   ))     `-'.-(`  )         #
+#      ( )       --'       `- __.'         :(      ))       #
+#     (_.'          .')                    `(    )  ))      #
+#                  (_  )                     ` __.:'        #
+#                                                           #
+#                      v  ~.      v                         #
+#             v           /|                                #
+#                        / |                v               #
+#                 v     /__|__                              #
+#                     \--------/                            #
+#~~~~~~~~~~~~~~~~~~~~~~`~~~~~~'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#############################################################
+#
+# Date of Creation: 2023/01/01
+#
+# [Summary of the source code file]
+#
+</code></pre></div></div>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[Source code header]]></summary></entry><entry><title type="html">Storing Offline Data for Cartopy</title><link href="https://weiming-hu.github.io//about/blog/2022/offline-cartopy/" rel="alternate" type="text/html" title="Storing Offline Data for Cartopy" /><published>2022-09-06T00:00:00+00:00</published><updated>2022-09-06T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2022/offline-cartopy</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2022/offline-cartopy/"><![CDATA[<p>If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for <a href="https://scitools.org.uk/cartopy/docs/latest/">cartopy</a> ahead of time, rather than having the module to download it at hoc using the slow Internet connection.</p>
 
-<h2 id="mermaid">Mermaid</h2>
+<p>These discussions can be helpful for setting this up:</p>
 
-<p>Install mermaid using <code class="language-plaintext highlighter-rouge">node.js</code> package manager <code class="language-plaintext highlighter-rouge">npm</code> by running the following command:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> mermaid.cli
-</code></pre></div></div>
+<ul>
+  <li><a href="https://github.com/SciTools/cartopy/issues/1298#issuecomment-959209777">Natural Earth downloads timing out</a></li>
+  <li><a href="https://stackoverflow.com/questions/32365410/location-of-stored-offline-data-for-cartopy">Location of stored offline data for cartopy</a></li>
+  <li><a href="https://github.com/SciTools/cartopy/issues/734">Add new Natural Earth shapefiles manually and use as a feature</a></li>
+</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[If you are on a slow Internet connection, e.g., the compute node has a limited bandwidth, it is probably better to download the data for cartopy ahead of time, rather than having the module to download it at hoc using the slow Internet connection.]]></summary></entry><entry><title type="html">Scholarly Poster Guidelines</title><link href="https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines/" rel="alternate" type="text/html" title="Scholarly Poster Guidelines" /><published>2021-09-03T00:00:00+00:00</published><updated>2021-09-03T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/scholarly-poster-guidelines/"><![CDATA[<p>This is a curated list of guidelines for scholarly posters.</p>
 
-<p>The diagram below was generated by the following code:</p>
+<ul>
+  <li>
+    <p>Leave enough white space.</p>
+  </li>
+  <li>Paragraph and figure captions should be at least in a 24-point font (0.9 cm height) and headers at least in a 36-point font (1.2 cm height).</li>
+  <li>A serif font (e.g., Times) is often easier for reading main text, and a non-serif font (e.g., Arial or Helvetica) is more legible for headers and figure labels.</li>
+  <li><strong>AGU Specific</strong>: Maximum poster dimensions are 1.8 meters wide by 1.2 meters high (6′ W x 4′ H). Allow for a 1-inch border.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% mermaid %}
-sequenceDiagram
-    participant John
-    participant Alice
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!
-{% endmermaid %}
-</code></pre></div></div>
+<h3 id="references">References</h3>
 
-<div class="jekyll-diagrams diagrams mermaid">
-  <svg id="mermaid-1680553434485" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:450px;" viewBox="-50 -10 450 231"><style>#mermaid-1680553434485 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1680553434485 .node circle,#mermaid-1680553434485 .node ellipse,#mermaid-1680553434485 .node polygon,#mermaid-1680553434485 .node rect{fill:#ececff;stroke:#9370db;stroke-width:1px}#mermaid-1680553434485 .node.clickable{cursor:pointer}#mermaid-1680553434485 .arrowheadPath{fill:#333}#mermaid-1680553434485 .edgePath .path{stroke:#333;stroke-width:1.5px}#mermaid-1680553434485 .edgeLabel{background-color:#e8e8e8}#mermaid-1680553434485 .cluster rect{fill:#ffffde!important;stroke:#aa3!important;stroke-width:1px!important}#mermaid-1680553434485 .cluster text{fill:#333}#mermaid-1680553434485 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#ffffde;border:1px solid #aa3;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1680553434485 .actor{stroke:#ccf;fill:#ececff}#mermaid-1680553434485 text.actor{fill:#000;stroke:none}#mermaid-1680553434485 .actor-line{stroke:grey}#mermaid-1680553434485 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1680553434485 .messageLine0,#mermaid-1680553434485 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1680553434485 #arrowhead{fill:#333}#mermaid-1680553434485 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1680553434485 .messageText{fill:#333;stroke:none}#mermaid-1680553434485 .labelBox{stroke:#ccf;fill:#ececff}#mermaid-1680553434485 .labelText,#mermaid-1680553434485 .loopText{fill:#000;stroke:none}#mermaid-1680553434485 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#ccf}#mermaid-1680553434485 .note{stroke:#aa3;fill:#fff5ad}#mermaid-1680553434485 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1680553434485 .section{stroke:none;opacity:.2}#mermaid-1680553434485 .section0{fill:rgba(102,102,255,.49)}#mermaid-1680553434485 .section2{fill:#fff400}#mermaid-1680553434485 .section1,#mermaid-1680553434485 .section3{fill:#fff;opacity:.2}#mermaid-1680553434485 .sectionTitle0,#mermaid-1680553434485 .sectionTitle1,#mermaid-1680553434485 .sectionTitle2,#mermaid-1680553434485 .sectionTitle3{fill:#333}#mermaid-1680553434485 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1680553434485 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1680553434485 .grid path{stroke-width:0}#mermaid-1680553434485 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1680553434485 .task{stroke-width:2}#mermaid-1680553434485 .taskText{text-anchor:middle;font-size:11px}#mermaid-1680553434485 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1680553434485 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1680553434485 .taskText0,#mermaid-1680553434485 .taskText1,#mermaid-1680553434485 .taskText2,#mermaid-1680553434485 .taskText3{fill:#fff}#mermaid-1680553434485 .task0,#mermaid-1680553434485 .task1,#mermaid-1680553434485 .task2,#mermaid-1680553434485 .task3{fill:#8a90dd;stroke:#534fbc}#mermaid-1680553434485 .taskTextOutside0,#mermaid-1680553434485 .taskTextOutside1,#mermaid-1680553434485 .taskTextOutside2,#mermaid-1680553434485 .taskTextOutside3{fill:#000}#mermaid-1680553434485 .active0,#mermaid-1680553434485 .active1,#mermaid-1680553434485 .active2,#mermaid-1680553434485 .active3{fill:#bfc7ff;stroke:#534fbc}#mermaid-1680553434485 .activeText0,#mermaid-1680553434485 .activeText1,#mermaid-1680553434485 .activeText2,#mermaid-1680553434485 .activeText3{fill:#000!important}#mermaid-1680553434485 .done0,#mermaid-1680553434485 .done1,#mermaid-1680553434485 .done2,#mermaid-1680553434485 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1680553434485 .doneText0,#mermaid-1680553434485 .doneText1,#mermaid-1680553434485 .doneText2,#mermaid-1680553434485 .doneText3{fill:#000!important}#mermaid-1680553434485 .crit0,#mermaid-1680553434485 .crit1,#mermaid-1680553434485 .crit2,#mermaid-1680553434485 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1680553434485 .activeCrit0,#mermaid-1680553434485 .activeCrit1,#mermaid-1680553434485 .activeCrit2,#mermaid-1680553434485 .activeCrit3{stroke:#f88;fill:#bfc7ff;stroke-width:2}#mermaid-1680553434485 .doneCrit0,#mermaid-1680553434485 .doneCrit1,#mermaid-1680553434485 .doneCrit2,#mermaid-1680553434485 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1680553434485 .activeCritText0,#mermaid-1680553434485 .activeCritText1,#mermaid-1680553434485 .activeCritText2,#mermaid-1680553434485 .activeCritText3,#mermaid-1680553434485 .doneCritText0,#mermaid-1680553434485 .doneCritText1,#mermaid-1680553434485 .doneCritText2,#mermaid-1680553434485 .doneCritText3{fill:#000!important}#mermaid-1680553434485 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1680553434485 g.classGroup text{fill:#9370db;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1680553434485 g.classGroup rect{fill:#ececff;stroke:#9370db}#mermaid-1680553434485 g.classGroup line{stroke:#9370db;stroke-width:1}#mermaid-1680553434485 .classLabel .box{stroke:none;stroke-width:0;fill:#ececff;opacity:.5}#mermaid-1680553434485 .classLabel .label{fill:#9370db;font-size:10px}#mermaid-1680553434485 .relation{stroke:#9370db;stroke-width:1;fill:none}#mermaid-1680553434485 #compositionEnd,#mermaid-1680553434485 #compositionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1680553434485 #aggregationEnd,#mermaid-1680553434485 #aggregationStart{fill:#ececff;stroke:#9370db;stroke-width:1}#mermaid-1680553434485 #dependencyEnd,#mermaid-1680553434485 #dependencyStart,#mermaid-1680553434485 #extensionEnd,#mermaid-1680553434485 #extensionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1680553434485 .branch-label,#mermaid-1680553434485 .commit-id,#mermaid-1680553434485 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1680553434485 {
-    color: rgb(0, 0, 0);
-    font: normal normal 400 normal 16px / normal "Times New Roman";
-  }</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="220" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">John</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="220" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Alice</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Hello John, how are you?</text><line x1="275" y1="100" x2="75" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Great!</text><line x1="75" y1="135" x2="275" y2="135" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><rect x="0" y="155" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="187.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">John</tspan></text></g><g><rect x="200" y="155" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="187.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Alice</tspan></text></g></svg>
-</div>]]></content><author><name></name></author><summary type="html"><![CDATA[an example of a blog post with diagrams]]></summary></entry><entry><title type="html">a distill-style blog post</title><link href="https://alshedivat.github.io/al-folio/blog/2021/distill/" rel="alternate" type="text/html" title="a distill-style blog post" /><published>2021-05-22T00:00:00+00:00</published><updated>2021-05-22T00:00:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2021/distill</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2021/distill/"><![CDATA[<h2 id="equations">Equations</h2>
+<ul>
+  <li><a href="https://www.agu.org/Fall-Meeting-2019/Pages/Presenter-Guidelines">AGU 2019 Presenter Guidelines</a></li>
+  <li><a href="http://betterposters.blogspot.com/2011/04/critique-breast-cancer-inhibition.html">Poster Critique</a></li>
+  <li><a href="https://guides.nyu.edu/posters">How to create a research poster</a></li>
+</ul>
 
-<p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/">MathJax 3</a> engine.
-You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>.
-If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p>
+<h3 id="logos">Logos</h3>
 
-<p>To use display mode, again surround your expression with <code class="language-plaintext highlighter-rouge">$$</code> and place it as a separate paragraph.
-Here is an example:</p>
+<ul>
+  <li><a href="https://scripps.ucsd.edu/portal/employee-resources/scripps-oceanography-brand-guidelines">Scripps Institution of Oceanography</a></li>
+  <li><a href="https://www.ems.psu.edu/resources-faculty-and-staff/marketing-and-communications">Penn State College of Earth and Mineral Sciences</a> or the <a href="https://www.ems.psu.edu/resources-faculty-and-staff/marketing-and-communications">university mark</a></li>
+</ul>]]></content><author><name></name></author><category term="Template" /><summary type="html"><![CDATA[My curated list of guidelines for making scholarly posters]]></summary></entry><entry><title type="html">Understanding Value Swapping in Python</title><link href="https://weiming-hu.github.io//about/blog/2021/understand-swap/" rel="alternate" type="text/html" title="Understanding Value Swapping in Python" /><published>2021-08-05T00:00:00+00:00</published><updated>2021-08-05T00:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/understand-swap</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/understand-swap/"><![CDATA[<h2 id="introduction">Introduction</h2>
 
-\[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\]
+<p><a href="https://www.python.org/">Python</a> has some very nice <a href="https://en.wikipedia.org/wiki/Syntactic_sugar">syntax sugars</a> that really come in handy when we program. One such example is swapping values. It is probably one of the first things you learn and this feature is always touted to show Python’s convenience and readability. The idea is that, instead of relying on a third variable, you can directly swap two values. Nice and easy!</p>
 
-<p>Note that MathJax 3 is <a href="https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html">a major re-write of MathJax</a> that brought a significant improvement to the loading and rendering speed, which is now <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php">on par with KaTeX</a>.</p>
+<p>But <strong>there are caveats</strong>. And that is why I wrote this article to explain what happens under the hood.</p>
 
-<hr />
+<p>Try the following questions and see whether you are already familiar with what I’m going show you. Have fun!</p>
 
-<h2 id="citations">Citations</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Level 1: The swap feature that comes in handy
+</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'a: {}; b: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 
-<p>Citations are then used in the article body with the <code class="language-plaintext highlighter-rouge">&lt;d-cite&gt;</code> tag.
-The key attribute is a reference to the id provided in the bibliography.
-The key attribute can take multiple ids, separated by commas.</p>
+<span class="c1"># Level 2: Yes. You can do more than just two.
+</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'a: {}; b: {}; c: {}; d: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
 
-<p>The citation is presented inline like this: <d-cite key="gregor2015draw"></d-cite> (a number that displays more information on hover).
-If you have an appendix, a bibliography is automatically created and populated in it.</p>
+<span class="c1"># Level 3: It also works for lists.
+</span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'arr: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 
-<p>Distill chose a numerical inline citation style to improve readability of citation dense articles and because many of the benefits of longer citations are obviated by displaying more information on hover.
-However, we consider it good style to mention author last names if you discuss something at length and it fits into the flow well — the authors are human and it’s nice for them to have the community associate them with their work.</p>
+<span class="c1"># Level 4: Getting fancier
+</span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'arr: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 
-<hr />
+<span class="c1"># Level 5: This might surprise you.
+</span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">'arr: {}'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
 
-<h2 id="footnotes">Footnotes</h2>
+<span class="c1"># Level 6
+# Explain how they are different @_@
+</span>
+<span class="c1">###########
+# Answers #
+###########
+</span>
+<span class="c1"># 1. a = 2, b = 1
+# 2. a = 4, b = 3, c = 2, d = 1
+# 3. arr = [0, 2, 1, 3]
+# 4. arr = [0, 2, 1, 3]
+# 5. arr = [3, 2, 1, 0]
+# 6. Please read the rest of the post.
+</span></code></pre></div></div>
 
-<p>Just wrap the text you would like to show up in a footnote in a <code class="language-plaintext highlighter-rouge">&lt;d-footnote&gt;</code> tag.
-The number of the footnote will be automatically generated.<d-footnote>This will become a hoverable footnote.</d-footnote></p>
+<p>Code for this post can be downloaded from <a href="https://weiming-hu.github.io/assets/python/2021-08-05-understand-swap.py">here</a>.</p>
 
-<hr />
+<h2 id="preparation">Preparation</h2>
 
-<h2 id="code-blocks">Code Blocks</h2>
+<p>I am glad that you decide to read on. It is recommended to have Python <code class="language-plaintext highlighter-rouge">3.x</code> running. I am using Python <code class="language-plaintext highlighter-rouge">3.9.5</code>.</p>
 
-<p>Syntax highlighting is provided within <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> tags.
-An example of inline code snippets: <code class="language-plaintext highlighter-rouge">&lt;d-code language="html"&gt;let x = 10;&lt;/d-code&gt;</code>.
-For larger blocks of code, add a <code class="language-plaintext highlighter-rouge">block</code> attribute:</p>
+<p>We are going to read some <a href="https://en.wikipedia.org/wiki/Assembly_language">assembly code</a>. But <strong>you do not need to have any knowledge in assembly language</strong>. It is simply a way here for us to see how exactly Python is manipulating machine memory.</p>
 
-<d-code block="" language="javascript">
-  var x = 25;
-  function(x) {
-    return x * x;
-  }
-</d-code>
+<p>To compile Python into assembly, we need the native Python module, <code class="language-plaintext highlighter-rouge">dis</code>. <a href="https://stackoverflow.com/a/47529318">Here</a> is a pretty good explanation of the output produced by <code class="language-plaintext highlighter-rouge">dis.dis</code>.</p>
 
-<p><strong>Note:</strong> <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> blocks do not look good in the dark mode.
-You can always use the default code-highlight using the <code class="language-plaintext highlighter-rouge">highlight</code> liquid tag:</p>
+<p><a href="https://docs.python.org/3/library/dis.html#python-bytecode-instructions">Here</a> is a dictionary of assembly instructions. It contains documentation for all instructions that we are going to see in this post.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">x</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<h2 id="diving-in">Diving In</h2>
 
-<hr />
+<p>To understand this section, you do not need to know assembly language, but it is good to understand <a href="https://www.tutorialspoint.com/what-is-memory-stack-in-computer-architecture">memory stack</a>. Basically, it is a place to store data and instructions that the CPU can retrieve and execute.</p>
 
-<h2 id="interactive-plots">Interactive Plots</h2>
+<p>For example, when you execute <code class="language-plaintext highlighter-rouge">1 + 1</code> in Python, the two numbers are stored as data and <code class="language-plaintext highlighter-rouge">+</code> is stored as an instruction in the stack so that CPU can then execute the command.</p>
 
-<p>You can add interative plots using plotly + iframes :framed_picture:</p>
-
-<div class="l-page">
-  <iframe src="/al-folio/assets/plotly/demo.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<p>The plot must be generated separately and saved into an HTML file.
-To generate the plot that you see above, you can use the following code snippet:</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">import</span> <span class="n">plotly.express</span> <span class="k">as</span> <span class="n">px</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span>
-  <span class="s">'https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv'</span>
-<span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="p">.</span><span class="nf">density_mapbox</span><span class="p">(</span>
-  <span class="n">df</span><span class="p">,</span>
-  <span class="n">lat</span><span class="o">=</span><span class="s">'Latitude'</span><span class="p">,</span>
-  <span class="n">lon</span><span class="o">=</span><span class="s">'Longitude'</span><span class="p">,</span>
-  <span class="n">z</span><span class="o">=</span><span class="s">'Magnitude'</span><span class="p">,</span>
-  <span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-  <span class="n">center</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">180</span><span class="p">),</span>
-  <span class="n">zoom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-  <span class="n">mapbox_style</span><span class="o">=</span><span class="s">"stamen-terrain"</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">write_html</span><span class="p">(</span><span class="s">'assets/plotly/demo.html'</span><span class="p">)</span></code></pre></figure>
-
-<hr />
-
-<h2 id="layouts">Layouts</h2>
-
-<p>The main text column is referred to as the body.
-It is the assumed layout of any direct descendants of the <code class="language-plaintext highlighter-rouge">d-article</code> element.</p>
-
-<div class="fake-img l-body">
-  <p>.l-body</p>
-</div>
-
-<p>For images you want to display a little larger, try <code class="language-plaintext highlighter-rouge">.l-page</code>:</p>
-
-<div class="fake-img l-page">
-  <p>.l-page</p>
-</div>
-
-<p>All of these have an outset variant if you want to poke out from the body text a little bit.
-For instance:</p>
-
-<div class="fake-img l-body-outset">
-  <p>.l-body-outset</p>
-</div>
-
-<div class="fake-img l-page-outset">
-  <p>.l-page-outset</p>
-</div>
-
-<p>Occasionally you’ll want to use the full browser width.
-For this, use <code class="language-plaintext highlighter-rouge">.l-screen</code>.
-You can also inset the element a little from the edge of the browser by using the inset variant.</p>
-
-<div class="fake-img l-screen">
-  <p>.l-screen</p>
-</div>
-<div class="fake-img l-screen-inset">
-  <p>.l-screen-inset</p>
-</div>
-
-<p>The final layout is for marginalia, asides, and footnotes.
-It does not interrupt the normal flow of <code class="language-plaintext highlighter-rouge">.l-body</code> sized text except on mobile screen sizes.</p>
-
-<div class="fake-img l-gutter">
-  <p>.l-gutter</p>
-</div>
-
-<hr />
-
-<h2 id="other-typography">Other Typography?</h2>
-
-<p>Emphasis, aka italics, with <em>asterisks</em> (<code class="language-plaintext highlighter-rouge">*asterisks*</code>) or <em>underscores</em> (<code class="language-plaintext highlighter-rouge">_underscores_</code>).</p>
-
-<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
-
-<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
-
-<p>Strikethrough uses two tildes. <del>Scratch this.</del></p>
+<p>The goal of this section is to understand:</p>
 
 <ol>
-  <li>First ordered list item</li>
-  <li>Another item
-⋅⋅* Unordered sub-list.</li>
-  <li>Actual numbers don’t matter, just that it’s a number
-⋅⋅1. Ordered sub-list</li>
-  <li>And another item.</li>
+  <li>the execution order of a Python command</li>
+  <li>the instruction carried out to the memory stack</li>
 </ol>
 
-<p>⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we’ll use three here to also align the raw Markdown).</p>
-
-<p>⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p>
-
-<ul>
-  <li>Unordered list can use asterisks</li>
-  <li>Or minuses</li>
-  <li>Or pluses</li>
-</ul>
-
-<p><a href="https://www.google.com">I’m an inline-style link</a></p>
-
-<p><a href="https://www.google.com" title="Google's Homepage">I’m an inline-style link with title</a></p>
-
-<p><a href="https://www.mozilla.org">I’m a reference-style link</a></p>
-
-<p><a href="../blob/master/LICENSE">I’m a relative reference to a repository file</a></p>
-
-<p><a href="http://slashdot.org">You can use numbers for reference-style link definitions</a></p>
-
-<p>Or leave it empty and use the <a href="http://www.reddit.com">link text itself</a>.</p>
-
-<p>URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <a href="http://www.example.com">http://www.example.com</a> and sometimes
-example.com (but not on Github, for example).</p>
-
-<p>Some text to show that the reference links can follow later.</p>
-
-<p>Here’s our logo (hover to see the title text):</p>
-
-<p>Inline-style:
-<img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1" /></p>
-
-<p>Reference-style:
-<img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2" /></p>
-
-<p>Inline <code class="language-plaintext highlighter-rouge">code</code> has <code class="language-plaintext highlighter-rouge">back-ticks around</code> it.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">JavaScript syntax highlighting</span><span class="dl">"</span><span class="p">;</span>
-<span class="nf">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span> <span class="n">s</span>
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No language indicated, so no syntax highlighting.
-But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
-</code></pre></div></div>
-
-<p>Colons can be used to align columns.</p>
+<h3 id="level-1">Level 1</h3>
 
 <table>
   <thead>
     <tr>
-      <th>Tables</th>
-      <th style="text-align: center">Are</th>
-      <th style="text-align: right">Cool</th>
+      <th>Line #</th>
+      <th>Python</th>
+      <th>Assembly</th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>col 3 is</td>
-      <td style="text-align: center">right-aligned</td>
-      <td style="text-align: right">$1600</td>
-    </tr>
-    <tr>
-      <td>col 2 is</td>
-      <td style="text-align: center">centered</td>
-      <td style="text-align: right">$12</td>
-    </tr>
-    <tr>
-      <td>zebra stripes</td>
-      <td style="text-align: center">are neat</td>
-      <td style="text-align: right">$1</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don’t need to make the
-raw Markdown line up prettily. You can also use inline Markdown.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Markdown</th>
-      <th>Less</th>
-      <th>Pretty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><em>Still</em></td>
-      <td><code class="language-plaintext highlighter-rouge">renders</code></td>
-      <td><strong>nicely</strong></td>
-    </tr>
     <tr>
       <td>1</td>
+      <td>a, b = 1, 2</td>
+      <td>LOAD_CONST</td>
+      <td>1</td>
+      <td>((1, 2))</td>
+    </tr>
+    <tr>
       <td>2</td>
+      <td> </td>
+      <td>UNPACK_SEQUENCE</td>
+      <td>2</td>
+      <td> </td>
+    </tr>
+    <tr>
       <td>3</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>a, b = b, a</td>
+      <td>LOAD_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td><strong>ROT_TWO</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>0</td>
+      <td>(None)</td>
     </tr>
   </tbody>
 </table>
 
+<p>The most important instruction here is <a href="https://docs.python.org/3/library/dis.html#opcode-ROT_TWO">ROT_TWO</a> [line 7] which swaps the two top-most stack items. In our case, it swaps 1 and 2 so that, later on, when <a href="https://docs.python.org/3/library/dis.html#opcode-STORE_FAST">STORE_FAST</a> [lines 8 and 9] retrieves the top-of-stack values in order, it actually assigns 2 to <code class="language-plaintext highlighter-rouge">a</code> and 1 to <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<p>This is exactly what we would expect when we swap values.</p>
+
+<p>It is also interesting to note that <code class="language-plaintext highlighter-rouge">a, b = 1, 2</code> internally creates a sequence and then unpack them [lines 1 and 2]. We will also observe this in the later examples.</p>
+
+<h3 id="level-2">Level 2</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line #</th>
+      <th>Python</th>
+      <th>Assembly</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>a, b, c, d = 1, 2, 3, 4</td>
+      <td>LOAD_CONST</td>
+      <td>1</td>
+      <td>((1, 2, 3, 4))</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> </td>
+      <td>UNPACK_SEQUENCE</td>
+      <td>4</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>2</td>
+      <td>(c)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>3</td>
+      <td>(d)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>a, b, c, d = d, c, b, a</td>
+      <td>LOAD_FAST</td>
+      <td>3</td>
+      <td>(d)</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>2</td>
+      <td>(c)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td> </td>
+      <td><strong>BUILD_TUPLE</strong></td>
+      <td>4</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td> </td>
+      <td>UNPACK_SEQUENCE</td>
+      <td>4</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(a)</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>1</td>
+      <td>(b)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>2</td>
+      <td>(c)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>3</td>
+      <td>(d)</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>0</td>
+      <td>(None)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Yes, you can carry out value swaps with more than two variables. However, the underlying instructions are different. We no longer see <code class="language-plaintext highlighter-rouge">ROT_TWO</code> but we see <a href="https://docs.python.org/3/library/dis.html#opcode-BUILD_TUPLE">BUILD_TUPLE</a> [line 11] which creates a tuple consuming a certain number of items from the stack.</p>
+
+<p>You probably have already guessed. When swapping more values, Python, instead, creates a new tuple with the desired data [line 11] and then unpack the sequence [line 12]. This is different from the previous behavior where top of the stacks are directly swapped.</p>
+
+<h3 id="level-3">Level 3</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line #</th>
+      <th>Python</th>
+      <th>Assembly</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>arr = [3, 2, 1, 0]</td>
+      <td>BUILD_LIST</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>1</td>
+      <td>((3, 2, 1, 0))</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td> </td>
+      <td>LIST_EXTEND</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>arr[0], arr[3] = arr[3], arr[0]</td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(3)</strong></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>3</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td> </td>
+      <td><strong>ROT_TWO</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>3</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(3)</strong></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>0</td>
+      <td>(None)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This syntax sugar also applies to lists. <strong>But this is where caveat exists</strong>.</p>
+
+<p>If you already understand the previous examples, this one does not look too different: Python first loads the two values from the array into the top of the stack in order [lines 5 ~ 10], and then it swaps the top two values of the stack [line 11]. Finally, values are assigned back to the array [lines 12 ~ 17].</p>
+
+<p>So far so good.</p>
+
+<h3 id="level-4">Level 4</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line #</th>
+      <th>Python</th>
+      <th>Assembly</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>arr = [3, 2, 1, 0]</td>
+      <td>BUILD_LIST</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>1</td>
+      <td>((3, 2, 1, 0))</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td> </td>
+      <td>LIST_EXTEND</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>arr[arr[0]], arr[0] = arr[0], arr[arr[0]]</td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td> </td>
+      <td><strong>ROT_TWO</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>0</td>
+      <td>(None)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you have ever written code like this, please either stop or put very good comments. It is almost unreadable, but it serves our purpose just right.</p>
+
+<p>Note that <strong>the execution order of the right-hand side is from left to right</strong>, so that <code class="language-plaintext highlighter-rouge">arr[0]</code> [lines 5 ~ 7] is first loaded into the stack, and then <code class="language-plaintext highlighter-rouge">arr[arr[0]]</code> [lines 8 ~ 12]. Then things become straightforward: Python swap the top two values in the stack, and assign values back to the array. <strong>The assignment order is also from left to right</strong>, first assigning <code class="language-plaintext highlighter-rouge">arr[arr[0]]</code> [lines 14 ~ 18] and then <code class="language-plaintext highlighter-rouge">arr[0]</code> [lines 19 ~ 21].</p>
+
+<h3 id="level-5">Level 5</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Line #</th>
+      <th>Python</th>
+      <th>Assembly</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>arr = [3, 2, 1, 0]</td>
+      <td>BUILD_LIST</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>1</td>
+      <td>((3, 2, 1, 0))</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td> </td>
+      <td>LIST_EXTEND</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td> </td>
+      <td>STORE_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>arr[0], arr[arr[0]] = arr[arr[0]], arr[0]</td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td> </td>
+      <td><strong>ROT_TWO</strong></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td> </td>
+      <td>LOAD_FAST</td>
+      <td>0</td>
+      <td>(arr)</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td> </td>
+      <td><strong>LOAD_CONST</strong></td>
+      <td>2</td>
+      <td><strong>(0)</strong></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td> </td>
+      <td>BINARY_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td> </td>
+      <td>STORE_SUBSCR</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td> </td>
+      <td>LOAD_CONST</td>
+      <td>0</td>
+      <td>(None)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now, this code actually does not do what it is supposed to do. The result of <code class="language-plaintext highlighter-rouge">arr</code> <strong>does not change</strong>. The key here is the execution order.</p>
+
+<p>Lines 5 ~ 12 load 0 and 3 into the stack. After <code class="language-plaintext highlighter-rouge">ROT_TWO</code> [line 13], the top of the stack is 0 and the second is 3.</p>
+
+<p>Lines 14 ~ 16 assign the top value of the stack, 0, to <code class="language-plaintext highlighter-rouge">arr[0]</code>. At this point, <code class="language-plaintext highlighter-rouge">arr</code> <strong>has already been changed!</strong> When lines 18 and 19 access <code class="language-plaintext highlighter-rouge">arr[0]</code>, the value is 0, rather than 3. Finally, when <code class="language-plaintext highlighter-rouge">STORE_SUBSCR</code> [line 21] gets evaluated, the equivalent Python expression is <code class="language-plaintext highlighter-rouge">arr[0] = 3</code>. As a result, the array is not changed.</p>
+
+<h3 id="level-6">Level 6</h3>
+
+<p>I hope you now understand the differences between these swapping scenarios. Differences in instructions potentially affect the performance. And when swapping values in arrays, you need to pay extra attention to cases where values are changing “in real time”.</p>
+
+<p>Please let me know if you have any questions or suggestions. I enjoyed writing this post and I hope this post can help you understand Python a little bit better.</p>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[How Python swaps values might surprise you]]></summary></entry><entry><title type="html">FAQ: Dedicated Server for Don’t Starve Together (2021 Version)</title><link href="https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server/" rel="alternate" type="text/html" title="FAQ: Dedicated Server for Don’t Starve Together (2021 Version)" /><published>2021-06-16T18:00:00+00:00</published><updated>2021-06-16T18:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/DST-Dedicated-Server/"><![CDATA[<p>This post is a memo for the problems I encountered during setting up a dedicated server for <a href="https://www.klei.com/games/dont-starve-together">Don’t Starve Together</a>.</p>
+
+<h3 id="what-is-my-setup-for-the-dedicated-server">What is my setup for the dedicated server?</h3>
+
+<p>I used Amazon AWS services. It is a cloud service and a pay-as-you-use service. Specifically, I chose the <code class="language-plaintext highlighter-rouge">t3.xlarge</code> instance running the latest version of Ubuntu. I have tried the free tier instance but that seems not to have enough RAM.</p>
+
+<p>You should also choose the physical location of your server, preferably closest to your physical location. This will affect your connection lag.</p>
+
+<h3 id="how-to-set-up-the-dedicated-server">How to set up the dedicated server?</h3>
+
+<p>There is a detailed tutorial on how to set up dedicated servers on Linux <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=590565473">here</a>. You can also find related tutorials <a href="https://steamcommunity.com/id/ToNiO44/myworkshopfiles/?section=guides&amp;appid=322330">here</a>, for example, setting up servers for other operating systems.</p>
+
+<h3 id="what-is-my-username-on-the-aws-server">What is my username on the AWS server?</h3>
+
+<p>Before you try to do anything on the server, you need to <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">connect to the server</a> and you need a username. Where to find this username? It is usually just a default username based on your selected distribution, for example, <code class="language-plaintext highlighter-rouge">ubuntu</code> for Ubuntu. See details <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance">here</a>.</p>
+
+<h3 id="what-is-admin-on-the-dedicated-server">What is admin on the dedicated server?</h3>
+
+<p>At certain point in the tutorial, you will see the steps to add admin. This is to enable you to act like the owner of the world when playing games, so that you can do things like stop the servers, revert days, and spawn items with <code class="language-plaintext highlighter-rouge">c_spawn</code>.</p>
+
+<p>You can definitely location your ID as it is mentioned in the tutorial. Or you can go <a href="https://accounts.klei.com/account/info">here</a>. Under <code class="language-plaintext highlighter-rouge">USER INFO</code> and <code class="language-plaintext highlighter-rouge">Klei User ID</code>, you will a string of characters like <code class="language-plaintext highlighter-rouge">KU_***</code>. That is your ID to use when adding an admin. You might need to login first.</p>
+
+<h3 id="how-to-avoid-world-reset-after-server-restart">How to avoid world reset after server restart?</h3>
+
+<p>The problem is I don’t want to leave the server running all the time because it is pay-as-you-use. I want to only run the server when I play the game and stop the server when I’m done. The way to stop the server mentioned in the tutorial does not quite work because I <strong>lose my world</strong>! So I need a way to make the world persistent after server reboot.</p>
+
+<p>You would want to shut down your world when you are in the game. Press ` (backtick) on your keyboard to bring up a prompt and then you enter <code class="language-plaintext highlighter-rouge">c_shutdown()</code>. You wait for a while and you will receive a message of connection loss.</p>
+
+<p>At this point, you are safe to stop your server and the world is properly saved.</p>
+
+<h3 id="how-to-add-mods">How to add mods?</h3>
+
+<p>Follow <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=591543858">this tutorial</a> to install mods on servers. There is a lot information and tutorials. Make sure you are reading the correct one for dedicated servers.</p>
+
+<p>There is one caveat: this file <code class="language-plaintext highlighter-rouge">~/server_dst/mods/dedicated_server_mods_setup.lua</code> will be reset every time you update the server using the <code class="language-plaintext highlighter-rouge">update.sh</code> created during <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=590565473">this tutorial</a>. So I back up my <code class="language-plaintext highlighter-rouge">.lua</code> file and added the following line after <code class="language-plaintext highlighter-rouge">sleep 10</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> ~/dedicated_server_mods_setup_backup.lua ~/server_dst/mods/dedicated_server_mods_setup.lua
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">~/dedicated_server_mods_setup_backup.lua</code> is basically just a backup. The update process won’t affect your <code class="language-plaintext highlighter-rouge">modoverrides.lua</code> under <code class="language-plaintext highlighter-rouge">~/.klei/DoNotStarveTogether/MyDediServer/Master</code> and <code class="language-plaintext highlighter-rouge">~/.klei/DoNotStarveTogether/MyDediServer/Caves</code>.</p>
+
+<h3 id="how-to-move-the-aws-server-to-a-different-location">How to move the AWS server to a different location?</h3>
+
+<p>[To be continued]</p>
+
+<h3 id="how-to-move-the-world-to-a-different-device">How to move the world to a different device?</h3>
+
+<p>[To be continued]</p>
+
+<h3 id="still-have-questions">Still have questions?</h3>
+
+<p>Please leave a comment. Thank you!</p>]]></content><author><name></name></author><category term="Game" /><summary type="html"><![CDATA[Dont't starve together!]]></summary></entry><entry><title type="html">Creating User Clone of NCAR Package Library for JupyterHub</title><link href="https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter/" rel="alternate" type="text/html" title="Creating User Clone of NCAR Package Library for JupyterHub" /><published>2021-02-09T12:00:00+00:00</published><updated>2021-02-09T12:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2021/user-NPL-jupyter/"><![CDATA[<h2 id="motivation">Motivation</h2>
+
+<p>This posts documented how I created a user clone of NCAR package library (NPL) for use with JupyterHub. I want to do this because:</p>
+
+<ol>
+  <li>I want to use the <a href="https://jupyterhub.ucar.edu">JupyterHub</a> interface</li>
+  <li>I want to be able to install packages to kernels. This would prevent me from using any of the pre-existing kernels.</li>
+</ol>
+
+<p>Most of the steps are already documented <a href="https://www2.cisl.ucar.edu/resources/python-%E2%80%93-ncar-package-library#clone">here</a>. But JupyterHub environment was probably built with a different setup with the cloned NPL package. So there are extra steps to make sure the same version sare installed.</p>
+
 <blockquote>
-  <p>Blockquotes are very handy in email to emulate reply text.
-This line is part of the same quote.</p>
+  <p>This post was last tested on Feb. 24, 2021.</p>
 </blockquote>
 
-<p>Quote break.</p>
+<h2 id="clone-npl">Clone NPL</h2>
 
-<blockquote>
-  <p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>
-</blockquote>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Load the required modules</span>
+module load python ncarenv
+	
+<span class="c"># Check available modules</span>
+ncar_pylib <span class="nt">-l</span>
 
-<p>Here’s a line for us to start with.</p>
+<span class="c"># Clone the module to your user space</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>
+ncar_pylib <span class="nt">-c</span> 20201220 venv_Jupyter
+</code></pre></div></div>
 
-<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
+<p>You can find more details on this matter <a href="https://www2.cisl.ucar.edu/resources/python-%E2%80%93-ncar-package-library#clone">here</a>. The clone process took about 3 minutes for me and it printed the following output.</p>
 
-<p>This line is also a separate paragraph, but…
-This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>]]></content><author><name>Albert Einstein</name></author><summary type="html"><![CDATA[an example of a distill-style blog post and main elements]]></summary></entry><entry><title type="html">a post with github metadata</title><link href="https://alshedivat.github.io/al-folio/blog/2020/github-metadata/" rel="alternate" type="text/html" title="a post with github metadata" /><published>2020-09-28T21:01:00+00:00</published><updated>2020-09-28T21:01:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2020/github-metadata</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2020/github-metadata/"><![CDATA[<p>A sample blog page that demonstrates the accessing of github meta data.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning 20201220 into directory venv_Jupyter...
 
-<h2 id="what-does-github-metadata-do">What does Github-MetaData do?</h2>
+    Python 3.7.9-20201220 library on system cheyenne
+    Modules used to build this package library:
+
+        ncarenv/1.3
+        gnu/9.1.0
+        ncarcompilers/0.5.0
+        python/3.7.9
+
+    When installing packages into your personal clone,
+    use the aforementioned modules to avoid compiler
+    and library errors.
+
+    We also recommend using the <span class="s2">"--no-cache-dir"</span> option
+    to the pip <span class="nb">install command</span>, which will prevent pip from
+    installing previously compiled package installs that
+    may have used different library versions. Example:
+
+        module purge
+        module load ncarenv gnu/9.1.0 ncarcompilers python/3.7.9
+        ncar_pylib <span class="nt">-c</span> default my_clone
+        ncar_pylib my_clone
+        pip <span class="nt">--no-cache-dir</span> <span class="nb">install </span>PACKAGE_NAME
+</code></pre></div></div>
+
+<p>And then, let’s add the cloned module as a kernel so that we can use it in Jupyter notebooks.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ncar_pylib <span class="nt">--kernel</span> venv_Jupyter
+</code></pre></div></div>
+
+<h2 id="module-consistency">Module Consistency</h2>
+
+<p>The following python code check should be done after requesting a session from JupyterHub and in a Jupyter notebook. You should toggle the kernel between <code class="language-plaintext highlighter-rouge">Python 3</code> and <code class="language-plaintext highlighter-rouge">venv_Jupyter</code> to see the different versions if any.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">bokeh</span>
+<span class="kn">import</span> <span class="n">tornado</span>
+<span class="kn">import</span> <span class="n">distributed</span>
+<span class="kn">import</span> <span class="n">dask_jobqueue</span>
+</code></pre></div></div>
+
+<p>At the time when I wrote this post, <code class="language-plaintext highlighter-rouge">Python 3</code> had the following configuration.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">distributed</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>    <span class="c1"># 2.3.2
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dask_jobqueue</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>  <span class="c1"># 0.6.3
+</span><span class="nf">print</span><span class="p">(</span><span class="n">tornado</span><span class="p">.</span><span class="n">version</span><span class="p">)</span>            <span class="c1"># 6.0.3
+</span><span class="nf">print</span><span class="p">(</span><span class="n">bokeh</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>          <span class="c1"># 1.3.4
+</span><span class="nf">print</span><span class="p">(</span><span class="n">msgpack</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>        <span class="c1"># 0.6.1
+</span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">venv_Jupyter</code> had the following configuration.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">distributed</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>    <span class="c1"># 2020.12.0
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dask_jobqueue</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>  <span class="c1"># 0.7.2
+</span><span class="nf">print</span><span class="p">(</span><span class="n">tornado</span><span class="p">.</span><span class="n">version</span><span class="p">)</span>            <span class="c1"># 6.1
+</span><span class="nf">print</span><span class="p">(</span><span class="n">bokeh</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>          <span class="c1"># 2.2.3
+</span><span class="nf">print</span><span class="p">(</span><span class="n">msgpack</span><span class="p">.</span><span class="n">__version__</span><span class="p">)</span>        <span class="c1"># 1.0.2
+</span></code></pre></div></div>
+
+<p>Our next step is to install version specific modules into <code class="language-plaintext highlighter-rouge">venv_Jupyter</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># These lines come from the previous output when you cloned NPL</span>
+module purge
+module load ncarenv gnu/9.1.0 ncarcompilers python/3.7.9
+ncar_pylib venv_Jupyter
+
+<span class="c"># Install version specific modules</span>
+pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="se">\</span>
+  <span class="nv">distributed</span><span class="o">==</span>2.3.2 <span class="se">\</span>
+  <span class="nv">dask_jobqueue</span><span class="o">==</span>0.6.3 <span class="se">\</span>
+  <span class="nv">tornado</span><span class="o">==</span>6.0.3 <span class="se">\</span>
+  <span class="nv">bokeh</span><span class="o">==</span>1.3.4 <span class="se">\</span>
+  <span class="nv">msgpack</span><span class="o">==</span>0.6.1
+</code></pre></div></div>
+
+<h2 id="issues">Issues</h2>
+
+<p>Please feel free to comment if you have found other modules that should be checked for version consistency. Thank you!</p>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[User clone of NPL for JupyterHub]]></summary></entry><entry><title type="html">Cartopy Study Notes (on NCAR Cheyenne)</title><link href="https://weiming-hu.github.io//about/blog/2020/cartopy-note/" rel="alternate" type="text/html" title="Cartopy Study Notes (on NCAR Cheyenne)" /><published>2020-12-01T11:00:00+00:00</published><updated>2020-12-01T11:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/cartopy-note</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/cartopy-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
+
 <ul>
-  <li>Propagates the site.github namespace with repository metadata</li>
-  <li>Setting site variables :
+  <li><a href="#setup">Setup</a>
     <ul>
-      <li>site.title</li>
-      <li>site.description</li>
-      <li>site.url</li>
-      <li>site.baseurl</li>
+      <li><a href="#environment">Environment</a></li>
+      <li><a href="#map-data">Map Data</a></li>
+      <li><a href="#other-settings">Other Settings</a></li>
     </ul>
   </li>
-  <li>Accessing the metadata - duh.</li>
-  <li>Generating edittable links.</li>
+  <li><a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#working-with-projections">Working with Projections</a></li>
+    </ul>
+  </li>
+  <li><a href="#resources">Resources</a></li>
 </ul>
 
-<h2 id="additional-reading">Additional Reading</h2>
+<!-- vim-markdown-toc -->
+
+<h2 id="setup">Setup</h2>
+
+<h3 id="environment">Environment</h3>
+
+<p>Since I’m using <code class="language-plaintext highlighter-rouge">cartopy</code> on supercomputers, I usually do not have root access for installation. I need to make sure everything I do is within my user space.</p>
+
+<blockquote>
+  <p>To prepare an environment in user space, this approach might no longer work. Please see my more recent post on this matter <a href="https://weiming-hu.github.io/user-NPL-jupyter/">here</a>.</p>
+</blockquote>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load python
+
+<span class="c"># To make conda accessible, we need to activate a base environment</span>
+<span class="nb">source</span> /ncar/usr/jupyterhub/20190905/bin/activate
+
+<span class="c"># If you have not yet created these directories</span>
+<span class="nb">mkdir</span> <span class="nv">$HOME</span>/conda_env
+<span class="nb">mkdir</span> <span class="nv">$HOME</span>/conda_pkg
+
+<span class="c"># Specify system environment</span>
+<span class="nb">export </span><span class="nv">CONDA_ENVS_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/conda_env
+<span class="nb">export </span><span class="nv">CONDA_PKGS_DIRS</span><span class="o">=</span><span class="nv">$HOME</span>/conda_pkg
+
+<span class="c"># Create a new environment</span>
+<span class="c"># conda create -n "myenv" python=3.7.5 ipython</span>
+<span class="c">#</span>
+<span class="c"># Or clone from a pre-existing environment</span>
+conda create <span class="nt">--name</span> venvConda <span class="nt">--clone</span> /ncar/usr/jupyterhub/20190905
+
+<span class="c"># Activate the environment</span>
+conda activate venvConda
+
+<span class="c"># Install additional modules</span>
+conda <span class="nb">install</span> <span class="nt">-y</span> <span class="nt">--channel</span> conda-forge cartopy
+conda <span class="nb">install</span> <span class="nt">-y</span> ipykernel
+
+<span class="c"># Add the environment to jupyter kernals</span>
+python <span class="nt">-m</span> ipykernel <span class="nb">install</span> <span class="nt">--user</span> <span class="nt">--name</span> venvConda
+</code></pre></div></div>
+
+<p>The above settings of <code class="language-plaintext highlighter-rouge">CONDA_ENVS_PATH</code> and <code class="language-plaintext highlighter-rouge">CONDA_PKGS_DIRS</code> are meant for Linux OS. For other OS, please refer to the <a href="https://conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs">official documentation</a>.</p>
+
+<p>If you want to remove any kernels from jupyter notebook, you can use the following command.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get a list of available kernels</span>
+jupyter kernelspec list
+
+<span class="c"># Remove an unwanted kernel</span>
+jupyter kernelspec uninstall &lt;kernel name to remove&gt; 
+</code></pre></div></div>
+
+<h3 id="map-data">Map Data</h3>
+
+<p>Compute nodes on Cheyenne have very slow Internet connection. This would potentially slow down our visualization process. Let’s download all the data for visualization ahead of time. We will use <a href="https://github.com/SciTools/cartopy/blob/master/tools/feature_download.py">this script</a> to download all data that <code class="language-plaintext highlighter-rouge">cartopy</code> uses.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a directory for storing visualization data</span>
+<span class="nb">mkdir</span> ~/scratch/data/Cartopy/
+<span class="nb">cd</span> ~/scratch/data/Cartopy/
+
+<span class="c"># Download the script</span>
+wget https://raw.githubusercontent.com/SciTools/cartopy/master/tools/feature_download.py
+
+<span class="c"># If you have not yet activated the environment we have just created</span>
+<span class="c"># run the following</span>
+<span class="c">#</span>
+<span class="c"># conda activate venvConda</span>
+
+<span class="c"># Run the script to download all data</span>
+python feature_download.py <span class="nt">--output</span> ~/scratch/data/Cartopy/ <span class="se">\</span>
+    gshhs physical cultural cultural-extra
+</code></pre></div></div>
+
+<p>The total size of the downloaded files is about 600 MB (as of 2020/11/30). So please be patient. Later on during the development before using <code class="language-plaintext highlighter-rouge">cartopy</code>, we will set the data directory accordingly.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">cartopy</span>
+<span class="n">cartopy</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="s">'pre_existing_data_dir'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">expanduser</span><span class="p">(</span><span class="s">'~/scratch/data/Cartopy/'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>However, the downloaded script still does not download absolutely all the data needed. When I tried to add the <code class="language-plaintext highlighter-rouge">ax.add_feature(cf.STATES)</code> layer, the downloader was again called. So I have to manually download some files after all.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Change to the data directory</span>
+<span class="nb">cd</span> ~/scratch/data/Cartopy/shapefiles/natural_earth/cultural
+
+<span class="c"># The URL will be displayed when the downloaded was initialized. You can discover </span>
+<span class="c"># new datasets to download from there. Here is an example.</span>
+<span class="c">#</span>
+wget http://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_1_states_provinces_lakes.zip
+
+<span class="c"># Unzip</span>
+unzip ne_110m_admin_1_states_provinces_lakes.zip
+</code></pre></div></div>
+
+<h3 id="other-settings">Other Settings</h3>
+
+<p>I have had mysterious segmentation fault when using <code class="language-plaintext highlighter-rouge">cartopy.feature</code> and projections. I following the steps to reinstall <code class="language-plaintext highlighter-rouge">shaply</code> to avoid segmentation faults as suggested <a href="https://github.com/SciTools/cartopy/issues/879">here</a>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Make sure you are using the proper python environment</span>
+pip uninstall shapely<span class="p">;</span> pip <span class="nb">install</span> <span class="nt">--no-binary</span> :all: shapely
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<p>Here are some basic imports.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">cartopy</span>
+<span class="kn">import</span> <span class="n">warnings</span>
+
+<span class="kn">import</span> <span class="n">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">import</span> <span class="n">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="n">cartopy.feature</span> <span class="k">as</span> <span class="n">cf</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Ignore matplotlib deprecation warnings
+</span><span class="n">warnings</span><span class="p">.</span><span class="nf">filterwarnings</span><span class="p">(</span><span class="s">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">mpl</span><span class="p">.</span><span class="n">cbook</span><span class="p">.</span><span class="n">mplDeprecation</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="working-with-projections">Working with Projections</h3>
+
+<p>The dataset <code class="language-plaintext highlighter-rouge">ds</code> is an <code class="language-plaintext highlighter-rouge">xarray.core.dataset.Dataset</code> based on my own data. It would work other data too.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">projection_visual</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="nc">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mi">96</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="c1"># projection_visual = ccrs.Orthographic(central_longitude=-96, central_latitude=45)
+# projection_visual = ccrs.Mercator()
+# projection_visual = ccrs.PlateCarree()
+</span>
+<span class="c1"># My data coordinates are un-projected coordinates in latitudes and longitudes.
+# So I'm using Geodetic. It is an unprojected coordinate system.
+# You cannot use this as the visualization projection.
+#
+</span><span class="n">data_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="p">.</span><span class="nc">Geodetic</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s">'projection'</span><span class="p">:</span> <span class="n">projection_visual</span><span class="p">})</span>
+<span class="n">ds</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'Xs'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'Ys'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s">'StationState'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">data_crs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">add_feature</span><span class="p">(</span><span class="n">cf</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">add_feature</span><span class="p">(</span><span class="n">cf</span><span class="p">.</span><span class="n">STATES</span><span class="p">)</span>
+
+<span class="c1"># ax.set_global()
+</span><span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="resources">Resources</h2>
+
+<p>Here is a list of resources:</p>
+
 <ul>
-  <li>If you’re recieving incorrect/missing data, you may need to perform a Github API<a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md"> authentication</a>.</li>
-  <li>Go through this <a href="https://jekyll.github.io/github-metadata/">README</a> for more details on the topic.</li>
-  <li><a href="https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md">This page</a> highlights all the feilds you can access with github-metadata.
-<br /></li>
+  <li><a href="http://xarray.pydata.org/en/stable/examples/visualization_gallery.html?highlight=projection#Multiple-plots-and-map-projections">Deal with projections with <code class="language-plaintext highlighter-rouge">xarray</code></a></li>
+  <li><a href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">Cartopy projection list</a></li>
+  <li><a href="https://scitools.org.uk/cartopy/docs/v0.15/crs/index.html#coordinate-reference-systems-in-cartopy">Coordinate reference systems in Cartopy</a></li>
+</ul>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Cartopy]]></summary></entry><entry><title type="html">Scalable Post-Processing with Dask and xarray</title><link href="https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask/" rel="alternate" type="text/html" title="Scalable Post-Processing with Dask and xarray" /><published>2020-11-25T11:00:00+00:00</published><updated>2020-11-25T11:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/scalable-xarray-dask/"><![CDATA[<!-- vim-markdown-toc GFM -->
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#ensemble-simulation-data">Ensemble Simulation Data</a></li>
+  <li><a href="#environment-setup">Environment Setup</a>
+    <ul>
+      <li><a href="#allocation-on-cheyenne">Allocation on Cheyenne</a></li>
+      <li><a href="#python-kernel-for-jupiter-notebook">Python Kernel for Jupiter Notebook</a></li>
+      <li><a href="#interactive-session-with-ncar-jupyterhub">Interactive Session with NCAR JupyterHub</a></li>
+    </ul>
+  </li>
+  <li><a href="#parallel-processing">Parallel Processing</a>
+    <ul>
+      <li><a href="#request-workers">Request Workers</a></li>
+      <li><a href="#attach-clients">Attach Clients</a></li>
+      <li><a href="#open-files-in-parallel">Open Files in Parallel</a></li>
+      <li><a href="#plot-in-parallel">Plot in Parallel</a></li>
+      <li><a href="#computation-graph">Computation Graph</a></li>
+      <li><a href="#termination">Termination</a></li>
+    </ul>
+  </li>
+  <li><a href="#summary">Summary</a></li>
+  <li><a href="#references">References</a></li>
 </ul>
 
-<h2 id="example-metadata">Example MetaData</h2>
+<!-- vim-markdown-toc -->
+
+<h2 id="introduction">Introduction</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tl<span class="p">;</span>dr
+
+This post shows how to <span class="nb">set </span>up a Jupyter notebook on NCAR Cheyenne with
+Dask and xarray to analyze ensemble simulation output from Parallel Analog Ensemble.
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-1.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>Parallel computing becomes increasingly <strong>popular</strong> as more scientific workflows have been deployed onto supercomputers. It is also much more <strong>accessible</strong> because of the various supercomputer platforms available, e.g. Comet and Stampede from <a href="https://www.xsede.org/">XSEDE</a>.</p>
+
+<p>Among all the scientific workflows, ensemble simulation is an example that typically requires large amount of computation. The good news is <strong>we have many tools to parallelize ensemble simulation</strong>, the standard and well-known solution being <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> for parallelization on distributed-memory clusters. There is the C/C++ interface from <a href="https://www.open-mpi.org/">OpenMPI</a> and <a href="https://www.mpich.org/">MPICH</a>; there is the Python interface from <a href="https://mpi4py.readthedocs.io/en/stable/">mpi4py</a>; there is the R interface from <a href="https://cran.r-project.org/web/packages/Rmpi/index.html">Rmpi</a>. This is good because usually the <strong>ensemble simulation stage takes up most of the computation</strong>. The benefit of parallelization is abundant and most often outweighs the costs of possibly having to refactor the simulation code.</p>
+
+<p>Yet, <strong>what about analysis and visualization</strong>? Ensemble simulations usually output tons of simulation results, for example, later in this post, 3.2 TB of ensemble simulation for hourly photovoltaic power generation in 2019 for the continental US. With the sheer amount of the simulation output, <strong>data analysis and visualization can also be computational expensive and even memory intensive</strong>. It is sometimes hard to just read the data because they are stored in multiple files or the data size exceeds the physical memory of your computer. On another hand, <strong>data analysis and visualization is a highly interactive and explorative process</strong>. We usually do not know the exact data to read and the exact figures to generate. As a result, code for data analysis and visualization is usually procedure-based and is changed quite often based on what we find interesting.</p>
+
+<p>There are tools for interactive data analysis and visualization. <a href="https://jupyter.org/">Jupyter notebook</a> is an amazing example, but it does not provide parallel computing capability. We desire the ability to directly analyze our data on supercomputers, without downloading the bulk of data and in parallel.</p>
+
+<p>In this post, I document how I set up my analysis and visualization environment with parallel computing on a supercomputer, <a href="https://www2.cisl.ucar.edu/resources/computational-systems/cheyenne">Cheyenne</a> from <a href="https://www2.cisl.ucar.edu/">NCAR CISL</a>. This setup works great if your simulation data are stored with the <a href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> format, which is a quite popular format for high-dimensional labeled data built on top of <a href="https://www.hdfgroup.org/solutions/hdf5">HDF5</a>.</p>
+
+<p>This solution has the following <strong>features</strong>:</p>
+
+<ol>
+  <li>The workflow is implemented in <a href="https://www.python.org/">Python</a>.</li>
+  <li>The workflow is deployed directly on Cheyenne to avoid downloading the huge amount of data.</li>
+  <li>Users interact with Jupyter Notebook for data analysis and visualization.</li>
+  <li>Back-end computation is handled, in parallel, with <a href="http://xarray.pydata.org/en/stable/">xarray</a> and <a href="https://dask.org/">Dask</a>.</li>
+  <li>Data can be stored in a single file or across multiple files.</li>
+</ol>
+
+<h2 id="ensemble-simulation-data">Ensemble Simulation Data</h2>
+
+<p>This section provides a brief summary of the data I am going to work with. <strong>Feel free to skip this section if you only care about the setup procedures</strong>.</p>
+
+<p>The simulation data I am going to use is generated from <a href="https://weiming-hu.github.io/AnalogsEnsemble/">Parallel Analog Ensemble</a> and <a href="https://github.com/Weiming-Hu/RenewableSimulator">Renewable Simulator</a>. The goal is to generate a 21-member ensemble simulation for photovoltaic solar power production across the continental US for the entire year of 2019. The spatial resolution is 12 km and therefore, there are over 100,000 grid points to simulate.</p>
+
+<p>The entire simulation output data are saved in NetCDF files, broken up in 30 spatial subsets. Please see the following shell command output.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cheyenne5:~/scratch/anen_solar_annual&gt; <span class="nb">du</span> <span class="nt">-ch</span> <span class="k">*</span>
+110G	analogs_domain-USA_chunk-01.nc
+110G	analogs_domain-USA_chunk-02.nc
+<span class="o">[</span>...]
+110G	analogs_domain-USA_chunk-30.nc
+3.2T	total
+</code></pre></div></div>
+
+<p>Each of the file has the year-round simulation results from 21 weather forecast ensemble members under 4 scenarios. These are hourly simulation with a high spatial resolution. Please see the following output that shows the structure of a particular NetCDF file.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cheyenne5:~/scratch/anen_solar_annual&gt; ncdump <span class="nt">-h</span> analogs_domain-USA_chunk-01.nc
+netcdf analogs_domain-USA_chunk-01 <span class="o">{</span>
+dimensions:
+	num_stations <span class="o">=</span> 3376 <span class="p">;</span>
+	num_test_times <span class="o">=</span> 365 <span class="p">;</span>
+	num_flts <span class="o">=</span> 27 <span class="p">;</span>
+	num_analogs <span class="o">=</span> 21 <span class="p">;</span>
+	num_similarity <span class="o">=</span> 21 <span class="p">;</span>
+	num_parameters <span class="o">=</span> 6 <span class="p">;</span>
+	num_search_times <span class="o">=</span> 710 <span class="p">;</span>
+variables:
+	double analogs_time_index<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double similarity<span class="o">(</span>num_similarity, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double similarity_time_index<span class="o">(</span>num_similarity, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double weights<span class="o">(</span>num_parameters<span class="o">)</span> <span class="p">;</span>
+	double Xs<span class="o">(</span>num_stations<span class="o">)</span> <span class="p">;</span>
+	double Ys<span class="o">(</span>num_stations<span class="o">)</span> <span class="p">;</span>
+	uint64 test_times<span class="o">(</span>num_test_times<span class="o">)</span> <span class="p">;</span>
+	uint64 search_times<span class="o">(</span>num_search_times<span class="o">)</span> <span class="p">;</span>
+	uint64 FLTs<span class="o">(</span>num_flts<span class="o">)</span> <span class="p">;</span>
+	string ParameterNames<span class="o">(</span>num_parameters<span class="o">)</span> <span class="p">;</span>
+	double WindSpeed_10m<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double Temperature_2m<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double DownwardShortwaveRadiation<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+	double Albedo<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+
+// global attributes:
+		:num_analogs <span class="o">=</span> 21 <span class="p">;</span>
+		:num_similarity <span class="o">=</span> 21 <span class="p">;</span>
+		:observation_id <span class="o">=</span> 0 <span class="p">;</span>
+		:max_par_nan <span class="o">=</span> 1 <span class="p">;</span>
+		:max_flt_nan <span class="o">=</span> 1 <span class="p">;</span>
+		:flt_radius <span class="o">=</span> 1 <span class="p">;</span>
+		:operation <span class="o">=</span> 1 <span class="p">;</span>
+		:quick <span class="o">=</span> 1 <span class="p">;</span>
+		:prevent_search_future <span class="o">=</span> 1 <span class="p">;</span>
+		:Institute <span class="o">=</span> <span class="s2">"GEOlab @ Penn State"</span> <span class="p">;</span>
+		:Institute<span class="se">\ </span>Link <span class="o">=</span> <span class="s2">"http://geolab.psu.edu"</span> <span class="p">;</span>
+		:Package <span class="o">=</span> <span class="s2">"Parallel Analog Ensemble"</span> <span class="p">;</span>
+		:Package<span class="se">\ </span>Version <span class="o">=</span> <span class="s2">"v 4.2.5"</span> <span class="p">;</span>
+		:Package<span class="se">\ </span>Link <span class="o">=</span> <span class="s2">"https://weiming-hu.github.io/AnalogsEnsemble"</span> <span class="p">;</span>
+		:Report<span class="se">\ </span>Issues <span class="o">=</span> <span class="s2">"https://github.com/Weiming-Hu/AnalogsEnsemble/issues"</span> <span class="p">;</span>
+		
+<span class="o">[</span>...]
+group: PV_simulation_scenario_00000 <span class="o">{</span>
+  dimensions:
+  	single_member <span class="o">=</span> 1 <span class="p">;</span>
+
+  // group attributes:
+  		:surface_tilt <span class="o">=</span> 0LL <span class="p">;</span>
+  		:surface_azimuth <span class="o">=</span> 180LL <span class="p">;</span>
+  		:tcell_model_parameters <span class="o">=</span> <span class="s2">"open_rack_glass_polymer"</span> <span class="p">;</span>
+  		:pv_module <span class="o">=</span> <span class="s2">"Silevo_Triex_U300_Black__2014_"</span> <span class="p">;</span>
+
+  group: analogs <span class="o">{</span>
+    variables:
+    	double power<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+    	double tcell<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+    	double effective_irradiance<span class="o">(</span>num_analogs, num_flts, num_test_times, num_stations<span class="o">)</span> <span class="p">;</span>
+    <span class="o">}</span> // group analogs
+    
+  <span class="o">[</span>...]
+  <span class="o">}</span> // group PV_simulation_scenario_00000
+
+<span class="o">[</span>...]
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="environment-setup">Environment Setup</h2>
+
+<h3 id="allocation-on-cheyenne">Allocation on Cheyenne</h3>
+
+<p>It is assumed that you have an active <a href="https://www2.cisl.ucar.edu/user-support/allocations">allocation on Cheyenne</a>. I will not be using <a href="https://www2.cisl.ucar.edu/resources/computational-systems/casper">Casper</a>. Cheyenne will be sufficient for the documented solution.</p>
+
+<h3 id="python-kernel-for-jupiter-notebook">Python Kernel for Jupiter Notebook</h3>
+
+<p>Jupyter needs a dedicated kernel to run code. To set up the environment, we need to</p>
+
+<ol>
+  <li>Log onto a Cheyenne login node</li>
+  <li>Activate a python environment</li>
+  <li>Install additional modules we need for analysis and visualization</li>
+</ol>
+
+<p>Please see the following code:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># This is the location of 'Python 3' kernel prepared by NCAR as the default option</span>
+<span class="nb">source</span> /ncar/usr/jupyterhub/20190905/bin/activate
+
+<span class="c"># The following modules should already be installed.</span>
+<span class="c"># Install additional modules needed by your individual workflow.</span>
+<span class="c">#</span>
+<span class="c"># pip install dask[complete] dask_jobqueue xarray netCDF4</span>
+pip <span class="nb">install </span>matplotlib  <span class="c"># For generating scientific plots</span>
+pip <span class="nb">install </span>graphviz    <span class="c"># For generating computation graphs</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>To prepare an environment in user space, this approach might no longer work. Please see my more recent post on this matter <a href="https://weiming-hu.github.io/user-NPL-jupyter/">here</a>.</p>
+</blockquote>
+
+<h3 id="interactive-session-with-ncar-jupyterhub">Interactive Session with NCAR JupyterHub</h3>
+
+<p>We then carry on to request interactive jobs from Cheyenne following the steps:</p>
+
+<ol>
+  <li>Go to <a href="https://jupyterhub.ucar.edu/">NCAR JupyterHub</a></li>
+  <li>Select <em>Cheyenne Supercomputer</em> to use allocations on Cheyenne</li>
+  <li>Sign in and select <em>Launch Server</em></li>
+  <li>Fill out the job request form. Note my choice of <code class="language-plaintext highlighter-rouge">regular</code> for the queue type.</li>
+  <li>Wait until you are redirected to your Jupyter notebook session</li>
+  <li>Open a notebook with the <code class="language-plaintext highlighter-rouge">Python 3</code> kernel (<em>If you set up your own kernel, feel free to choose your own kernel.</em>)</li>
+</ol>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-2.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>There is a second way of setting up a Jupyter notebook server on Cheyenne as illustrated <a href="https://www2.cisl.ucar.edu/resources/jupyter-and-ipython">here</a> via SSH port forwarding. However, I did not find the integration of <code class="language-plaintext highlighter-rouge">Dask</code> dashboard with this second approach. So I would recommend using the web-based interface. Another advantage of the web-based interface is that the server is always live until you terminate the server explicitly or the allocationg runs out. This is very helpful when you have mediocre and intermittent internet connection.</p>
+
+<h2 id="parallel-processing">Parallel Processing</h2>
+
+<p>At this point, your parallel computing environment is ready. In this section, I am going to show you how to read data from multiple NetCDF files and generate a quick plot, all in parallel.</p>
+
+<h3 id="request-workers">Request Workers</h3>
+
+<p>In the previous section, we have only started an interactive job with one process. We need to request several workers that will actually do the heavy lifting. We do this by using a module called <a href="https://jobqueue.dask.org/en/latest/">dask_jobqueue</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">dask_jobqueue</span>
+
+<span class="c1"># Configure job requirements
+</span><span class="n">cluster</span> <span class="o">=</span> <span class="n">dask_jobqueue</span><span class="p">.</span><span class="nc">PBSCluster</span><span class="p">(</span>
+    <span class="n">cores</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s">"30GB"</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="s">'5:00:00'</span><span class="p">,</span>
+    <span class="n">project</span><span class="o">=</span><span class="s">'URTG0014'</span><span class="p">,</span> <span class="n">queue</span><span class="o">=</span><span class="s">'regular'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Request 10 workers
+</span><span class="n">cluster</span><span class="p">.</span><span class="nf">scale</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>At this point, if you open another terminal to monitor your job status, you will see a few jobs added.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wuh20@r2i4n9:~&gt; qstat <span class="nt">-u</span> wuh20
+chadmin1.ib0.cheyenne.ucar.edu: 
+                                                            Req<span class="s1">'d  Req'</span>d   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+<span class="nt">---------------</span> <span class="nt">--------</span> <span class="nt">--------</span> <span class="nt">----------</span> <span class="nt">------</span> <span class="nt">---</span> <span class="nt">---</span> <span class="nt">------</span> <span class="nt">-----</span> - <span class="nt">-----</span>
+5180052.chadmin wuh20    regular  Jupyter     49297   1   1   40gb 05:00 R 00:07
+5180066.chadmin wuh20    regular  dask-worke  41938   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180067.chadmin wuh20    regular  dask-worke  20567   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180069.chadmin wuh20    regular  dask-worke  13846   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180070.chadmin wuh20    regular  dask-worke  45562   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180071.chadmin wuh20    regular  dask-worke  41154   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180072.chadmin wuh20    regular  dask-worke  58037   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180073.chadmin wuh20    regular  dask-worke  49432   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180074.chadmin wuh20    regular  dask-worke  54128   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180075.chadmin wuh20    regular  dask-worke  46128   1   1    <span class="nt">--</span>  05:00 R 00:01
+5180076.chadmin wuh20    regular  dask-worke  53090   1   1    <span class="nt">--</span>  05:00 R 00:01
+</code></pre></div></div>
+
+<p>Under the <em>Jobname</em> column, <code class="language-plaintext highlighter-rouge">Jupyter</code> is the interactive session we have manually requested from the web interface and <code class="language-plaintext highlighter-rouge">dask-worker</code> jobs are created by <code class="language-plaintext highlighter-rouge">dask_jobqueue</code> call. Now, all my workers are ready to go, indicated by the <code class="language-plaintext highlighter-rouge">R</code> for <em>running</em> under the <em>S</em> column for <em>status</em>.</p>
+
+<h3 id="attach-clients">Attach Clients</h3>
+
+<p>Now we have the resources ready, we need to specifically mark them as available and tell <code class="language-plaintext highlighter-rouge">Dask</code> to use these resources during parallel computation. Let’s create some clients.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import distributed
+client = distributed.Client(cluster)
+</code></pre></div></div>
+
+<blockquote>
+  <p>As of Feb. 7, 2021, the Dask dashboard on Cheyenne seems to have issues with displaying. I have opened a ticket about it and let’s see how it goes.</p>
+</blockquote>
+
+<h3 id="open-files-in-parallel">Open Files in Parallel</h3>
+
+<p>Finally, let’s open NetCDF files in parallel.</p>
+
+<p>Normally, you would just need <code class="language-plaintext highlighter-rouge">xarray.open_mfdataset</code> as it opens and merges multiple NetCDF files, and returns a pretty HTML representation of the data structure. However, this post shows how to read NetCDF files generated from by <a href="https://weiming-hu.github.io/AnalogsEnsemble/">PAnEn</a> specifically. In order to successfully merge multiple files, we need to define a preprocess function as follows. <strong>Feel free to skip this function if you are reading your own data</strong>.</p>
+
+<blockquote>
+  <p>The following functions have been migrated to <a href="https://github.com/Weiming-Hu/PyAnEn">PyAnEn</a>. Please check it out.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+
+<span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="k">def</span> <span class="nf">add_coords</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">arr_name</span><span class="p">,</span> <span class="n">arr_axis</span><span class="p">):</span>
+    <span class="s">"""
+    This function adds coordinate information to an NetCDF file
+    based on the NetCDF file name and the length of the specified
+    dimension and variable. The coordinates will be created as simply
+    some offset from the identifier from a file name.
+    
+    For example, if the file name is `analogs_domain-USA_chunk-01.nc` and 
+    there are 10 stations in this file, the coordinates for the station 
+    dimension will be calculated as `[1.0, 1.1, 1.2, ..., 1.9]`.
+    
+    :param ds The dataset object passed in internally by `xarray.open_mfdataset`
+    :param arr_name The variable name
+    :param arr_axis The axis index of the variable to determine coordinate length
+    :return A modified dataset with coordinates
+    """</span>
+    <span class="c1"># Extract identifer from the file name.
+</span>    <span class="c1"># This extracts all numeral digits immediately 
+</span>    <span class="c1"># before the file extension as the identifier.
+</span>    <span class="c1">#
+</span>    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">'.*chunk-(\d+)\.nc'</span><span class="p">).</span><span class="nf">search</span><span class="p">(</span><span class="n">ds</span><span class="p">.</span><span class="n">encoding</span><span class="p">[</span><span class="s">"source"</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="n">matched</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+    
+    <span class="n">matched</span> <span class="o">=</span> <span class="n">matched</span><span class="p">.</span><span class="nf">groups</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nf">len</span><span class="p">(</span><span class="n">matched</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    
+    <span class="n">start</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">matched</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1"># Determine the length of coordinates in this file
+</span>    <span class="n">current_total</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">arr_name</span><span class="p">].</span><span class="n">shape</span><span class="p">[</span><span class="n">arr_axis</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate coordinates for this file
+</span>    <span class="n">station_coords</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span> <span class="o">+</span> <span class="n">index</span> <span class="o">/</span> <span class="n">current_total</span> 
+                      <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">current_total</span><span class="p">)]</span>
+    
+    <span class="c1"># Add coordinates to the dataset
+</span>    <span class="n">ds</span><span class="p">.</span><span class="n">coords</span><span class="p">[</span><span class="s">'num_stations'</span><span class="p">]</span> <span class="o">=</span> <span class="n">station_coords</span>
+
+    <span class="k">return</span> <span class="n">ds</span>
+
+<span class="c1"># Use the last dimension, the number of stations, of wind speed to
+# determine the length of coordinates in this file
+</span><span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span> <span class="o">=</span> <span class="nf">partial</span><span class="p">(</span>
+    <span class="n">add_coords</span><span class="p">,</span> <span class="n">arr_name</span><span class="o">=</span><span class="s">'WindSpeed_10m'</span><span class="p">,</span> <span class="n">arr_axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then, let’s open the files in parallel.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="nf">open_mfdataset</span><span class="p">(</span>
+    <span class="s">'/glade/u/home/wuh20/scratch/anen_solar_annual/*.nc'</span><span class="p">,</span>
+    <span class="n">concat_dim</span><span class="o">=</span><span class="s">'num_stations'</span><span class="p">,</span> <span class="n">data_vars</span><span class="o">=</span><span class="s">'minimal'</span><span class="p">,</span>
+    <span class="n">coords</span><span class="o">=</span><span class="s">'minimal'</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="s">'override'</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span>
+<span class="p">)</span>
+
+<span class="c1"># For details of the arguments, please refer to the documentation
+# http://xarray.pydata.org/en/stable/generated/xarray.open_mfdataset.html
+</span></code></pre></div></div>
+
+<p>At this point, all workers are opening files in parallel in the back-end. If you open <em>Dask Task Stream</em> and <em>Dask Workers</em>, you will notice some pretty progress bars showing up, as below.</p>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-3.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 id="plot-in-parallel">Plot in Parallel</h3>
+
+<p>I promised you a figure and here we are going to generate one. Our data points are not on a regular mesh grid so it is hard to fit into an x-by-y grid map. I have to generate scatter plot as an alternative.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">irradiance</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'DownwardShortwaveRadiation'</span><span class="p">].</span><span class="nf">isel</span><span class="p">(</span><span class="n">num_flts</span><span class="o">=</span><span class="mi">16</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span>
+    <span class="s">'num_analogs'</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span><span class="s">'num_test_times'</span><span class="p">)</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'Xs'</span><span class="p">].</span><span class="n">values</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'Ys'</span><span class="p">].</span><span class="n">values</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'jet'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">colorbar</span><span class="p">(</span><span class="n">cbar</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>And you will see a figure generated in no time. Also not the progress bars to the right.</p>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-4.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 id="computation-graph">Computation Graph</h3>
+
+<p>Before we wrap up, I want to document another cool feature of <code class="language-plaintext highlighter-rouge">Dask</code> to generate computation graph. Data are loaded in a lazy style meaning that they are loaded only when they are needed. For example, in the previous code snippet, when we create the variable  <code class="language-plaintext highlighter-rouge">irradiance</code>, we are not actually calculating the slices and averages at that time, <code class="language-plaintext highlighter-rouge">Daks</code> is simply creating a computational graph representing all the operations. If you are familiar with <code class="language-plaintext highlighter-rouge">TensorFlow</code> or <code class="language-plaintext highlighter-rouge">PyTorch</code>, they are similar to <code class="language-plaintext highlighter-rouge">tensors</code>. <strong>No real calculations are done yet</strong> until you call <code class="language-plaintext highlighter-rouge">plt.scatter</code> on the data. At this point, all workers started to actually carry out the computation in parallel.</p>
+
+<p>To illustrate this, we can visualize the computation graph stored in <code class="language-plaintext highlighter-rouge">irradiance</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">dask</span>
+<span class="n">dask</span><span class="p">.</span><span class="nf">visualize</span><span class="p">(</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s">'computation-graph.svg'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Please click the image to zoom in. In total there are 30 columns corresponding to 30 processes. These processes will be distributed across and created on the 10 workers available. Each column represents the computation that is going to be carried out at evaluation time, which includes reading, slicing, and calculating the averages.</p>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2020-11-25-scalable/scalable-solution-5.svg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 id="termination">Termination</h3>
+
+<p>To terminate the workflow, you need to first terminate workers and then terminate Jupyter session.</p>
+
+<ol>
+  <li>Simply shutdown all session in Jupyter to close connections to all workers</li>
+  <li><code class="language-plaintext highlighter-rouge">File -&gt; Hub Control Panel -&gt; Stop My Server</code> to terminate the Jupyter session</li>
+</ol>
+
+<p>Make sure your jobs are not hung for some mysterious reason after your terminate everything. You can check this by running <code class="language-plaintext highlighter-rouge">qstat -u &lt;your user name&gt;</code> in a terminal on Cheyenne. Give them at least several minutes to be properly terminated.</p>
+
+<p>If jobs are still running for some mysterious reasons, terminate them using <code class="language-plaintext highlighter-rouge">qdel &lt;job ID&gt;</code>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This post documents the setup of an interactive workflow for scalable data analysis and visualization. Comments are very welcome. Please let me know if you have any questions and suggestions. Thank you for reading.</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a href="https://coiled.io/blog/scalable-computing-with-dask-and-xarray/">Scalable Computing in Oceanography with Dask and xarray</a></li>
+  <li><a href="https://jobqueue.dask.org/en/latest/talks-and-tutorials.html#talks-and-tutorials">Talks and tutorials</a> provided by Dask-jobqueue</li>
+  <li><a href="https://jobqueue.dask.org/en/latest/">Documentation</a> of Dask-jobqueue</li>
+  <li><a href="http://xarray.pydata.org/en/stable/">Documentation</a> of xarray</li>
+</ol>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[Analyze ensemble simulations with Dask and xarray]]></summary></entry><entry><title type="html">Matplotlib Study Note</title><link href="https://weiming-hu.github.io//about/blog/2020/matplotlib-note/" rel="alternate" type="text/html" title="Matplotlib Study Note" /><published>2020-11-24T14:00:00+00:00</published><updated>2020-11-24T14:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/matplotlib-note</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/matplotlib-note/"><![CDATA[<!-- vim-markdown-toc GFM -->
+
 <ul>
-  <li>Host Name :</li>
-  <li>URL :</li>
-  <li>BaseURL :</li>
-  <li>Archived :</li>
-  <li>Contributors :</li>
-</ul>]]></content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><summary type="html"><![CDATA[a quick run down on accessing github metadata.]]></summary></entry><entry><title type="html">a post with twitter</title><link href="https://alshedivat.github.io/al-folio/blog/2020/twitter/" rel="alternate" type="text/html" title="a post with twitter" /><published>2020-09-28T15:12:00+00:00</published><updated>2020-09-28T15:12:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2020/twitter</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2020/twitter/"><![CDATA[<p>A sample blog page that demonstrates the inclusion of Tweets/Timelines/etc.</p>
+  <li><a href="#resources">Resources</a></li>
+  <li><a href="#my-first-confusion">My First Confusion</a></li>
+  <li><a href="#exploration-of-plotting">Exploration of Plotting</a></li>
+  <li><a href="#performance-considerations">Performance Considerations</a></li>
+</ul>
 
-<h1 id="tweet">Tweet</h1>
-<p>An example of displaying a tweet:</p>
-<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="sv" dir="ltr">jekyll-twitter-plugin (1.0.0): A Liquid tag plugin for Jekyll that renders Tweets from Twitter API <a href="http://t.co/m4EIQPM9h4">http://t.co/m4EIQPM9h4</a></p>&mdash; RubyGems (@rubygems) <a href="https://twitter.com/rubygems/status/518821243320287232?ref_src=twsrc%5Etfw">October 5, 2014</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<!-- vim-markdown-toc -->
 
-<h1 id="timeline">Timeline</h1>
-<p>An example of pulling from a timeline:</p>
-<div class="jekyll-twitter-plugin"><a class="twitter-timeline" data-width="500" data-tweet-limit="3" href="https://twitter.com/jekyllrb?ref_src=twsrc%5Etfw">Tweets by jekyllrb</a>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+<h2 id="resources">Resources</h2>
 
-<h1 id="additional-details">Additional Details</h1>
-<p>For more details on using the plugin visit: <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a></p>]]></content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><category term="formatting" /><summary type="html"><![CDATA[an example of a blog post with twitter]]></summary></entry><entry><title type="html">a post with disqus comments</title><link href="https://alshedivat.github.io/al-folio/blog/2015/disqus-comments/" rel="alternate" type="text/html" title="a post with disqus comments" /><published>2015-10-20T15:59:00+00:00</published><updated>2015-10-20T15:59:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2015/disqus-comments</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2015/disqus-comments/"><![CDATA[<p>This post shows how to add DISQUS comments.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="external-services" /><summary type="html"><![CDATA[an example of a blog post with disqus comments]]></summary></entry><entry><title type="html">a post with math</title><link href="https://alshedivat.github.io/al-folio/blog/2015/math/" rel="alternate" type="text/html" title="a post with math" /><published>2015-10-20T15:12:00+00:00</published><updated>2015-10-20T15:12:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2015/math</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2015/math/"><![CDATA[<p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/">MathJax 3</a> engine. You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>. If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p>
+<p>All of the reading comes from the <a href="https://matplotlib.org/tutorials/index.html">Tutorial</a> page of <code class="language-plaintext highlighter-rouge">matplotlib</code>. I have read the following pages:</p>
 
-<p>To use display mode, again surround your expression with <code class="language-plaintext highlighter-rouge">$$</code> and place it as a separate paragraph. Here is an example:</p>
+<ol>
+  <li><a href="https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py">Usage Guide</a></li>
+  <li><a href="https://matplotlib.org/tutorials/introductory/lifecycle.html#the-lifecycle-of-a-plot">The Lifecycle of a Plot</a></li>
+  <li><a href="https://matplotlib.org/tutorials/introductory/usage.html#the-object-oriented-interface-and-the-pyplot-interface">Customizing Matplotlib with style sheets and rcParams</a></li>
+  <li><a href="https://matplotlib.org/tutorials/intermediate/artists.html#sphx-glr-tutorials-intermediate-artists-py">Artist Tutorial</a></li>
+  <li><a href="https://matplotlib.org/tutorials/intermediate/legend_guide.html#sphx-glr-tutorials-intermediate-legend-guide-py">Legend Guide</a></li>
+  <li><a href="https://matplotlib.org/tutorials/intermediate/gridspec.html#customizing-figure-layouts-using-gridspec-and-other-functions">Customizing Figure Layouts Using GridSpec and Other Functions</a></li>
+</ol>
 
-\[\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2\]
+<h2 id="my-first-confusion">My First Confusion</h2>
 
-<p>You can also use <code class="language-plaintext highlighter-rouge">\begin{equation}...\end{equation}</code> instead of <code class="language-plaintext highlighter-rouge">$$</code> for display mode math.
-MathJax will automatically number equations:</p>
+<p><strong>Which one should I use,</strong> <code class="language-plaintext highlighter-rouge">matplotlib.pyplot</code> or <code class="language-plaintext highlighter-rouge">figure.Figure</code> ?</p>
 
-<p>\begin{equation}
-\label{eq:cauchy-schwarz}
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-\end{equation}</p>
+<p><code class="language-plaintext highlighter-rouge">matplotlib</code> has two interfaces:</p>
 
-<p>and by adding <code class="language-plaintext highlighter-rouge">\label{...}</code> inside the equation environment, we can now refer to the equation using <code class="language-plaintext highlighter-rouge">\eqref</code>.</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Figure</code> being the object-oriented interface</li>
+  <li><code class="language-plaintext highlighter-rouge">pyplot</code> being the state-based interface.</li>
+</ol>
 
-<p>Note that MathJax 3 is <a href="https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html">a major re-write of MathJax</a> that brought a significant improvement to the loading and rendering speed, which is now <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php">on par with KaTeX</a>.</p>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="math" /><summary type="html"><![CDATA[an example of a blog post with some math]]></summary></entry><entry><title type="html">a post with code</title><link href="https://alshedivat.github.io/al-folio/blog/2015/code/" rel="alternate" type="text/html" title="a post with code" /><published>2015-07-15T15:09:00+00:00</published><updated>2015-07-15T15:09:00+00:00</updated><id>https://alshedivat.github.io/al-folio/blog/2015/code</id><content type="html" xml:base="https://alshedivat.github.io/al-folio/blog/2015/code/"><![CDATA[<p>This theme implements a built-in Jekyll feature, the use of Rouge, for syntax highlighting.
-It supports more than 100 languages.
-This example is in C++.
-All you have to do is wrap your code in markdown code tags:</p>
+<p>They are equally powerful and both are illustrated in <code class="language-plaintext highlighter-rouge">matplotlib</code> docmentation. But it is better to stick to the one and do no mix them. Some suggestions are:</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">c++
-</span><span class="n">code</span> <span class="n">code</span> <span class="n">code</span>
-<span class="p">```</span>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">pyplot</code> behaves like base plot in <a href="https://www.r-project.org/">R</a> and is <a href="https://matplotlib.org/tutorials/introductory/usage.html#the-object-oriented-interface-and-the-pyplot-interface">suggested</a> when generating simple plots in an interactive environment (e.g. Jupyter notebook).</li>
+  <li>In general, it is <a href="https://matplotlib.org/tutorials/introductory/lifecycle.html#a-note-on-the-object-oriented-api-vs-pyplot">suggested</a> to use <code class="language-plaintext highlighter-rouge">figure.Figure</code>.</li>
+</ol>
+
+<p>I will focus on using the <code class="language-plaintext highlighter-rouge">figure.Figure</code> interface throughout my study notes.</p>
+
+<h2 id="exploration-of-plotting">Exploration of Plotting</h2>
+
+<p>Some common imports are as follow:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.gridspec</span> <span class="k">as</span> <span class="n">gridspec</span>
 </code></pre></div></div>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="err">\</span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">myString</span><span class="p">;</span>
+<p>I have compiled the following list of examples for generating figures. Each example provides some information on figure customization.</p>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"input a string: "</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">myString</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">myString</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<ol>
+  <li>
+    <p><a href="https://matplotlib.org/tutorials/introductory/usage.html#the-object-oriented-interface-and-the-pyplot-interface">Generating a multi-line plot</a> with a legend and axis labels</p>
+  </li>
+  <li>
+    <p><a href="https://matplotlib.org/tutorials/introductory/lifecycle.html#combining-multiple-visualizations">Generating a bar plot</a> with customizations of the automatic layout, the figure style, the x-axis, figure saving, and combining multiple visualizations</p>
+  </li>
+  <li><a href="https://matplotlib.org/tutorials/introductory/customizing.html#a-sample-matplotlibrc-file">An example matplotlibrc file</a> with customization settings for all kinds of properties. Typically, we can change them by using the following code. Actually, <code class="language-plaintext highlighter-rouge">mpl.rcParams</code> is just a dictionary that controls the default aesthetics. Changing its values will change the default setting.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">mpl.rcParams['lines.linewidth'] = 2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mpl.rcParams.update({'font.size': 22})</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mpl.rc('lines', linewidth=4, linestyle='-.')</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mpl.rc('ytick.minor', size=0.33333)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ax.plot([1, 2, 3], [1, 3, 2], linewidth=4)</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://matplotlib.org/tutorials/intermediate/artists.html#sphx-glr-tutorials-intermediate-artists-py">Changing properties of axis containers</a> including ticks and labels</p>
 
-    <span class="kt">char</span> <span class="n">charArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span> <span class="o">*</span> <span class="p">[</span><span class="n">length</span><span class="p">];</span>
+    <blockquote>
+      <p>There are two types of Artists: <em>primitives</em> and <em>containers</em>. The primitives represent the standard graphical objects we want to paint onto our canvas (Line2D, Rectangle, Text, AxesImage, etc.), and the containers are places to put them (Tick, Axis, Axes and Figure).</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend">Fine-tuning legend position</a> using <code class="language-plaintext highlighter-rouge">bbox_to_anchor</code> and <code class="language-plaintext highlighter-rouge">loc</code></p>
 
-    <span class="n">charArray</span> <span class="o">=</span> <span class="n">myString</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">charArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-    <span class="p">}</span>
+    <blockquote>
+      <p>Those artists with an empty string as label or with a label starting with “_” will be ignored.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><a href="https://matplotlib.org/tutorials/intermediate/legend_guide.html#legend-handlers">Creating more complex legends</a> with legend handler</p>
+  </li>
+  <li><a href="https://matplotlib.org/tutorials/intermediate/gridspec.html#fine-adjustments-to-a-gridspec-layout">Creating complex grid layout</a> with <code class="language-plaintext highlighter-rouge">Gridspec</code> and adjusting margins between panels</li>
+</ol>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<h2 id="performance-considerations">Performance Considerations</h2>
+
+<p>All of the following points and more are available from the <a href="https://matplotlib.org/tutorials/introductory/usage.html#performance">Performance</a> section.</p>
+
+<ol>
+  <li><strong>Lines</strong>: Set <code class="language-plaintext highlighter-rouge">rcParams['path.simplify']</code> and <code class="language-plaintext highlighter-rouge">rcParams['path.simplify_threshold']</code> to speed up line segment redering.</li>
+  <li><strong>Legends</strong>: Specifically provide a location for legends to avoid the expensive default operation of finding the best location.</li>
+  <li><strong>Presets</strong>: Use the <code class="language-plaintext highlighter-rouge">fast</code> style for automatic simplification.</li>
+</ol>]]></content><author><name></name></author><category term="Python" /><summary type="html"><![CDATA[Study notes for Matplotlib]]></summary></entry><entry><title type="html">HPC with RADICAL EnTK on NCAR Cheyenne</title><link href="https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup/" rel="alternate" type="text/html" title="HPC with RADICAL EnTK on NCAR Cheyenne" /><published>2020-11-13T18:00:00+00:00</published><updated>2020-11-13T18:00:00+00:00</updated><id>https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup</id><content type="html" xml:base="https://weiming-hu.github.io//about/blog/2020/EnTK-Cheyenne-Setup/"><![CDATA[<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#setting-up">Setting Up</a>
+    <ul>
+      <li><a href="#step-4-customization">Step 4: Customization</a></li>
+    </ul>
+  </li>
+  <li><a href="#debugging">Debugging</a>
+    <ul>
+      <li><a href="#where-to-look">Where To Look</a></li>
+      <li><a href="#problem-1">Problem 1</a></li>
+      <li><a href="#problem-2">Problem 2</a></li>
+    </ul>
+  </li>
+  <li><a href="#final-remark">Final Remark</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tl;dr
+
+Still using bash scripts to run jobs on HPC?
+Too many bash script for your jobs on HPC?
+Too many jobs to submit and the queue time is too long?
+
+Use EnTK !!!
 </code></pre></div></div>
 
-<p>By default, it does not display line numbers. If you want to display line numbers for every code block, you can set <code class="language-plaintext highlighter-rouge">kramdown.syntax_highlighter_opts.block.line_numbers</code> to true in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+<p><a href="https://radicalentk.readthedocs.io/en/latest/index.html">Ensemble Toolkit</a> (EnTK) is a Python framework for developing and executing applications comprised of multiple sets of tasks, a.k.a. ensembles, on High-Performance Computing (HPC) platforms. It is developed by the <a href="http://radical.rutgers.edu/">RADICAL</a> group from Rutgers University.</p>
 
-<p>If you want to display line numbers for a specific code block, all you have to do is wrap your code in a liquid tag:</p>
+<p>Usually, running ensemble simulations on HPC platforms is done with some kind of scripting language like <code class="language-plaintext highlighter-rouge">bash</code>. It often involves a main script that does the actual computation and some helper scripts to submit jobs in batches. <strong>The <a href="https://link-springer-com.ezaccess.libraries.psu.edu/referenceworkentry/10.1007%2F1-4020-0612-8_789">queue time</a> can be a significant bottleneck</strong> if you decide to submit hundreds or even thousands of tasks. If you have multiple stages in your simulation, for example, you need to first generate wind speed forecasts and then generate wind power simulation, you will need to <strong>manually manage all the stages and the intermediate data</strong>. This is not a flexible and scalable solution.</p>
 
-<p>{% highlight c++ linenos %}  <br /> code code code <br /> {% endhighlight %}</p>
+<p>EnTK aims to address these issues and provide flexibility and scalability. It provides the following features:</p>
 
-<p>The keyword <code class="language-plaintext highlighter-rouge">linenos</code> triggers display of line numbers.
-Produces something like this:</p>
+<ul>
+  <li>EnTK provides a framework to help you define your ensemble simulations in pipelines, stages, and tasks.</li>
+  <li>Submit only one job for your entire ensemble simulation workflow.</li>
+  <li>Allocation for each task is dynamically managed by EnTK. No more I-wish-I-had-five-more-minute moments.</li>
+  <li>Low overhead</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="code"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="err">\</span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">myString</span><span class="p">;</span>
+<p>Think of it as a steward for your computational resources. Previously, you need to write specific script to handle simulations and job submissions. Now, you only ask once for the computational resources and EnTK manages it for you. You then tell EnTK how many cores to allocate for each task without specifying the acutal time for each task. That is one extra level of abstraction in the workflow.</p>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"input a string: "</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">myString</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">myString</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<p>This post is not to show tutorials on EnTK. Please refer to the <a href="https://radicalentk.readthedocs.io/en/latest/index.html">documentation</a> for that matter. This post is dedicated to setting up an EnTK environment on the NCAR <a href="https://www2.cisl.ucar.edu/resources/computational-systems/cheyenne">Cheyenne</a> supercomputer. And I personally use these instructions for my research projects on <a href="https://weiming-hu.github.io/AnalogsEnsemble/">weather analogs</a> and <a href="https://github.com/Weiming-Hu/RenewableSimulator">photovoltaic solar energy simulation</a>.</p>
 
-    <span class="kt">char</span> <span class="n">charArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span> <span class="o">*</span> <span class="p">[</span><span class="n">length</span><span class="p">];</span>
+<p>Please refer to the <a href="https://www2.cisl.ucar.edu/user-support/allocations/university-allocations">allocation page</a> if you are interested in getting your allocation and start your research on Cheyenne at scale!</p>
 
-    <span class="n">charArray</span> <span class="o">=</span> <span class="n">myString</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">charArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-    <span class="p">}</span>
+<h2 id="setting-up">Setting Up</h2>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name></name></author><category term="sample-posts" /><category term="formatting" /><category term="code" /><summary type="html"><![CDATA[an example of a blog post with some code]]></summary></entry></feed>
+<p>Setting up an environemnt for EnTK on Cheyenne involves the following steps:</p>
+
+<ol>
+  <li>Create a virtual environment for head nodes</li>
+  <li>Install EnTK</li>
+  <li>Prepare a second virtual environment for compute nodes</li>
+  <li>Customize configuration</li>
+</ol>
+
+<p>The following script shows a step-by-step guide to setting up EnTK on Cheyenne. It is assumed that you are already logged onto a head node of Cheyenne.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">##########</span>
+<span class="c"># Step 1 #</span>
+<span class="c">##########</span>
+
+<span class="c"># Load modules</span>
+<span class="c">#</span>
+<span class="c"># Avoid using Intel compilers due to possible linking errors. Use GNU compilers instead.</span>
+<span class="c">#</span>
+module purge
+module load ncarenv gnu mpt netcdf cmake ncarcompilers python git
+
+<span class="c"># Prepare virtual environment</span>
+virtualenv <span class="nt">-p</span> python3.7 ~/venv
+
+<span class="c"># Activate the environment</span>
+<span class="nb">source</span> ~/venv/bin/activate
+
+<span class="c">##########</span>
+<span class="c"># Step 2 #</span>
+<span class="c">##########</span>
+
+<span class="c"># Instal EnTK</span>
+<span class="c">#</span>
+<span class="c"># Add --no-cache-dir if you have disabled your pip cache</span>
+<span class="c">#</span>
+pip <span class="nb">install </span>radical.entk
+
+<span class="c">##########</span>
+<span class="c"># Step 3 #</span>
+<span class="c">##########</span>
+
+<span class="c"># Prepare a second virtual environment for compute nodes</span>
+<span class="c"># -d installs default modules.</span>
+<span class="c">#</span>
+radical-pilot-create-static-ve <span class="nt">-p</span> ~/ve.pilot <span class="nt">-d</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>As on 2021/2/1, I received the error, <code class="language-plaintext highlighter-rouge">ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+requests 2.25.1 requires idna&lt;3,&gt;=2.5, but you have idna 3.1 which is incompatible.</code>, while creating the static virtual environment. As far as I’m concerned, this won’t affect the process.</p>
+</blockquote>
+
+<p>At this point, we have prepared all the environments needed by EnTK. Step 3 is optional but I highly recommend doing it on Cheyenne. EnTK can automatically create the environment for compute nodes while the job the running but this will take time from your acutal computation. In reality, the Internet connection on Cheyenne compute nodes is very slow. Setting up the environment effectively can take half an hour or even longer. So to save time, we prepare the environment ahead of time for EnTK.</p>
+
+<h3 id="step-4-customization">Step 4: Customization</h3>
+
+<p><strong>Prepare the computing environment ahead of time</strong>. We need to tell EnTK to use the virtual environment prepared, instead of creating a new one on compute nodes. This can be done by creating a file at <code class="language-plaintext highlighter-rouge">~/.radical/pilot/configs/resource_ncar.json</code>, and write the following content.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "cheyenne_mpt": {
+        "virtenv" : "/glade/u/home/wuh20/ve.pilot"
+    },
+    
+    "cheyenne": {
+        "virtenv" : "/glade/u/home/wuh20/ve.pilot"
+    }
+}
+</code></pre></div></div>
+
+<p>Note that we have changed the <code class="language-plaintext highlighter-rouge">virtenv</code> field for two resource labels, <code class="language-plaintext highlighter-rouge">cheyenne_mpt</code> and <code class="language-plaintext highlighter-rouge">cheyenne</code>. We need to use these resource labels when running simulations on Cheyenne. For example, my resource configuration looks like the following.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">resource-desc</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ncar.cheyenne_mpt'</span>
+  <span class="na">walltime</span><span class="pi">:</span> <span class="m">300</span>
+  <span class="na">cpus</span><span class="pi">:</span> <span class="m">72</span>
+  <span class="na">gpus</span><span class="pi">:</span> <span class="m">0</span>
+  <span class="na">queue</span><span class="pi">:</span> <span class="s1">'</span><span class="s">regular'</span>
+  <span class="na">project</span><span class="pi">:</span> <span class="s1">'</span><span class="s">&lt;Your</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">account&gt;'</span>
+  <span class="na">schema</span><span class="pi">:</span> <span class="s1">'</span><span class="s">local'</span>
+</code></pre></div></div>
+
+<p><strong>Set up a message database</strong>. To instantiate an <code class="language-plaintext highlighter-rouge">AppManager</code>, it needs RabbitMQ for message transfer. Please refer to the <a href="https://radicalentk.readthedocs.io/en/latest/install.html#rabbitmq">documentation</a> for options you have to set up RabbitMQ. What is an <code class="language-plaintext highlighter-rouge">AppManager</code>, it is explained <a href="https://radicalentk.readthedocs.io/en/latest/user_guide/get_started.html#creating-the-appmanager">here</a> on what it is and how to create one. But the different is, the documentation creates an <code class="language-plaintext highlighter-rouge">AppManager</code> to run locally, but we are running on supercomputers. After setting up RabbitMQ, you will have your own set of configurations for <code class="language-plaintext highlighter-rouge">hostname</code>, <code class="language-plaintext highlighter-rouge">port</code>, <code class="language-plaintext highlighter-rouge">username</code>, and <code class="language-plaintext highlighter-rouge">password</code>.</p>
+
+<p><strong>Set up a temporary folder for logs</strong>. Point the temporary file directory to scratch folder is also a good practice because EnTK with a verbose level will create a lot of messages. For me, I have the following setting in my <code class="language-plaintext highlighter-rouge">~/.bash_profile</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">TMPDIR</span><span class="o">=</span>/glade/scratch/&lt;your NCAR account&gt;/tmp
+</code></pre></div></div>
+
+<p><strong>Trun off heartbeat</strong>. EnTK uses <code class="language-plaintext highlighter-rouge">pika</code> to maintain connections. However, session might be terminated if they become too long. I added the following customization into my main python script to specifically turn off heartbeat so that servers will not close any connections unless the client does so.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pika</span>
+
+<span class="c1"># Make sure server does not close any connection unless the client does so
+</span><span class="n">pika</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">DEFAULT_HEARTBEAT_INTERVAL</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pika</span><span class="p">.</span><span class="n">connection</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">DEFAULT_HEARTBEAT_TIMEOUT</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>Finally, I usually set the following in my main python script to enable verbose output and to log profiling information.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable profiling information
+</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'RADICAL_PROFILE'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'True'</span>
+
+<span class="c1"># Set output verbosity
+</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'RADICAL_LOG_LVL'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'DEBUG'</span>
+</code></pre></div></div>
+
+<h2 id="debugging">Debugging</h2>
+
+<h3 id="where-to-look">Where To Look</h3>
+
+<p>Errors are generated from two sources, the client side errors and the server side errrors.</p>
+
+<p>The client side errors can be found where you run your main python script. It looks similar to <code class="language-plaintext highlighter-rouge">re.session.cheyenne1.wuh20.018579.0020</code> and <code class="language-plaintext highlighter-rouge">018579</code> is the job ID.</p>
+
+<p>The server side errors are stored under <code class="language-plaintext highlighter-rouge">$TMPDIR/radical.pilot.sandbox</code>. You can match names of the client side and server side folders.</p>
+
+<p>I usually use the following commands to look for possible error messages. Sometimes, you need to sift through the results just to make sure the matches are actual error messages, rather than source code.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep -R Error *.log
+</code></pre></div></div>
+
+<h3 id="problem-1">Problem 1</h3>
+
+<p>The program is stuck with the following output for more than half an hour.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EnTK session: re.session.cheyenne1.wuh20.018579.0019
+Creating AppManagerSetting up RabbitMQ system                                 ok
+                                                                              ok
+Validating and assigning resource manager                                     ok
+Setting up RabbitMQ system                                                   n/a
+new session: <span class="o">[</span>re.session.cheyenne1.wuh20.018579.0019]                          <span class="se">\</span>
+database   : <span class="o">[</span>mongodb://hpcw-psu:<span class="k">****</span>@129.114.17.185:27017/hpcw-psu]          ok
+create pilot manager                                                          ok
+submit 1 pilot<span class="o">(</span>s<span class="o">)</span>
+        pilot.0000   ncar.cheyenne            72 cores       0 gpus           ok
+</code></pre></div></div>
+
+<p>This could be caused by EnTK spending a long time on preparing the virtual environment directly on compute nodes. Compute nodes have slow internet connection.</p>
+
+<p>Make sure you have created a configuration file as in step 4. And also make sure that the resource label you are using is consistent with the one present in the configuration file you have created.</p>
+
+<h3 id="problem-2">Problem 2</h3>
+
+<p>The program returns similar errors to the following one before the successful creation of a pilot manager.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Exception</span> <span class="ow">in</span> <span class="n">thread</span> <span class="n">Thread</span><span class="o">-</span><span class="mi">12</span><span class="p">:</span>
+<span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s">"/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">926</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_bootstrap_inner</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s">"/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">870</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run</span>
+    <span class="n">self</span><span class="p">.</span><span class="nf">_target</span><span class="p">(</span><span class="o">*</span><span class="n">self</span><span class="p">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">self</span><span class="p">.</span><span class="n">_kwargs</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/entk/execman/rp/task_manager.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">280</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_process_tasks</span>
+    <span class="n">umgr</span> <span class="o">=</span> <span class="n">rp</span><span class="p">.</span><span class="nc">UnitManager</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">rmgr</span><span class="p">.</span><span class="n">_session</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/unit_manager.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__init__</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">_cmgr</span><span class="p">.</span><span class="nf">start_components</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/utils/component.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">231</span><span class="p">,</span> <span class="ow">in</span> <span class="n">start_components</span>
+    <span class="k">raise</span> <span class="nc">RuntimeError</span><span class="p">(</span><span class="s">'bridge startup failed'</span><span class="p">)</span>
+<span class="nb">RuntimeError</span><span class="p">:</span> <span class="n">bridge</span> <span class="n">startup</span> <span class="n">failed</span>
+</code></pre></div></div>
+
+<p>This is probably caused by left over processes. We need to first confirm this by looking for those processes and then terminate them manually.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wuh20@cheyenne4:~/github/pv-workflow/02_WeightOptimization&gt; ps <span class="nt">-u</span> wuh20 | <span class="nb">grep</span> <span class="nt">-e</span> python <span class="nt">-e</span> rp
+  519 ?        09:36:10 rp.pmgr_launchi
+21919 ?        00:00:07 rp.pmgr_launchi
+27693 ?        10:14:41 rp.pmgr_launchi
+30741 ?        10:13:24 rp.pmgr_launchi
+36305 ?        10:16:11 rp.pmgr_launchi
+46109 ?        09:18:37 rp.pmgr_launchi
+49351 ?        10:24:34 rp.pmgr_launchi
+58516 ?        10:23:10 rp.pmgr_launchi
+58906 ?        09:38:10 rp.pmgr_launchi
+72261 ?        00:00:06 rp.pmgr_launchi
+72596 ?        10:16:12 rp.pmgr_launchi
+wuh20@cheyenne4:~/github/pv-workflow/02_WeightOptimization&gt; pkill <span class="nt">-f</span> rp.pmgr_launchi
+wuh20@cheyenne4:~/github/pv-workflow/02_WeightOptimization&gt; ps <span class="nt">-u</span> wuh20 | <span class="nb">grep</span> <span class="nt">-e</span> python <span class="nt">-e</span> rp
+wuh20@cheyenne4:~/github/pv-workflow/02_WeightOptimization&gt; 
+</code></pre></div></div>
+
+<h2 id="final-remark">Final Remark</h2>
+
+<p>This solution has been tested on February 1, 2021. Feel free to contact me if you have problems.</p>]]></content><author><name></name></author><category term="Python" /><category term="HPC" /><summary type="html"><![CDATA[Ensemble toolkit for HPC workflows]]></summary></entry></feed>

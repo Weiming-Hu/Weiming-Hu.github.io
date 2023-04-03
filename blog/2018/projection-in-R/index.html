@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Deal with Raster and Projection in R | Weiming  Hu</title>
+    <meta name="author" content="Weiming  Hu">
+    <meta name="description" content="Coordinate systems and reprojection in R">
+    <meta name="keywords" content="academic-website, machine-learning, open-source, geography, weather">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/about/assets/img/initial.svg">
+    
+    <link rel="stylesheet" href="/about/assets/css/main.css">
+    <link rel="canonical" href="https://weiming-hu.github.io//about/blog/2018/projection-in-R/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/about/assets/js/theme.js"></script>
+    <script src="/about/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/about/"><span class="font-weight-bold">Weiming </span>Hu</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/">Main</a>
+              </li>
+              
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/projects/">Research</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/teaching/">Teaching</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/publications/">Pubs</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/repositories/">Code</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/about/cv/">CV</a>
+              </li>
+<!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/about/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <li class="toggle-container">
+                <button id="light-toggle" title="Change theme">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Deal with Raster and Projection in R</h1>
+    <p class="post-meta">April 14, 2018</p>
+    <p class="post-tags">
+      <a href="/about/blog/2018"> <i class="fas fa-calendar fa-sm"></i> 2018 </a>
+        ·  
+        <a href="/about/blog/tag/r">
+          <i class="fas fa-hashtag fa-sm"></i> R</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <!-- vim-markdown-toc GitLab -->
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#data">Data</a></li>
+  <li><a href="#georectified-raster-with-lat-lon">Georectified Raster with Lat-Lon</a></li>
+  <li>
+<a href="#raster-reprojection">Raster Reprojection</a>
+    <ul>
+      <li><a href="#projection-1-north-america-lambert-conformal-conic">Projection 1: North America Lambert Conformal Conic</a></li>
+      <li><a href="#projection-2-lambert-azimuthal-equal-area">Projection 2: Lambert Azimuthal Equal Area</a></li>
+    </ul>
+  </li>
+  <li><a href="#everything-together">Everything Together</a></li>
+  <li><a href="#references">References</a></li>
+  <li><a href="#update">Update</a></li>
+</ul>
+
+<!-- vim-markdown-toc -->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>When dealing with data with coordinates, we usually have the longitudes and the latitudes of each data value, and we want to plot the georectified map overlayed with other map layers, or simply we just want to plot the georectified map in a different coordinate system. For example, if you have a data table like below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; # x for longitudes
+&gt; # y for latitudes
+&gt; # z for values
+&gt; #
+&gt; head(xyz)
+          x        y        z
+1 -152.8786 54.56534 278.4887
+2 -152.7311 54.60416 278.3637
+3 -152.5835 54.64287 278.2387
+4 -152.4358 54.68147 278.1137
+5 -152.2878 54.71995 278.1137
+6 -152.1398 54.75833 278.1137
+</code></pre></div></div>
+
+<p>And you want to plot the data using a raster with the correct projection. There might be several problems:</p>
+
+<ol>
+  <li>The x and y grids are irregular. It is very common that locations by latitudes and longitudes do not lie perfectly on a regular grid. Some locations are closer to each other and the others are further out.</li>
+  <li>The domain of the dataset is not rectangular. In other words, the shape of the domain can be complicate.</li>
+  <li>Interpolation method of the whole dataset is not preferred. Interpolation is very time-consuming, and interpolation might bring errors.</li>
+</ol>
+
+<p>After search, I compiled the information online, and recommend the following steps to efficiently create a georectified raster.</p>
+
+<h2 id="data">Data</h2>
+
+<p>You can find the <code class="language-plaintext highlighter-rouge">Rdata</code> file <a href="https://weiming-hu.github.io/assets/data-for-posts/2018-04-04-projection-in-R/NAM-temperature.Rdata">here</a> which will be used in this post. The data are subset from <a href="https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/north-american-mesoscale-forecast-system-nam" rel="external nofollow noopener" target="_blank">North American Mesoscale Forecast Model</a>. You can download the full data by your own option from the <a href="https://rda.ucar.edu/datasets/ds335.0/" rel="external nofollow noopener" target="_blank">NCAR Research Data Archive</a>.</p>
+
+<h2 id="georectified-raster-with-lat-lon">Georectified Raster with Lat-Lon</h2>
+
+<p>First, you have the variable <code class="language-plaintext highlighter-rouge">xyz</code>. NAM model output has 428 rows and 614 cols, so I hard coded these attributes. We have longitudes, latitudes, and values for each of the grid. <strong>Please note that although the grid is regular originally, lat-lon grid is irregular since we want to plot the map in lat-lon.</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(raster)
+load('NAM-temperature.Rdata')
+
+# NAM forecast output has 428 rows and 614 columns
+nrow &lt;- 428
+ncol &lt;- 614
+
+# if you download the original netcdf file
+# and use raster to read the variable
+# you will get similar results like this
+#
+dat &lt;- raster(
+  xmn = 1, xmx = ncol,
+  ymn = 1, ymx = nrow,
+  nrows = nrow, ncols = ncol,
+  vals = xyz$z)
+</code></pre></div></div>
+
+<p>Let’s take a simple look at the <code class="language-plaintext highlighter-rouge">dat</code> which is the temperature in Kelvin and the actual locations of lat-lon points.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(maps)
+library(RColorBrewer) # this is only for color scale
+plot(dat, main = 'Temperature Forecasts on 20141231 at 0600',
+     col = brewer.pal(11, 'Spectral')[11:1])
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-original-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-original-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-original-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-original.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>You can see the xs and ys are off, and the shape of America looks weird. What should our domain look like? Let’s plot the coordinates by values.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map()
+
+# plot a sample of the points because this is faster
+s &lt;- sample(1:nrow(xyz), 5000)
+points(xyz$x[s], xyz$y[s],
+       cex = 0.05, pch = 19)
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/coordinates-by-values-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/coordinates-by-values-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/coordinates-by-values-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/coordinates-by-values.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>The domain has a bit of a curvature rather than being a perfect rectangle.</p>
+
+<p>Therefore, we are going to do the following steps:</p>
+
+<ol>
+  <li>Get the extent (bounding box) of the domain together with the number of rows and columns.</li>
+  <li>Rasterize data with longitudes and latitudes.</li>
+  <li>Deal with NA values.</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># For color schemes
+library(RColorBrewer)
+
+# specify CRS to be used
+crs.latlon &lt;- CRS("+proj=longlat +datum=WGS84")
+
+# get nrow and ncol
+# this is only an approximation
+#
+nrow &lt;- dim(dat)[1]
+ncol &lt;- dim(dat)[2]
+
+# get extent of the domain
+ext &lt;- extent(xyz[, c('x', 'y')])
+
+# create a raster for extent with nrow and ncol
+rast &lt;- raster(
+  ext, nrow = nrow, ncol = ncol,
+  crs = crs.latlon)
+
+# rasterize the data values
+rast &lt;- rasterize(
+  xyz[, c('x', 'y')], rast,
+  xyz[, 'z'], fun=mean)
+
+# you have the map
+print(rast)
+plot(rast, main = 'Temperature Forecasts on 20141231 at 0600',
+     col = brewer.pal(11, 'Spectral')[11:1])
+map(col = 'grey', add = T)
+map('state', add = T)
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-with-lonlat-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-with-lonlat-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-with-lonlat-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-with-lonlat.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>At last we deal with NA values. Popular ways to replace NAs include nearest neighbor and interpolation. If you have multiple raster layers, you can also try to extract values for the NA locations from other layers using the R function <a href="https://rdrr.io/cran/raster/man/approxNA.html" rel="external nofollow noopener" target="_blank"><code class="language-plaintext highlighter-rouge">raster::approxNA</code></a>. But this function only works with <code class="language-plaintext highlighter-rouge">RasterStack</code> or <code class="language-plaintext highlighter-rouge">RasterBrick</code>. As mentioned in the beginning, interpolation is slow and might bring errors. Here, because we are only interpolating for NA locations which should not be too many, we constrain the negative impact. The function provided <a href="https://gist.github.com/Weiming-Hu/ee8981bef06c6512327e4c4d9a91fecb" rel="external nofollow noopener" target="_blank">here</a> only interpolates the NA locations where the up, down, right, and left values are all valid.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source('fill-raster-NA.R')
+rast.no.na &lt;- fill.raster.NA(rast)
+plot(rast.no.na, main = 'Temperature Forecasts on 20141231 at 0600',
+     col = brewer.pal(11, 'Spectral')[11:1])
+map(col = 'grey', add = T)
+map('state', add = T)
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-no-na-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-no-na-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-no-na-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-no-na.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h2 id="raster-reprojection">Raster Reprojection</h2>
+
+<p>Now that we have a georectified raster, if you want to reproject the raster to a different projection, you can easily do it.</p>
+
+<h3 id="projection-1-north-america-lambert-conformal-conic">Projection 1: North America Lambert Conformal Conic</h3>
+
+<p>I chose this projection because this is the projection used by the <a href="https://rda.ucar.edu/datasets/ds335.0/" rel="external nofollow noopener" target="_blank">NAM model</a>.</p>
+
+<p>When I plot the overlay map, I didn’t use the function <code class="language-plaintext highlighter-rouge">maps::map</code> directly because I just couldn’t get it working. If you have an idea please comment. Instead I extract the spatial objects from <code class="language-plaintext highlighter-rouge">map</code> and reproject them myself.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># this are the parameters I chose. I had a hard time selecting
+# these parameters. See explanations after this code for why
+# I chose these parameters.
+#
+crs.lcc &lt;- CRS("+proj=lcc +lat_1=12.190 +lat_0=40 
+               +lon_0=-97 +lat_2=45
+               +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+
+# reproject to lcc
+rast.ext &lt;- projectExtent(rast.no.na, crs.lcc)
+rast.lcc &lt;- projectRaster(rast.no.na, rast.ext)
+
+# overlay
+library(sp)
+library(maptools)
+
+# extract usa spatial polygons
+usa &lt;- map("state", fill = TRUE, 
+           col="transparent", plot=FALSE)
+IDs &lt;- sapply(strsplit(usa$names, ":"), function(x) x[1])
+usa &lt;- map2SpatialPolygons(
+  usa, IDs=IDs, proj4string=CRS("+proj=longlat +datum=WGS84"))
+usa.lcc &lt;- spTransform(usa, CRSobj = crs.lcc)
+
+# extract world spatial polygons
+world &lt;- map(fill = TRUE, col="transparent", plot=FALSE)
+IDs &lt;- sapply(strsplit(world$names, ":"), function(x) x[1])
+world &lt;- map2SpatialPolygons(
+  world, IDs=IDs, proj4string=CRS("+proj=longlat +datum=WGS84"))
+world.lcc &lt;- spTransform(world, CRSobj = crs.lcc)
+
+# plot them together
+plot(rast.lcc, main = 'Temperature Map on North America Lambert Conformal Conic',
+     col = brewer.pal(11, 'Spectral')[11:1])
+plot(world.lcc, add = T, border = 'grey')
+plot(usa.lcc, add = T)
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-lcc-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-lcc-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-lcc-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-lcc.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p><strong>Explanation for the prjoection parameters</strong></p>
+
+<ul>
+  <li>You can get a approximately correct projection from <a href="https://epsg.io/102009" rel="external nofollow noopener" target="_blank">ESRI:102009 North America Lambert Conformal Conic</a>. However you need to fine tune the parameters.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+proj=lcc</code> is the name of the projection. You can also search the name in <a href="https://epsg.io/" rel="external nofollow noopener" target="_blank">EPSG</a>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+lat_0=40 +lon_0=-97</code> is the location where you want the projection to be centered. For example, here I chose the center at Penn State. You can find coordinates using <a href="https://www.google.com/maps/" rel="external nofollow noopener" target="_blank">Google Map</a>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+lat_1=12.190</code> is the start of Lambert Conformal projection specified by the model. I found this in <a href="https://rda.ucar.edu/datasets/ds335.0/" rel="external nofollow noopener" target="_blank">NAM model</a> <code class="language-plaintext highlighter-rouge">Spatial Coverage -&gt; Detailed coverage information -&gt; NAM 12km CONUS files</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+lat_2=45</code> is the curvature of the domain as my understanding. I haven’t looked into this. So please correct me if I’m wrong.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+ellps=WGS84 +datum=WGS84</code> is the datum used with the projection.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">+units=m</code> is the unit.</li>
+</ul>
+
+<p>I have to admit that finding the correct parameters for a projection is not easy, and I didn’t find good tutorial on this. If you are having the same issue or you have more experience on this, let’s create a general guide for using different projections.</p>
+
+<h3 id="projection-2-lambert-azimuthal-equal-area">Projection 2: Lambert Azimuthal Equal Area</h3>
+
+<p>Now we have the skills, let’s choose a weird projection and try it out.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crs.laea &lt;- CRS("+proj=laea +lat_0=90 +lon_0=0
+               +x_0=0 +y_0=0 +ellps=WGS84 
+               +datum=WGS84 +units=m +no_defs")
+rast.ext &lt;- projectExtent(rast.no.na, crs.laea)
+rast.laea &lt;- projectRaster(rast.no.na, rast.ext)
+
+# overlay
+usa.laea &lt;- spTransform(usa, CRSobj = crs.laea)
+world.laea &lt;- spTransform(world, CRSobj = crs.laea)
+
+# jpeg('map-laea.jpeg', width = 600, height = 450)
+plot(rast.laea, main = 'Temperature Map on Lambert Azimuthal Equal Area',
+     col = brewer.pal(11, 'Spectral')[11:1])
+plot(world.laea, add = T, border = 'grey')
+plot(usa.laea, add = T)
+</code></pre></div></div>
+
+<div class="row mt-6">
+    <div class="col-sm mt-6 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-laea-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-laea-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-laea-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/about/assets/data-for-posts/2018-04-04-projection-in-R/map-laea.jpeg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h2 id="everything-together">Everything Together</h2>
+
+<p>To put every thing together, you can download the R script <a href="https://weiming-hu.github.io/assets/data-for-posts/2018-04-04-projection-in-R/project.R">here</a>.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://epsg.io/102009" rel="external nofollow noopener" target="_blank">ESRI:102009 North America Lambert Conformal Conic</a></li>
+  <li><a href="https://epsg.io/102017" rel="external nofollow noopener" target="_blank">ESRI:102017 North Pole Lambert Azimuthal Equal Area</a></li>
+  <li><a href="http://www.cmascenter.org/sa-tools/documentation/4.2/html/grids_ellipsoids_map_proj.html" rel="external nofollow noopener" target="_blank">Specifying Grids, Ellipsoids, and Map Projections</a></li>
+  <li><a href="https://leonawicz.github.io/mapmate/articles/mapmate.html" rel="external nofollow noopener" target="_blank">Mapmate R package for 3D latlon visualization</a></li>
+  <li><a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/OverviewCoordinateReferenceSystems.pdf" rel="external nofollow noopener" target="_blank">Overview of coordinate reference systems in R</a></li>
+  <li><a href="https://lincolnmullen.com/projects/spatial-workshop/georectification.html" rel="external nofollow noopener" target="_blank">Georectification</a></li>
+  <li><a href="https://cran.r-project.org/web/packages/maps/maps.pdf" rel="external nofollow noopener" target="_blank">maps package R</a></li>
+  <li><a href="https://gis.stackexchange.com/questions/79062/how-to-make-raster-from-irregular-point-data-without-interpolation/79074" rel="external nofollow noopener" target="_blank">How to make raster from irregular point data without interpolation</a></li>
+  <li><a href="https://gis.stackexchange.com/questions/31743/projecting-sp-objects-in-r" rel="external nofollow noopener" target="_blank">Projecting sp objects in R</a></li>
+  <li><a href="https://stackoverflow.com/questions/26062280/converting-a-map-object-to-a-spatialpolygon-object" rel="external nofollow noopener" target="_blank">Converting a ‘map’ object to a ‘SpatialPolygon’ object</a></li>
+  <li><a href="https://rdrr.io/cran/maptools/man/map2SpatialPolygons.html" rel="external nofollow noopener" target="_blank">map2SpatialPolygons: Convert map objects to sp classes</a></li>
+</ul>
+
+<h2 id="update">Update</h2>
+
+<p><strong>Mar. 25, 2019</strong> Although <code class="language-plaintext highlighter-rouge">RColorBrewer</code> schemes are limited by the number of colors in each scheme, you can easily interpolate as many colors as you want using the colors provided and the <code class="language-plaintext highlighter-rouge">colorRampPalette</code> function. Note the <code class="language-plaintext highlighter-rouge">(100)</code> at the end which specifies the number of colors to generate.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plot(rast, col = colorRampPalette(brewer.pal(11, 'Spectral')[11:1])(100))
+</code></pre></div></div>
+
+  </article><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "alshedivat/al-folio",
+        "data-repo-id": "MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOA5PmLc4CTBt6",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2023 Weiming  Hu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+Last updated: April 03, 2023.
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/about/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/about/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/about/assets/js/common.js"></script>
+  <script defer src="/about/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+</html>
