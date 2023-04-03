@@ -1,25 +1,26 @@
 ---
 layout: about
-title: about
+title: Main
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: A practical idealist in open source and open science
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>427 Nirenberg Hall</p>
+    <p>Scripps, UC San Diego</p>
 
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Salute and welcome to my website!
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am a **Machine Learning Scientist** at the [Center for Western Weather and Water Extremes](https://cw3e.ucsd.edu/), SCRIPPS, UC San Diego. My research interests lie primarily in **machine learning** and **big spatiotemporal data analytics**.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am particularly passioned about quantifying and understanding the level of **uncertainty from multi-source data**, e.g., remote sensing, model simulations, and ground observations, and from hybrid dynamical-machine-learning models. My goal is to investigate how to build *accurate*, *reliable*, *trustworthy*, and *realistic* models with machine learning for *Environmental and Earth Sciences*. My work has been applied to **renewable energy forecasting**, **extreme event forecasting**, and **water resource mangement**.
+
+Have a look around and find out more about me. Don't forget to check out my blog, [the Wanderer's Retreat](/about/blog/). Feel free to respond and leave a comment. Peace!

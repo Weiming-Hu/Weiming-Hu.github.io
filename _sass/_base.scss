@@ -517,7 +517,7 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -549,7 +549,7 @@ footer.sticky-bottom {
   }
 
   h2.year {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
@@ -762,6 +762,10 @@ html.transition *:after {
   }
 
   .post-content {
+    p {
+      font-size: 1.2rem;
+    }
+
     blockquote {
       border-left: 5px solid var(--global-theme-color);
       padding: 8px;
