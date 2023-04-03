@@ -23,4 +23,4 @@ I am a **Machine Learning Scientist** at the [Center for Western Weather and Wat
 
 I am particularly passioned about quantifying and understanding the level of **uncertainty from multi-source data**, e.g., remote sensing, model simulations, and ground observations, and from hybrid dynamical-machine-learning models. My goal is to investigate how to build *accurate*, *reliable*, *trustworthy*, and *realistic* models with machine learning for *Environmental and Earth Sciences*. My work has been applied to **renewable energy forecasting**, **extreme event forecasting**, and **water resource mangement**.
 
-Have a look around and find out more about me. Don't forget to check out my blog, [the Wanderer's Retreat](/about/blog/). Feel free to respond and leave a comment. Peace!
+Have a look around and find out more about me. Don't forget to check out my blog, [the Wanderer's Retreat](/blog/). Feel free to respond and leave a comment. Peace!

@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mode_toggle.addEventListener("click", function() {
         toggleTheme(localStorage.getItem("theme"));
-        if (window.location.pathname == "/about/") {
+        if (window.location.pathname == "/") {
             let theme = localStorage.getItem("theme");
             if (theme == "dark") {
-                document.documentElement.style.backgroundImage = 'url(/about/assets/img/background_dark.jpg)';
+                document.documentElement.style.backgroundImage = 'url(/assets/img/background_dark.jpg)';
             } else {
-                document.documentElement.style.backgroundImage = 'url(/about/assets/img/background_light.jpg)';
+                document.documentElement.style.backgroundImage = 'url(/assets/img/background_light.jpg)';
             }
         }
     });
