@@ -13,7 +13,7 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Introduction to Geographic Information System</a></h5>
+        <h5 class="font-weight-bold">Introduction to Geographic Information System</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
@@ -28,7 +28,7 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Applications of Geographic Information System: Advanced Human and Environmental Applications</a></h5>
+        <h5 class="font-weight-bold">Applications of Geographic Information System: Advanced Human and Environmental Applications</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">

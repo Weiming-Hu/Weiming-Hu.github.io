@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>801 Carrier Drive, MSC 4302</p>
+    <p>801 Carrier Drive</p>
     <p>Harrisonburg, VA 22807</p>
     <p>Office: EnGeo 2133</p>
 
