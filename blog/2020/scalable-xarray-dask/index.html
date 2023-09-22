@@ -23,7 +23,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -384,8 +384,8 @@ pip <span class="nb">install </span>graphviz    <span class="c"># For generating
 
 <span class="c1"># Configure job requirements
 </span><span class="n">cluster</span> <span class="o">=</span> <span class="n">dask_jobqueue</span><span class="p">.</span><span class="nc">PBSCluster</span><span class="p">(</span>
-    <span class="n">cores</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s">"30GB"</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="s">'5:00:00'</span><span class="p">,</span>
-    <span class="n">project</span><span class="o">=</span><span class="s">'URTG0014'</span><span class="p">,</span> <span class="n">queue</span><span class="o">=</span><span class="s">'regular'</span><span class="p">,</span>
+    <span class="n">cores</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="sh">"</span><span class="s">30GB</span><span class="sh">"</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="sh">'</span><span class="s">5:00:00</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">project</span><span class="o">=</span><span class="sh">'</span><span class="s">URTG0014</span><span class="sh">'</span><span class="p">,</span> <span class="n">queue</span><span class="o">=</span><span class="sh">'</span><span class="s">regular</span><span class="sh">'</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Request 10 workers
@@ -441,7 +441,7 @@ client = distributed.Client(cluster)
 <span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">partial</span>
 
 <span class="k">def</span> <span class="nf">add_coords</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">arr_name</span><span class="p">,</span> <span class="n">arr_axis</span><span class="p">):</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     This function adds coordinate information to an NetCDF file
     based on the NetCDF file name and the length of the specified
     dimension and variable. The coordinates will be created as simply
@@ -455,12 +455,12 @@ client = distributed.Client(cluster)
     :param arr_name The variable name
     :param arr_axis The axis index of the variable to determine coordinate length
     :return A modified dataset with coordinates
-    """</span>
+    </span><span class="sh">"""</span>
     <span class="c1"># Extract identifer from the file name.
 </span>    <span class="c1"># This extracts all numeral digits immediately 
 </span>    <span class="c1"># before the file extension as the identifier.
 </span>    <span class="c1">#
-</span>    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="s">'.*chunk-(\d+)\.nc'</span><span class="p">).</span><span class="nf">search</span><span class="p">(</span><span class="n">ds</span><span class="p">.</span><span class="n">encoding</span><span class="p">[</span><span class="s">"source"</span><span class="p">])</span>
+</span>    <span class="n">matched</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">.*chunk-(\d+)\.nc</span><span class="sh">'</span><span class="p">).</span><span class="nf">search</span><span class="p">(</span><span class="n">ds</span><span class="p">.</span><span class="n">encoding</span><span class="p">[</span><span class="sh">"</span><span class="s">source</span><span class="sh">"</span><span class="p">])</span>
     <span class="k">assert</span> <span class="n">matched</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
     
     <span class="n">matched</span> <span class="o">=</span> <span class="n">matched</span><span class="p">.</span><span class="nf">groups</span><span class="p">()</span>
@@ -476,14 +476,14 @@ client = distributed.Client(cluster)
                       <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">current_total</span><span class="p">)]</span>
     
     <span class="c1"># Add coordinates to the dataset
-</span>    <span class="n">ds</span><span class="p">.</span><span class="n">coords</span><span class="p">[</span><span class="s">'num_stations'</span><span class="p">]</span> <span class="o">=</span> <span class="n">station_coords</span>
+</span>    <span class="n">ds</span><span class="p">.</span><span class="n">coords</span><span class="p">[</span><span class="sh">'</span><span class="s">num_stations</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">station_coords</span>
 
     <span class="k">return</span> <span class="n">ds</span>
 
 <span class="c1"># Use the last dimension, the number of stations, of wind speed to
 # determine the length of coordinates in this file
 </span><span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span> <span class="o">=</span> <span class="nf">partial</span><span class="p">(</span>
-    <span class="n">add_coords</span><span class="p">,</span> <span class="n">arr_name</span><span class="o">=</span><span class="s">'WindSpeed_10m'</span><span class="p">,</span> <span class="n">arr_axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">add_coords</span><span class="p">,</span> <span class="n">arr_name</span><span class="o">=</span><span class="sh">'</span><span class="s">WindSpeed_10m</span><span class="sh">'</span><span class="p">,</span> <span class="n">arr_axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Then, let’s open the files in parallel.</p>
@@ -491,9 +491,9 @@ client = distributed.Client(cluster)
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">xarray</span> <span class="k">as</span> <span class="n">xr</span>
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="nf">open_mfdataset</span><span class="p">(</span>
-    <span class="s">'/glade/u/home/wuh20/scratch/anen_solar_annual/*.nc'</span><span class="p">,</span>
-    <span class="n">concat_dim</span><span class="o">=</span><span class="s">'num_stations'</span><span class="p">,</span> <span class="n">data_vars</span><span class="o">=</span><span class="s">'minimal'</span><span class="p">,</span>
-    <span class="n">coords</span><span class="o">=</span><span class="s">'minimal'</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="s">'override'</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">/glade/u/home/wuh20/scratch/anen_solar_annual/*.nc</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">concat_dim</span><span class="o">=</span><span class="sh">'</span><span class="s">num_stations</span><span class="sh">'</span><span class="p">,</span> <span class="n">data_vars</span><span class="o">=</span><span class="sh">'</span><span class="s">minimal</span><span class="sh">'</span><span class="p">,</span>
+    <span class="n">coords</span><span class="o">=</span><span class="sh">'</span><span class="s">minimal</span><span class="sh">'</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="sh">'</span><span class="s">override</span><span class="sh">'</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">preprocess</span><span class="o">=</span><span class="n">preprocess</span>
 <span class="p">)</span>
 
@@ -532,14 +532,14 @@ client = distributed.Client(cluster)
 
 <span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="n">irradiance</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'DownwardShortwaveRadiation'</span><span class="p">].</span><span class="nf">isel</span><span class="p">(</span><span class="n">num_flts</span><span class="o">=</span><span class="mi">16</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span>
-    <span class="s">'num_analogs'</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span><span class="s">'num_test_times'</span><span class="p">)</span>
+<span class="n">irradiance</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="sh">'</span><span class="s">DownwardShortwaveRadiation</span><span class="sh">'</span><span class="p">].</span><span class="nf">isel</span><span class="p">(</span><span class="n">num_flts</span><span class="o">=</span><span class="mi">16</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span>
+    <span class="sh">'</span><span class="s">num_analogs</span><span class="sh">'</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span><span class="sh">'</span><span class="s">num_test_times</span><span class="sh">'</span><span class="p">)</span>
 
-<span class="n">xs</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'Xs'</span><span class="p">].</span><span class="n">values</span>
-<span class="n">ys</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'Ys'</span><span class="p">].</span><span class="n">values</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="sh">'</span><span class="s">Xs</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="sh">'</span><span class="s">Ys</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span>
 
 <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'jet'</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">jet</span><span class="sh">'</span><span class="p">)</span>
 <span class="n">plt</span><span class="p">.</span><span class="nf">colorbar</span><span class="p">(</span><span class="n">cbar</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -573,7 +573,7 @@ client = distributed.Client(cluster)
 <p>To illustrate this, we can visualize the computation graph stored in <code class="language-plaintext highlighter-rouge">irradiance</code>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">dask</span>
-<span class="n">dask</span><span class="p">.</span><span class="nf">visualize</span><span class="p">(</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s">'computation-graph.svg'</span><span class="p">)</span>
+<span class="n">dask</span><span class="p">.</span><span class="nf">visualize</span><span class="p">(</span><span class="n">irradiance</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="sh">'</span><span class="s">computation-graph.svg</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Please click the image to zoom in. In total there are 30 columns corresponding to 30 processes. These processes will be distributed across and created on the 10 workers available. Each column represents the computation that is going to be carried out at evaluation time, which includes reading, slicing, and calculating the averages.</p>
@@ -667,7 +667,7 @@ client = distributed.Client(cluster)
     <footer class="fixed-bottom">
       <div class="container mt-0">
         &copy; Copyright 2023 Weiming  Hu. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-Last updated: May 04, 2023.
+Last updated: September 22, 2023.
       </div>
     </footer> -->
 

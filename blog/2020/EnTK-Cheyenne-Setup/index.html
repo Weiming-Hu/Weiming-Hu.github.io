@@ -23,7 +23,7 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:100,300,400,500,700%7CMaterial+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
@@ -288,10 +288,10 @@ requests 2.25.1 requires idna&lt;3,&gt;=2.5, but you have idna 3.1 which is inco
 <p>Finally, I usually set the following in my main python script to enable verbose output and to log profiling information.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable profiling information
-</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'RADICAL_PROFILE'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'True'</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">'</span><span class="s">RADICAL_PROFILE</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">True</span><span class="sh">'</span>
 
 <span class="c1"># Set output verbosity
-</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'RADICAL_LOG_LVL'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'DEBUG'</span>
+</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">[</span><span class="sh">'</span><span class="s">RADICAL_LOG_LVL</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">DEBUG</span><span class="sh">'</span>
 </code></pre></div></div>
 
 <h2 id="debugging">Debugging</h2>
@@ -335,16 +335,16 @@ submit 1 pilot<span class="o">(</span>s<span class="o">)</span>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Exception</span> <span class="ow">in</span> <span class="n">thread</span> <span class="n">Thread</span><span class="o">-</span><span class="mi">12</span><span class="p">:</span>
 <span class="nc">Traceback </span><span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s">"/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">926</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_bootstrap_inner</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">926</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_bootstrap_inner</span>
     <span class="n">self</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
-  <span class="n">File</span> <span class="s">"/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">870</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">/glade/u/apps/ch/opt/python/3.7.5/gnu/8.3.0/lib/python3.7/threading.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">870</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run</span>
     <span class="n">self</span><span class="p">.</span><span class="nf">_target</span><span class="p">(</span><span class="o">*</span><span class="n">self</span><span class="p">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">self</span><span class="p">.</span><span class="n">_kwargs</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/entk/execman/rp/task_manager.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">280</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_process_tasks</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/entk/execman/rp/task_manager.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">280</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_process_tasks</span>
     <span class="n">umgr</span> <span class="o">=</span> <span class="n">rp</span><span class="p">.</span><span class="nc">UnitManager</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">rmgr</span><span class="p">.</span><span class="n">_session</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/unit_manager.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__init__</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/unit_manager.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__init__</span>
     <span class="n">self</span><span class="p">.</span><span class="n">_cmgr</span><span class="p">.</span><span class="nf">start_components</span><span class="p">()</span>
-  <span class="n">File</span> <span class="s">"/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/utils/component.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">231</span><span class="p">,</span> <span class="ow">in</span> <span class="n">start_components</span>
-    <span class="k">raise</span> <span class="nc">RuntimeError</span><span class="p">(</span><span class="s">'bridge startup failed'</span><span class="p">)</span>
+  <span class="n">File</span> <span class="sh">"</span><span class="s">/glade/u/home/wuh20/venv/lib/python3.7/site-packages/radical/pilot/utils/component.py</span><span class="sh">"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">231</span><span class="p">,</span> <span class="ow">in</span> <span class="n">start_components</span>
+    <span class="k">raise</span> <span class="nc">RuntimeError</span><span class="p">(</span><span class="sh">'</span><span class="s">bridge startup failed</span><span class="sh">'</span><span class="p">)</span>
 <span class="nb">RuntimeError</span><span class="p">:</span> <span class="n">bridge</span> <span class="n">startup</span> <span class="n">failed</span>
 </code></pre></div></div>
 
@@ -409,7 +409,7 @@ wuh20@cheyenne4:~/github/pv-workflow/02_WeightOptimization&gt;
     <footer class="fixed-bottom">
       <div class="container mt-0">
         &copy; Copyright 2023 Weiming  Hu. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-Last updated: May 04, 2023.
+Last updated: September 22, 2023.
       </div>
     </footer> -->
 
