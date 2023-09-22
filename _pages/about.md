@@ -9,17 +9,18 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>427 Nirenberg Hall</p>
-    <p>Scripps, UC San Diego</p>
+    <p>801 Carrier Drive, MSC 4302</p>
+    <p>Harrisonburg, VA 22807</p>
+    <p>Office: EnGeo 2133</p>
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Salute and welcome to my website!
+Salute and welcome!
 
-I am a **Machine Learning Scientist** at the [Center for Western Weather and Water Extremes](https://cw3e.ucsd.edu/), SCRIPPS, UC San Diego. My research interests lie primarily in **machine learning** and **big spatiotemporal data analytics**.
+I am an **Assistant Professor** in the [School of Integrated Sciences](https://www.jmu.edu/cise/sis/index.shtml), [James Madison University](https://www.jmu.edu/index.shtml), Virginia, under the Geography program. My research interests lie primarily in **machine learning** and **big spatiotemporal data analytics**.
 
 I am particularly passionate about quantifying and understanding the level of **uncertainty from multi-source data**, e.g., remote sensing, model simulations, and ground observations, and from hybrid dynamical-machine-learning models. My goal is to investigate how to build *accurate*, *reliable*, *trustworthy*, and *realistic* models with machine learning for *Environmental and Earth Sciences*. My work has been applied to **renewable energy forecasting**, **extreme event forecasting**, and **water resource management**.
 
