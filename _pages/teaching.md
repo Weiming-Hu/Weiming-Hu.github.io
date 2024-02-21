@@ -13,11 +13,11 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Introduction to Geographic Information System</h5>
+        <h5 class="font-weight-bold">Introduction to Geographic Information Science and Cartography</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
-            GEOG 215
+            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">GEOG 215</a>
         </span>
       </div>
     </div>
@@ -28,14 +28,30 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Applications of Geographic Information System: Advanced Human and Environmental Applications</h5>
+        <h5 class="font-weight-bold">Programming for Geographic Information Science</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
-            GEOG 469
+            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=269062">GEOG 367</a>
         </span>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="p-3">
+    <div class="row">
+      <div class="col-sm-10">
+        <h5 class="font-weight-bold">Applications of Geographic Information System</h5>
+      </div>
+      <div class="col-sm-2 text-left text-sm-right">
+        <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
+            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=266088">GEOG 469</a>
+        </span>
+      </div>
+    </div>
+    <h6 class="font-italic mt-2 mt-sm-0">2023 FALL topic: Advanced Human and Environmental Applications</h6>
   </div>
 </div>
 
