@@ -34,8 +34,9 @@ nav_order: 2
       <div class="col-sm-10">
         <h5 class="font-weight-bold">
           <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">
-            Programming for Geographic Information Science</h5>
+            Programming for Geographic Information Science
           </a>
+        </h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
@@ -52,8 +53,9 @@ nav_order: 2
       <div class="col-sm-10">
         <h5 class="font-weight-bold">
           <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">
-            Applications of Geographic Information System</h5>
+            Applications of Geographic Information System
           </a>
+        </h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
