@@ -13,11 +13,15 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Introduction to Geographic Information Science and Cartography</h5>
+        <h5 class="font-weight-bold">
+          <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">
+            Introduction to Geographic Information Science and Cartography
+          </a>
+        </h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
-            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">GEOG 215</a>
+            GEOG 215
         </span>
       </div>
     </div>
@@ -28,11 +32,14 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Programming for Geographic Information Science</h5>
+        <h5 class="font-weight-bold">
+          <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">
+            Programming for Geographic Information Science</h5>
+          </a>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
-            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=269062">GEOG 367</a>
+            GEOG 367
         </span>
       </div>
     </div>
@@ -43,11 +50,14 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold">Applications of Geographic Information System</h5>
+        <h5 class="font-weight-bold">
+          <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=268753">
+            Applications of Geographic Information System</h5>
+          </a>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
-            <a href="https://catalog.jmu.edu/preview_course_nopop.php?catoid=51&coid=266088">GEOG 469</a>
+            GEOG 469
         </span>
       </div>
     </div>
@@ -63,7 +73,11 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold"><a href="https://cw3e.ucsd.edu/cw3e-internship-program/">Summer Internship Program</a></h5>
+        <h5 class="font-weight-bold">
+          <a href="https://cw3e.ucsd.edu/cw3e-internship-program/">
+            Summer Internship Program
+          </a>
+        </h5>
       </div>
     </div>
     <h6 class="font-italic mt-2 mt-sm-0">2023: Mentor; Progream Lead</h6>
@@ -82,7 +96,11 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold"><a href="https://www.e-education.psu.edu/geog160/node/1672">Mapping Our Changing World</a></h5>
+        <h5 class="font-weight-bold">
+          <a href="https://www.e-education.psu.edu/geog160/node/1672">
+            Mapping Our Changing World
+          </a>
+        </h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
@@ -102,7 +120,11 @@ nav_order: 2
   <div class="p-3">
     <div class="row">
       <div class="col-sm-10">
-        <h5 class="font-weight-bold"><a href="https://github.com/Weiming-Hu/PSU-2019FALL-GEOG365-GISIntroR">Introduction to GIS Programming</a></h5>
+        <h5 class="font-weight-bold">
+          <a href="https://github.com/Weiming-Hu/PSU-2019FALL-GEOG365-GISIntroR">
+            Introduction to GIS Programming
+          </a>
+        </h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
         <span class="badge font-weight-bold danger-color-dark darken-1 text-uppercase align-middle" target="_blank">
