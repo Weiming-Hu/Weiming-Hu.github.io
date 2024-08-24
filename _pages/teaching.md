@@ -63,6 +63,7 @@ nav_order: 2
         </span>
       </div>
     </div>
+    <h6 class="font-italic mt-2 mt-sm-0">2024 FALL topic: Data Science Literacy and Projects in Geography</h6>
     <h6 class="font-italic mt-2 mt-sm-0">2023 FALL topic: Advanced Human and Environmental Applications</h6>
   </div>
 </div>
