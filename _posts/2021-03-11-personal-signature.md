@@ -14,12 +14,11 @@ I posted here my template for source code header signature.
 #############################################################
 # Author: Weiming Hu <weiminghu@ucsd.edu>                   #
 #                                                           #
-#         Center for Western Weather and Water Extremes     #
-#         Scripps Institution of Oceanography               #
-#         UC San Diego                                      #
+#         School of Integrated Sciences                     #
+#         James Madison University                          #
+#         Harrisonburg, Virginia, USA                       #
 #                                                           #
 #         https://weiming-hu.github.io/                     #
-#         https://cw3e.ucsd.edu/                            #
 #                _                                          #
 #              (`  ).                   _                   #
 #             (     ).              .:(`  )`.               #
@@ -40,7 +39,7 @@ I posted here my template for source code header signature.
 #~~~~~~~~~~~~~~~~~~~~~~`~~~~~~'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #############################################################
 #
-# Date of Creation: 2023/01/01
+# Date of Creation: 2025/01/01
 #
 # [Summary of the source code file]
 #
