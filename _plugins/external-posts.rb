@@ -1,6 +1,8 @@
 require 'feedjira'
 require 'httparty'
 require 'jekyll'
+require 'nokogiri'
+require 'time'
 
 module ExternalPosts
   class ExternalPostsGenerator < Jekyll::Generator
