@@ -310,8 +310,8 @@
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
-  .min-w-\[500px\] {
-    min-width: 500px;
+  .min-w-\[360px\] {
+    min-width: 360px;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
