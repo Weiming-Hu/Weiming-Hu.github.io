@@ -62,7 +62,7 @@ pub fn Home() -> Element {
                                 a { 
                                     href: "https://geography.uga.edu/directory/people/weiming-hu", 
                                     class: "text-red-600 hover:text-red-800 underline",
-                                    "Department of Geography, University of Georgia"
+                                    "Dept. of Geography, Univ. of Georgia"
                                 }
                                 " and a core faculty member of the "
                                 a { 
@@ -94,6 +94,26 @@ pub fn Home() -> Element {
                                 ", and "
                                 span { class: "font-semibold", "water resource management" }
                                 "."
+                            }
+                        }
+
+                    }
+
+                    div {
+                        class: "flex items-center mt-6 justify-center",
+                        div {
+                            class: "bg-red-50 border-l-4 border-red-400 p-4 rounded shadow-sm max-w-2xl",
+                            p {
+                                class: "text-gray-800 leading-relaxed font-semibold text-center",
+                                "I am actively looking for motivated students who are broadly interested in "
+                                span { class: "font-bold text-red-700", "geospatial analysis" }
+                                ", "
+                                span { class: "font-bold text-red-700", "artificial intelligence" }
+                                ", "
+                                span { class: "font-bold text-red-700", "weather" }
+                                ", or "
+                                span { class: "font-bold text-red-700", "climate science" }
+                                ". Please contact me if you are interested in joining my research group."
                             }
                         }
                     }

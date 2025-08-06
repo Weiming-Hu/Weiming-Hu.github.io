@@ -21,7 +21,7 @@ pub fn Header() -> Element {
             header {
                 class: "w-full p-2 flex justify-center fixed top-0 left-0 z-50 bg-white bg-opacity-90 shadow",
                 nav {
-                    class: "flex space-x-6 text-sm",
+                    class: "flex space-x-6 text-lg",
                     Link { 
                         to: Route::Home {}, 
                         class: if matches!(current_route, Route::Home {}) {
