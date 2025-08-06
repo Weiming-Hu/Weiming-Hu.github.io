@@ -17,7 +17,8 @@ git add -A
 git commit -m "web release for version $VERSION"
 git push
 
-git checkout main
+git checkout master
 [ -d wasm ] && rm -rf wasm
 
+git pull
 echo gh-pages have been updated to $VERSION!
