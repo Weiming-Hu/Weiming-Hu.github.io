@@ -302,15 +302,15 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
         for target_day in &rrule.by_day {
             // web_sys::console::log_1(&format!("Processing BYDAY: {}", target_day).into());
             
-            // Convert BYDAY to weekday number (0=Monday, 6=Sunday)
+            // Convert BYDAY to weekday number (0=Sunday, 6=Saturday)
             let target_weekday = match target_day.as_str() {
-                "MO" => 0,
-                "TU" => 1,
-                "WE" => 2,
-                "TH" => 3,
-                "FR" => 4,
-                "SA" => 5,
-                "SU" => 6,
+                "SU" => 0,
+                "MO" => 1,
+                "TU" => 2,
+                "WE" => 3,
+                "TH" => 4,
+                "FR" => 5,
+                "SA" => 6,
                 _ => continue, // Skip unknown day
             };
             
@@ -540,13 +540,12 @@ fn add_days_to_date(year: i32, month: i32, day: i32, days_to_add: i32) -> Option
     None
 }
 
-// Helper function to get weekday from date (0=Monday, 6=Sunday)
+// Helper function to get weekday from date (0=Sunday, 6=Saturday)
 fn get_weekday_from_date(year: i32, month: i32, day: i32) -> i32 {
     let js_code = format!(
         r#"(() => {{
             const date = new Date({}, {}, {});
-            const day = date.getDay(); // 0=Sunday, 1=Monday, etc.
-            return day === 0 ? 6 : day - 1; // Convert to 0=Monday, 6=Sunday
+            return date.getDay(); // 0=Sunday, 1=Monday, etc. (already Sunday-first)
         }})()"#,
         year, month - 1, day // month is 0-based in JS
     );
@@ -557,7 +556,7 @@ fn get_weekday_from_date(year: i32, month: i32, day: i32) -> i32 {
         }
     }
     
-    0 // Fallback to Monday
+    0 // Fallback to Sunday
 }
 
 // Create a new event instance for a specific date
@@ -609,10 +608,19 @@ fn create_recurring_event_instance(base_event: &CalendarEvent, year: i32, month:
 }
 
 // Get maximum date for generating recurring events based on max_weeks_ahead
+// This calculates to the end of the target week (Saturday) rather than just max_weeks_ahead * 7 days from today
 fn get_max_generation_date(max_weeks_ahead: i32) -> String {
     let js_code = format!(r#"(() => {{
         const now = new Date();
-        const maxDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + ({} * 7));
+        const currentDayOfWeek = now.getDay(); // 0=Sunday, 1=Monday, etc.
+        
+        // Calculate days to reach the beginning of the target week (Sunday)
+        const daysToTargetWeekStart = ({} * 7) - currentDayOfWeek;
+        
+        // Add 6 more days to reach the end of that week (Saturday)
+        const daysToTargetWeekEnd = daysToTargetWeekStart + 6;
+        
+        const maxDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysToTargetWeekEnd);
         return maxDate.getFullYear().toString() + 
                (maxDate.getMonth() + 1).toString().padStart(2, '0') + 
                maxDate.getDate().toString().padStart(2, '0');
@@ -624,15 +632,22 @@ fn get_max_generation_date(max_weeks_ahead: i32) -> String {
         }
     }
     
-    // Fallback: max_weeks_ahead weeks from current date
-    let fallback_days = max_weeks_ahead * 7;
+    // Fallback: max_weeks_ahead to end of target week
     let js_fallback = format!(r#"(() => {{
         const now = new Date();
-        const fallbackDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + {});
+        const currentDayOfWeek = now.getDay(); // 0=Sunday, 1=Monday, etc.
+        
+        // Calculate days to reach the beginning of the target week (Sunday)
+        const daysToTargetWeekStart = ({} * 7) - currentDayOfWeek;
+        
+        // Add 6 more days to reach the end of that week (Saturday)
+        const daysToTargetWeekEnd = daysToTargetWeekStart + 6;
+        
+        const fallbackDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + daysToTargetWeekEnd);
         return fallbackDate.getFullYear().toString() + 
                (fallbackDate.getMonth() + 1).toString().padStart(2, '0') + 
                fallbackDate.getDate().toString().padStart(2, '0');
-    }})()"#, fallback_days);
+    }})()"#, max_weeks_ahead);
     
     if let Ok(result) = js_sys::eval(&js_fallback) {
         if let Some(date_str) = result.as_string() {
@@ -640,8 +655,8 @@ fn get_max_generation_date(max_weeks_ahead: i32) -> String {
         }
     }
     
-    // Final fallback: static date
-    "20260206".to_string()
+    // Final fallback: static date (end of 2026 to be safe)
+    "20261231".to_string()
 }
 
 fn parse_ics_datetime_with_timezone(datetime_str: &str, target_timezone: &str) -> (String, i32, i32) {
@@ -843,7 +858,7 @@ fn get_timezone_display(timezone: &str) -> String {
 #[component]
 fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, current_week_offset: i32, start_hour: i32, end_hour: i32) -> Element {
     // Simple week generation - show days of the week with proper dates
-    let week_days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    let week_days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     
     // Pre-calculate all dates for the week to avoid repeated JavaScript calls
     let week_dates: Vec<String> = (0..7).map(|day_idx| {
@@ -892,7 +907,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                     for (i, day) in week_days.iter().enumerate() {
                         div {
                             class: format!("p-2 text-xs font-medium text-center border-r last:border-r-0 {}",
-                                if i >= 5 || past_days[i] { 
+                                if i == 0 || i == 6 || past_days[i] { 
                                     "bg-gray-50 text-gray-500" 
                                 } else { 
                                     "text-gray-700 bg-gray-100" 
@@ -983,7 +998,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                                             div {
                                                 class: "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 whitespace-nowrap",
                                                 {
-                                                    let day_name = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][day_idx as usize];
+                                                    let day_name = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][day_idx as usize];
                                                     let target_date = &target_dates[day_idx as usize];
                                                     let date_str = if target_date.len() >= 8 {
                                                         let month = &target_date[4..6];
@@ -1095,8 +1110,8 @@ fn is_time_slot_busy_optimized(events: &[CalendarEvent], day_idx: i32, hour: i32
 
 // Optimized unavailable function using pre-calculated data
 fn is_time_slot_unavailable_optimized(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, target_dates: &[String], past_days: &[bool]) -> bool {
-    // Weekend check (5=Saturday, 6=Sunday)
-    if day_idx >= 5 {
+    // Weekend check (0=Sunday, 6=Saturday)
+    if day_idx == 0 || day_idx == 6 {
         return true;
     }
     
@@ -1140,15 +1155,15 @@ fn is_current_time_slot(day_idx: i32, hour: i32, minute: i32, current_week_offse
                 let current_minute = parsed["minute"].as_str().unwrap_or("00").parse::<i32>().unwrap_or(0);
                 let current_weekday = parsed["weekday"].as_str().unwrap_or("Mon");
                 
-                // Convert weekday to day_idx (0=Monday, 6=Sunday)
+                // Convert weekday to day_idx (0=Sunday, 6=Saturday)
                 let current_day_idx = match current_weekday {
-                    "Mon" => 0,
-                    "Tue" => 1,
-                    "Wed" => 2,
-                    "Thu" => 3,
-                    "Fri" => 4,
-                    "Sat" => 5,
-                    "Sun" => 6,
+                    "Sun" => 0,
+                    "Mon" => 1,
+                    "Tue" => 2,
+                    "Wed" => 3,
+                    "Thu" => 4,
+                    "Fri" => 5,
+                    "Sat" => 6,
                     _ => 0,
                 };
                 
@@ -1180,8 +1195,8 @@ fn is_current_time_slot(day_idx: i32, hour: i32, minute: i32, current_week_offse
     let current_minute = now.get_minutes() as i32;
     let current_day = now.get_day() as i32; // 0 = Sunday, 1 = Monday, etc.
     
-    // Convert Sunday-based (0-6) to Monday-based (0-6 where 0 = Monday)
-    let current_day_monday_based = if current_day == 0 { 6 } else { current_day - 1 };
+    // Convert Sunday-based (0-6) to Sunday-based (0-6 where 0 = Sunday)
+    let current_day_sunday_based = current_day;
     
     // Check if we're in the current week
     if current_week_offset != 0 {
@@ -1189,7 +1204,7 @@ fn is_current_time_slot(day_idx: i32, hour: i32, minute: i32, current_week_offse
     }
     
     // Check if it's the current day
-    if day_idx != current_day_monday_based {
+    if day_idx != current_day_sunday_based {
         return false;
     }
     
@@ -1265,14 +1280,14 @@ fn get_date_for_day_with_timezone(day_idx: i32, week_offset: i32, timezone: &str
             const result = {{}};
             parts.forEach(part => result[part.type] = part.value);
             
-            // Get current day index (0=Monday, 6=Sunday)
+            // Get current day index (0=Sunday, 6=Saturday)
             const currentDayName = result.weekday;
-            const dayMapping = {{'Mon': 0, 'Tue': 1, 'Wed': 2, 'Thu': 3, 'Fri': 4, 'Sat': 5, 'Sun': 6}};
+            const dayMapping = {{'Sun': 0, 'Mon': 1, 'Tue': 2, 'Wed': 3, 'Thu': 4, 'Fri': 5, 'Sat': 6}};
             const currentDayIdx = dayMapping[currentDayName] || 0;
             
-            // Calculate offset
-            const daysToMonday = -currentDayIdx;
-            const totalDayOffset = daysToMonday + ({} * 7) + {};
+            // Calculate offset to Sunday (start of week)
+            const daysToSunday = -currentDayIdx;
+            const totalDayOffset = daysToSunday + ({} * 7) + {};
             
             // Create target date
             const currentDate = parseInt(result.day);
@@ -1313,14 +1328,14 @@ fn get_date_for_day(day_idx: i32, week_offset: i32) -> String {
     let current_date = date.get_date() as i32;
     let current_day_of_week = date.get_day() as i32; // 0 = Sunday, 1 = Monday, etc.
     
-    // Convert to Monday-based indexing (0 = Monday, 6 = Sunday)
-    let current_day_of_week = if current_day_of_week == 0 { 6 } else { current_day_of_week - 1 };
+    // Convert to Sunday-based indexing (0 = Sunday, 6 = Saturday)
+    let current_day_of_week = current_day_of_week; // Already 0=Sunday in JavaScript
     
-    // Calculate days from today to the start of current week (Monday)
-    let days_to_monday = -current_day_of_week;
+    // Calculate days from today to the start of current week (Sunday)
+    let days_to_sunday = -current_day_of_week;
     
     // Calculate total offset in days
-    let total_day_offset = days_to_monday + (week_offset * 7) + day_idx;
+    let total_day_offset = days_to_sunday + (week_offset * 7) + day_idx;
     
     // Create a new date by adding the offset (timezone-aware)
     let target_date = js_sys::Date::new_0();
@@ -1344,7 +1359,7 @@ pub fn Cal() -> Element {
     
     // Configuration variables
     let use_timezone_dropdown = false; // Set to true to show timezone dropdown, false to show browser timezone as text
-    let max_weeks_ahead = 30; // Maximum weeks user can navigate ahead (0 = current week only, 5 = up to 5 weeks ahead)
+    let max_weeks_ahead = 5; // Maximum weeks user can navigate ahead (0 = current week only, 5 = up to 5 weeks ahead)
     let weeks_ahead = 4;
     let start_hour = 8;  // 8 AM
     let end_hour = 18;   // 6 PM
