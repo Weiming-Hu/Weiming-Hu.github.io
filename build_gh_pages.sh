@@ -11,6 +11,7 @@ dx bundle --platform web
 # mv Dioxus.toml.bak Dioxus.toml
 
 git checkout gh-pages
+git pull
 rm -rf assets index.html wasm
 cp -r target/dx/personal_website/release/web/public/* .
 git add -A
