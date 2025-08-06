@@ -24,7 +24,7 @@ struct RecurrenceRule {
     count: Option<i32>,     // Number of occurrences
 }
 
-async fn fetch_calendar_data(urls: Vec<&str>) -> Result<Vec<CalendarEvent>, String> {
+async fn fetch_calendar_data(urls: Vec<&str>, max_weeks_ahead: i32) -> Result<Vec<CalendarEvent>, String> {
     let mut all_events = Vec::new();
     
     for url in urls {
@@ -45,7 +45,7 @@ async fn fetch_calendar_data(urls: Vec<&str>) -> Result<Vec<CalendarEvent>, Stri
                     };
                     
                     // Simple ICS parser for VEVENT blocks
-                    let events = parse_ics_busy_free(&ics_content);
+                    let events = parse_ics_busy_free(&ics_content, max_weeks_ahead);
                     
                     // Debug: Log the first few lines of ICS content and parsed events
                     // web_sys::console::log_1(&format!("ICS content preview: {}", 
@@ -68,7 +68,7 @@ async fn fetch_calendar_data(urls: Vec<&str>) -> Result<Vec<CalendarEvent>, Stri
     Ok(all_events)
 }
 
-fn parse_ics_busy_free(ics_content: &str) -> Vec<CalendarEvent> {
+fn parse_ics_busy_free(ics_content: &str, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     let mut events = Vec::new();
     let lines: Vec<&str> = ics_content.lines().collect();
     let mut i = 0;
@@ -122,9 +122,9 @@ fn parse_ics_busy_free(ics_content: &str) -> Vec<CalendarEvent> {
                     
                     // Generate recurrence instances if RRULE exists
                     if let Some(rrule_str) = rrule {
-                        web_sys::console::log_1(&format!("Found RRULE: {} for event starting at {}", rrule_str, start).into());
-                        let generated_events = generate_recurring_events(&base_event, &rrule_str);
-                        web_sys::console::log_1(&format!("Generated {} recurring events", generated_events.len()).into());
+                        // web_sys::console::log_1(&format!("Found RRULE: {} for event starting at {}", rrule_str, start).into());
+                        let generated_events = generate_recurring_events(&base_event, &rrule_str, max_weeks_ahead);
+                        // web_sys::console::log_1(&format!("Generated {} recurring events", generated_events.len()).into());
                         events.extend(generated_events);
                     } else {
                         // Single event
@@ -141,7 +141,7 @@ fn parse_ics_busy_free(ics_content: &str) -> Vec<CalendarEvent> {
 
 // Parse RRULE string into RecurrenceRule struct
 fn parse_rrule(rrule_str: &str) -> Option<RecurrenceRule> {
-    web_sys::console::log_1(&format!("Parsing RRULE: {}", rrule_str).into());
+    // web_sys::console::log_1(&format!("Parsing RRULE: {}", rrule_str).into());
     
     let mut freq = String::new();
     let mut interval = 1;
@@ -157,7 +157,7 @@ fn parse_rrule(rrule_str: &str) -> Option<RecurrenceRule> {
                 "INTERVAL" => interval = value.parse().unwrap_or(1),
                 "BYDAY" => {
                     by_day = value.split(',').map(|s| s.to_string()).collect();
-                    web_sys::console::log_1(&format!("Found BYDAY: {:?}", by_day).into());
+                    // web_sys::console::log_1(&format!("Found BYDAY: {:?}", by_day).into());
                 }
                 "UNTIL" => {
                     // UNTIL can be in YYYYMMDDTHHMMSSZ or YYYYMMDD format
@@ -182,8 +182,8 @@ fn parse_rrule(rrule_str: &str) -> Option<RecurrenceRule> {
             until: until.clone(),
             count,
         };
-        web_sys::console::log_1(&format!("Parsed RRULE: freq={}, interval={}, by_day={:?}, until={:?}, count={:?}", 
-            freq, interval, by_day, until, count).into());
+        // web_sys::console::log_1(&format!("Parsed RRULE: freq={}, interval={}, by_day={:?}, until={:?}, count={:?}", 
+        //     freq, interval, by_day, until, count).into());
         Some(rule)
     } else {
         None
@@ -191,7 +191,7 @@ fn parse_rrule(rrule_str: &str) -> Option<RecurrenceRule> {
 }
 
 // Generate recurring events based on RRULE
-fn generate_recurring_events(base_event: &CalendarEvent, rrule_str: &str) -> Vec<CalendarEvent> {
+fn generate_recurring_events(base_event: &CalendarEvent, rrule_str: &str, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     // Parse the RRULE
     let Some(rrule) = parse_rrule(rrule_str) else {
         // If RRULE parsing fails, return just the base event
@@ -217,10 +217,10 @@ fn generate_recurring_events(base_event: &CalendarEvent, rrule_str: &str) -> Vec
     
     // Generate events based on frequency
     match rrule.freq.as_str() {
-        "DAILY" => generate_daily_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes),
-        "WEEKLY" => generate_weekly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes),
-        "MONTHLY" => generate_monthly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes),
-        "YEARLY" => generate_yearly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes),
+        "DAILY" => generate_daily_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes, max_weeks_ahead),
+        "WEEKLY" => generate_weekly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes, max_weeks_ahead),
+        "MONTHLY" => generate_monthly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes, max_weeks_ahead),
+        "YEARLY" => generate_yearly_events(base_event, &rrule, base_year, base_month, base_day, duration_minutes, max_weeks_ahead),
         _ => {
             // Unknown frequency, return base event
             vec![base_event.clone()]
@@ -249,12 +249,12 @@ fn calculate_event_duration_minutes(start: &str, end: &str) -> i32 {
 }
 
 // Generate daily recurring events
-fn generate_daily_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32) -> Vec<CalendarEvent> {
+fn generate_daily_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     let mut events = vec![base_event.clone()]; // Include the original event
     
-    // Limit to 2 months (60 days) since calendar only shows 5 weeks ahead
-    let max_occurrences = rrule.count.unwrap_or(60); // Max 2 months of daily events
-    let max_date = get_max_generation_date();
+    // Limit based on max generation date - enough to cover larger max_weeks_ahead values
+    let max_occurrences = rrule.count.unwrap_or(200); // Max ~6 months of daily events
+    let max_date = get_max_generation_date(max_weeks_ahead);
     
     for i in 1..max_occurrences {
         let days_offset = i * rrule.interval;
@@ -286,17 +286,17 @@ fn generate_daily_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, bas
 }
 
 // Generate weekly recurring events
-fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32) -> Vec<CalendarEvent> {
+fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     let mut events = vec![base_event.clone()]; // Include the original event
     
-    web_sys::console::log_1(&format!("Generating weekly events for base date {}/{}/{}, BYDAY: {:?}", 
-        base_year, base_month, base_day, rrule.by_day).into());
+    // web_sys::console::log_1(&format!("Generating weekly events for base date {}/{}/{}, BYDAY: {:?}", 
+    //     base_year, base_month, base_day, rrule.by_day).into());
     
     // If BYDAY is specified, handle multiple days per week
     if !rrule.by_day.is_empty() {
         // Get the base event's day of week
         let base_weekday = get_weekday_from_date(base_year, base_month, base_day);
-        web_sys::console::log_1(&format!("Base event weekday: {} (date: {}/{}/{})", base_weekday, base_year, base_month, base_day).into());
+        // web_sys::console::log_1(&format!("Base event weekday: {} (date: {}/{}/{})", base_weekday, base_year, base_month, base_day).into());
         
         // For each BYDAY value, generate events
         for target_day in &rrule.by_day {
@@ -324,19 +324,19 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
                     7 - (base_weekday - target_weekday)
                 };
                 
-                web_sys::console::log_1(&format!("Days offset for {}: {}", target_day, days_offset).into());
+                // web_sys::console::log_1(&format!("Days offset for {}: {}", target_day, days_offset).into());
                 
                 if let Some((first_year, first_month, first_day)) = add_days_to_date(base_year, base_month, base_day, days_offset) {
-                    web_sys::console::log_1(&format!("First occurrence for {}: {}/{}/{}", target_day, first_year, first_month, first_day).into());
+                    // web_sys::console::log_1(&format!("First occurrence for {}: {}/{}/{}", target_day, first_year, first_month, first_day).into());
                     
                     if let Some(first_event) = create_recurring_event_instance(base_event, first_year, first_month, first_day, duration_minutes) {
-                        web_sys::console::log_1(&format!("Added {} first occurrence: {}/{}/{} ({})", target_day, first_year, first_month, first_day, first_event.start).into());
+                        // web_sys::console::log_1(&format!("Added {} first occurrence: {}/{}/{} ({})", target_day, first_year, first_month, first_day, first_event.start).into());
                         events.push(first_event);
                     }
                     
                     // Generate subsequent weekly occurrences for this day
-                    let max_occurrences = rrule.count.unwrap_or(12); // Don't divide by BYDAY length
-                    let max_date = get_max_generation_date();
+                    let max_occurrences = rrule.count.unwrap_or(30); // Support larger max_weeks_ahead values
+                    let max_date = get_max_generation_date(max_weeks_ahead);
                     
                     for i in 1..max_occurrences {
                         let weeks_offset = i * rrule.interval;
@@ -358,7 +358,7 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
                             }
                             
                             if let Some(new_event) = create_recurring_event_instance(base_event, new_year, new_month, new_day, duration_minutes) {
-                                web_sys::console::log_1(&format!("Added {} occurrence: {}/{}/{}", target_day, new_year, new_month, new_day).into());
+                                // web_sys::console::log_1(&format!("Added {} occurrence: {}/{}/{}", target_day, new_year, new_month, new_day).into());
                                 events.push(new_event);
                             }
                         }
@@ -366,8 +366,8 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
                 }
             } else {
                 // This is the base event's day, generate additional weekly occurrences
-                let max_occurrences = rrule.count.unwrap_or(12); // Don't divide by BYDAY length
-                let max_date = get_max_generation_date();
+                let max_occurrences = rrule.count.unwrap_or(30); // Support larger max_weeks_ahead values
+                let max_date = get_max_generation_date(max_weeks_ahead);
                 
                 for i in 1..max_occurrences {
                     let weeks_offset = i * rrule.interval;
@@ -389,7 +389,7 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
                         }
                         
                         if let Some(new_event) = create_recurring_event_instance(base_event, new_year, new_month, new_day, duration_minutes) {
-                            web_sys::console::log_1(&format!("Added {} base day occurrence: {}/{}/{}", target_day, new_year, new_month, new_day).into());
+                            // web_sys::console::log_1(&format!("Added {} base day occurrence: {}/{}/{}", target_day, new_year, new_month, new_day).into());
                             events.push(new_event);
                         }
                     }
@@ -398,8 +398,8 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
         }
     } else {
         // No BYDAY specified, generate simple weekly recurrence
-        let max_occurrences = rrule.count.unwrap_or(9); // Max 9 weekly events (2+ months)
-        let max_date = get_max_generation_date();
+        let max_occurrences = rrule.count.unwrap_or(30); // Support larger max_weeks_ahead values
+        let max_date = get_max_generation_date(max_weeks_ahead);
         
         for i in 1..max_occurrences {
             let weeks_offset = i * rrule.interval;
@@ -429,17 +429,17 @@ fn generate_weekly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, ba
         }
     }
     
-    web_sys::console::log_1(&format!("Generated {} total weekly events", events.len()).into());
+    // web_sys::console::log_1(&format!("Generated {} total weekly events", events.len()).into());
     events
 }
 
 // Generate monthly recurring events (simplified)
-fn generate_monthly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32) -> Vec<CalendarEvent> {
+fn generate_monthly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     let mut events = vec![base_event.clone()]; // Include the original event
     
-    // Limit to 3 monthly events (covers 2+ months) since calendar only shows 5 weeks ahead
-    let max_occurrences = rrule.count.unwrap_or(3); // Max 3 monthly events
-    let max_date = get_max_generation_date();
+    // Limit to cover larger max_weeks_ahead values
+    let max_occurrences = rrule.count.unwrap_or(8); // Max ~6 months of monthly events
+    let max_date = get_max_generation_date(max_weeks_ahead);
     
     for i in 1..max_occurrences {
         let months_offset = i * rrule.interval;
@@ -477,12 +477,12 @@ fn generate_monthly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, b
 }
 
 // Generate yearly recurring events
-fn generate_yearly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32) -> Vec<CalendarEvent> {
+fn generate_yearly_events(base_event: &CalendarEvent, rrule: &RecurrenceRule, base_year: i32, base_month: i32, base_day: i32, duration_minutes: i32, max_weeks_ahead: i32) -> Vec<CalendarEvent> {
     let mut events = vec![base_event.clone()]; // Include the original event
     
-    // Limit to 1 additional yearly event since calendar only shows 5 weeks ahead
-    let max_occurrences = rrule.count.unwrap_or(2); // Max 2 yearly events (current + next year)
-    let max_date = get_max_generation_date();
+    // Generate a few yearly events to support longer max_weeks_ahead values
+    let max_occurrences = rrule.count.unwrap_or(3); // Max 3 yearly events (current + next 2 years)
+    let max_date = get_max_generation_date(max_weeks_ahead);
     
     for i in 1..max_occurrences {
         let years_offset = i * rrule.interval;
@@ -608,24 +608,40 @@ fn create_recurring_event_instance(base_event: &CalendarEvent, year: i32, month:
     }
 }
 
-// Get maximum date for generating recurring events (2 months from now to match 5-week view limit)
-fn get_max_generation_date() -> String {
-    let js_code = r#"(() => {
+// Get maximum date for generating recurring events based on max_weeks_ahead
+fn get_max_generation_date(max_weeks_ahead: i32) -> String {
+    let js_code = format!(r#"(() => {{
         const now = new Date();
-        const maxDate = new Date(now.getFullYear(), now.getMonth() + 2, now.getDate());
+        const maxDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + ({} * 7));
         return maxDate.getFullYear().toString() + 
                (maxDate.getMonth() + 1).toString().padStart(2, '0') + 
                maxDate.getDate().toString().padStart(2, '0');
-    })()"#;
+    }})()"#, max_weeks_ahead);
     
-    if let Ok(result) = js_sys::eval(js_code) {
+    if let Ok(result) = js_sys::eval(&js_code) {
         if let Some(date_str) = result.as_string() {
             return date_str;
         }
     }
     
-    // Fallback: 2 months from August 2025
-    "20251006".to_string()
+    // Fallback: max_weeks_ahead weeks from current date
+    let fallback_days = max_weeks_ahead * 7;
+    let js_fallback = format!(r#"(() => {{
+        const now = new Date();
+        const fallbackDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + {});
+        return fallbackDate.getFullYear().toString() + 
+               (fallbackDate.getMonth() + 1).toString().padStart(2, '0') + 
+               fallbackDate.getDate().toString().padStart(2, '0');
+    }})()"#, fallback_days);
+    
+    if let Ok(result) = js_sys::eval(&js_fallback) {
+        if let Some(date_str) = result.as_string() {
+            return date_str;
+        }
+    }
+    
+    // Final fallback: static date
+    "20260206".to_string()
 }
 
 fn parse_ics_datetime_with_timezone(datetime_str: &str, target_timezone: &str) -> (String, i32, i32) {
@@ -828,6 +844,8 @@ fn get_timezone_display(timezone: &str) -> String {
 fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, current_week_offset: i32, start_hour: i32, end_hour: i32) -> Element {
     // Simple week generation - show days of the week with proper dates
     let week_days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    
+    // Pre-calculate all dates for the week to avoid repeated JavaScript calls
     let week_dates: Vec<String> = (0..7).map(|day_idx| {
         let target_date = get_date_for_day_with_timezone(day_idx, current_week_offset, &timezone);
         // Extract day from YYYYMMDD format
@@ -839,6 +857,16 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
             format!("8/{}", day_idx + 1)
         }
     }).collect();
+    
+    // Pre-calculate which days are in the past to avoid repeated JavaScript calls
+    let past_days: Vec<bool> = (0..7).map(|day_idx| {
+        is_in_past_with_timezone(day_idx, current_week_offset, &timezone)
+    }).collect();
+    
+    // Pre-calculate target dates for each day to avoid repeated JavaScript calls
+    let target_dates: Vec<String> = (0..7).map(|day_idx| {
+        get_date_for_day_with_timezone(day_idx, current_week_offset, &timezone)
+    }).collect();
 
     // Calculate total 5-minute slots
     let total_hours = end_hour - start_hour;
@@ -846,7 +874,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
 
     rsx! {
         div {
-            class: "border border-gray-300 rounded-lg overflow-hidden",
+            class: "border border-gray-300 rounded-lg overflow-hidden relative", // Add relative positioning for time labels
             
             // Calendar header with days (sticky)
             div {
@@ -864,7 +892,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                     for (i, day) in week_days.iter().enumerate() {
                         div {
                             class: format!("p-2 text-xs font-medium text-center border-r last:border-r-0 {}",
-                                if i >= 5 || is_in_past_with_timezone(i as i32, current_week_offset, &timezone) { 
+                                if i >= 5 || past_days[i] { 
                                     "bg-gray-50 text-gray-500" 
                                 } else { 
                                     "text-gray-700 bg-gray-100" 
@@ -884,7 +912,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
             
             // Calendar body - 5-minute resolution grid
             div {
-                class: "grid grid-cols-8 gap-0 pt-4 mb-4", // Add top padding and bottom margin
+                class: "grid grid-cols-8 gap-0 pt-4 mb-4 relative border-b-2 border-gray-600", // Add relative positioning and bottom border
                 
                 // Top horizontal line across all columns
                 for _col in 0..8 {
@@ -901,48 +929,30 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                         let is_hour_boundary = minute == 0;
                         
                         rsx! {
-                            // Time label column (only show on hour boundaries)
+                            // Empty time column (no text, just spacing)
                             div {
-                                class: format!("text-xs text-gray-600 bg-white flex items-center justify-center h-3 border-r {}",
+                                class: format!("h-1 border-r bg-white {}",
                                     if is_hour_boundary {
-                                        "border-t border-gray-600"
+                                        "border-t-2 border-gray-600"
                                     } else {
                                         ""
                                     }
                                 ),
-                                if is_hour_boundary {
-                                    span {
-                                        class: "text-xs text-gray-700 font-medium",
-                                        {
-                                            if hour <= 12 { 
-                                                if hour == 0 { 
-                                                    "12AM".to_string()
-                                                } else { 
-                                                    format!("{}AM", hour)
-                                                }
-                                            } else { 
-                                                format!("{}PM", hour - 12)
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            // Day columns
+                            }                            // Day columns
                             for day_idx in 0..7 {
                                 {
                                     let is_current_time = is_current_time_slot(day_idx, hour, minute, current_week_offset, &timezone);
                                     
                                     rsx! {
                                         div {
-                                            class: format!("h-3 border-r last:border-r-0 relative group {}",
+                                            class: format!("h-1 border-r relative group {}",
                                                 if is_hour_boundary {
-                                                    format!("border-t border-gray-600 {}", 
+                                                    format!("border-t-2 border-gray-600 {}", 
                                                         if is_current_time {
                                                             "bg-blue-300 hover:bg-blue-400 cursor-pointer"
-                                                        } else if is_time_slot_unavailable_with_timezone(&events, day_idx, hour, minute, current_week_offset, &timezone) {
+                                                        } else if is_time_slot_unavailable_optimized(&events, day_idx, hour, minute, &target_dates, &past_days) {
                                                             "bg-gray-300 hover:bg-gray-400 cursor-not-allowed"
-                                                        } else if is_time_slot_busy_with_timezone(&events, day_idx, hour, minute, current_week_offset, &timezone) {
+                                                        } else if is_time_slot_busy_optimized(&events, day_idx, hour, minute, &target_dates) {
                                                             "bg-gray-400 hover:bg-gray-500 cursor-not-allowed"
                                                         } else {
                                                             "bg-green-200 hover:bg-green-300 cursor-pointer"
@@ -951,9 +961,9 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                                                 } else {
                                                     if is_current_time {
                                                         "bg-blue-300 hover:bg-blue-400 cursor-pointer".to_string()
-                                                    } else if is_time_slot_unavailable_with_timezone(&events, day_idx, hour, minute, current_week_offset, &timezone) {
+                                                    } else if is_time_slot_unavailable_optimized(&events, day_idx, hour, minute, &target_dates, &past_days) {
                                                         "bg-gray-300 hover:bg-gray-400 cursor-not-allowed".to_string()
-                                                    } else if is_time_slot_busy_with_timezone(&events, day_idx, hour, minute, current_week_offset, &timezone) {
+                                                    } else if is_time_slot_busy_optimized(&events, day_idx, hour, minute, &target_dates) {
                                                         "bg-gray-400 hover:bg-gray-500 cursor-not-allowed".to_string()
                                                     } else {
                                                         "bg-green-200 hover:bg-green-300 cursor-pointer".to_string()
@@ -974,7 +984,7 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                                                 class: "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 whitespace-nowrap",
                                                 {
                                                     let day_name = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][day_idx as usize];
-                                                    let target_date = get_date_for_day_with_timezone(day_idx, current_week_offset, &timezone);
+                                                    let target_date = &target_dates[day_idx as usize];
                                                     let date_str = if target_date.len() >= 8 {
                                                         let month = &target_date[4..6];
                                                         let day = &target_date[6..8];
@@ -1006,23 +1016,33 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
                         }
                     }
                 }
+            }
+            
+            // Overlapping time labels layer
+            div {
+                class: "absolute left-0 top-[72px] pointer-events-none", // Position after header (header height ~72px)
                 
-                // Add final ending hour label (6:00 PM)
-                {
-                    rsx! {
-                        // Add final ending hour label (6:00 PM)
-                        div {
-                            class: "text-xs text-gray-600 bg-white flex items-center justify-center h-6 border-r border-t-2 border-gray-600",
-                            span {
-                                class: "text-xs text-gray-700 font-medium",
-                                "6PM"
-                            }
-                        }
+                // Time labels positioned over the grid
+                for hour in start_hour..end_hour {
+                    {
+                        let row_offset = (hour - start_hour) * 12; // 12 slots per hour
+                        let top_position = row_offset * 4; // 4px per cell (h-1)
                         
-                        // Empty day columns for ending hour line
-                        for _day_idx in 0..7 {
+                        rsx! {
                             div {
-                                class: "h-6 border-r last:border-r-0 border-t-2 border-gray-600",
+                                class: "absolute text-xs text-gray-700 font-medium flex items-start justify-center px-1",
+                                style: format!("top: {}px; width: auto; height: 24px; padding-top: 2px;", top_position),
+                                {
+                                    if hour <= 12 { 
+                                        if hour == 0 { 
+                                            "12AM".to_string()
+                                        } else {
+                                            format!("{}AM", hour)
+                                        }
+                                    } else { 
+                                        format!("{}PM", hour - 12)
+                                    }
+                                }
                             }
                         }
                     }
@@ -1050,9 +1070,8 @@ fn CalendarGrid(events: Vec<CalendarEvent>, weeks_ahead: i32, timezone: String, 
     }
 }
 
-fn is_time_slot_busy_with_timezone(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, week_offset: i32, timezone: &str) -> bool {
-    // Generate the target date for this day/week combination
-    let target_date = get_date_for_day_with_timezone(day_idx, week_offset, timezone);
+fn is_time_slot_busy_optimized(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, target_dates: &[String]) -> bool {
+    let target_date = &target_dates[day_idx as usize];
     
     // Convert the target time slot to minutes since midnight for easier comparison
     let target_start_minutes = hour * 60 + minute;
@@ -1060,7 +1079,7 @@ fn is_time_slot_busy_with_timezone(events: &[CalendarEvent], day_idx: i32, hour:
     
     // Check if any event overlaps with this 5-minute time slot
     for event in events {
-        if event.start_date == target_date {
+        if &event.start_date == target_date {
             let event_start_minutes = event.start_hour * 60 + event.start_minute;
             let event_end_minutes = event.end_hour * 60 + event.end_minute;
             
@@ -1074,28 +1093,20 @@ fn is_time_slot_busy_with_timezone(events: &[CalendarEvent], day_idx: i32, hour:
     false
 }
 
-fn is_time_slot_busy(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, week_offset: i32) -> bool {
-    // Generate the target date for this day/week combination
-    let target_date = get_date_for_day(day_idx, week_offset);
-    
-    // Convert the target time slot to minutes since midnight for easier comparison
-    let target_start_minutes = hour * 60 + minute;
-    let target_end_minutes = target_start_minutes + 5; // 5-minute slot
-    
-    // Check if any event overlaps with this 5-minute time slot
-    for event in events {
-        if event.start_date == target_date {
-            let event_start_minutes = event.start_hour * 60 + event.start_minute;
-            let event_end_minutes = event.end_hour * 60 + event.end_minute;
-            
-            // Check for overlap: event starts before slot ends AND event ends after slot starts
-            if event_start_minutes < target_end_minutes && event_end_minutes > target_start_minutes {
-                return true;
-            }
-        }
+// Optimized unavailable function using pre-calculated data
+fn is_time_slot_unavailable_optimized(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, target_dates: &[String], past_days: &[bool]) -> bool {
+    // Weekend check (5=Saturday, 6=Sunday)
+    if day_idx >= 5 {
+        return true;
     }
     
-    false
+    // Past date check using pre-calculated data
+    if past_days[day_idx as usize] {
+        return true;
+    }
+    
+    // Busy from calendar events using optimized function
+    is_time_slot_busy_optimized(events, day_idx, hour, minute, target_dates)
 }
 
 // Check if a time slot corresponds to the current time (timezone-aware)
@@ -1192,36 +1203,6 @@ fn is_current_time_slot(day_idx: i32, hour: i32, minute: i32, current_week_offse
     false
 }
 
-fn is_time_slot_unavailable_with_timezone(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, week_offset: i32, timezone: &str) -> bool {
-    // Weekend check (5=Saturday, 6=Sunday)
-    if day_idx >= 5 {
-        return true;
-    }
-    
-    // Past date check
-    if is_in_past_with_timezone(day_idx, week_offset, timezone) {
-        return true;
-    }
-    
-    // Busy from calendar events
-    is_time_slot_busy_with_timezone(events, day_idx, hour, minute, week_offset, timezone)
-}
-
-fn is_time_slot_unavailable(events: &[CalendarEvent], day_idx: i32, hour: i32, minute: i32, week_offset: i32) -> bool {
-    // Weekend check (5=Saturday, 6=Sunday)
-    if day_idx >= 5 {
-        return true;
-    }
-    
-    // Past date check
-    if is_in_past(day_idx, week_offset) {
-        return true;
-    }
-    
-    // Busy from calendar events
-    is_time_slot_busy(events, day_idx, hour, minute, week_offset)
-}
-
 fn is_in_past_with_timezone(day_idx: i32, week_offset: i32, timezone: &str) -> bool {
     // Get today's date in the specified timezone
     let js_code = format!(
@@ -1263,22 +1244,6 @@ fn is_in_past_with_timezone(day_idx: i32, week_offset: i32, timezone: &str) -> b
     
     // Get the target date (also timezone-aware)
     let target_date_str = get_date_for_day_with_timezone(day_idx, week_offset, timezone);
-    
-    // Compare dates as strings (YYYYMMDD format allows string comparison)
-    target_date_str < today_str
-}
-
-fn is_in_past(day_idx: i32, week_offset: i32) -> bool {
-    // Get today's date (timezone-aware - uses browser's local timezone)
-    let today = js_sys::Date::new_0();
-    let today_str = format!("{:04}{:02}{:02}", 
-        today.get_full_year() as i32,
-        (today.get_month() as i32) + 1,
-        today.get_date() as i32
-    );
-    
-    // Get the target date (also timezone-aware)
-    let target_date_str = get_date_for_day(day_idx, week_offset);
     
     // Compare dates as strings (YYYYMMDD format allows string comparison)
     target_date_str < today_str
@@ -1379,6 +1344,7 @@ pub fn Cal() -> Element {
     
     // Configuration variables
     let use_timezone_dropdown = false; // Set to true to show timezone dropdown, false to show browser timezone as text
+    let max_weeks_ahead = 30; // Maximum weeks user can navigate ahead (0 = current week only, 5 = up to 5 weeks ahead)
     let weeks_ahead = 4;
     let start_hour = 8;  // 8 AM
     let end_hour = 18;   // 6 PM
@@ -1411,42 +1377,48 @@ pub fn Cal() -> Element {
     ];
 
     // Fetch calendar data on component mount and when timezone changes
-    use_effect(move || {
-        let urls = calendar_urls.clone();
-        let current_timezone = selected_timezone();
-        spawn_local(async move {
-            let url_refs: Vec<&str> = urls.iter().map(|s| &**s).collect();
-            match fetch_calendar_data(url_refs).await {
-                Ok(mut events) => {
-                    // Re-parse events with the selected timezone
-                    for event in &mut events {
-                        let (start_date, start_hour, start_minute) = parse_ics_datetime_with_timezone(&event.start, &current_timezone);
-                        let (_, end_hour, end_minute) = parse_ics_datetime_with_timezone(&event.end, &current_timezone);
+    use_effect({
+        let selected_timezone = selected_timezone.clone();
+        move || {
+            let urls = calendar_urls.clone();
+            let current_timezone = selected_timezone();
+            spawn_local(async move {
+                let url_refs: Vec<&str> = urls.iter().map(|s| &**s).collect();
+                match fetch_calendar_data(url_refs, max_weeks_ahead).await {
+                    Ok(mut events) => {
+                        // Re-parse events with the selected timezone
+                        for event in &mut events {
+                            let (start_date, start_hour, start_minute) = parse_ics_datetime_with_timezone(&event.start, &current_timezone);
+                            let (_, end_hour, end_minute) = parse_ics_datetime_with_timezone(&event.end, &current_timezone);
+                            
+                            event.start_date = start_date;
+                            event.start_hour = start_hour;
+                            event.start_minute = start_minute;
+                            event.end_hour = end_hour;
+                            event.end_minute = end_minute;
+                        }
                         
-                        event.start_date = start_date;
-                        event.start_hour = start_hour;
-                        event.start_minute = start_minute;
-                        event.end_hour = end_hour;
-                        event.end_minute = end_minute;
+                        // Debug: log all final events (only in debug mode)
+                        #[cfg(debug_assertions)]
+                        {
+                            // web_sys::console::log_1(&format!("=== FINAL EVENTS ({}) ===", events.len()).into());
+                            // for (i, event) in events.iter().enumerate() {
+                            //     web_sys::console::log_1(&format!("Event {}: {} ({}:{:02}-{}:{:02}) on {}", 
+                            //         i, event.start, event.start_hour, event.start_minute, event.end_hour, event.end_minute, event.start_date).into());
+                            // }
+                            // web_sys::console::log_1(&"=== END EVENTS ===".into());
+                        }
+                        
+                        availability_data.set(events);
+                        loading.set(false);
                     }
-                    
-                    // Debug: log all final events
-                    web_sys::console::log_1(&format!("=== FINAL EVENTS ({}) ===", events.len()).into());
-                    for (i, event) in events.iter().enumerate() {
-                        web_sys::console::log_1(&format!("Event {}: {} ({}:{:02}-{}:{:02}) on {}", 
-                            i, event.start, event.start_hour, event.start_minute, event.end_hour, event.end_minute, event.start_date).into());
+                    Err(e) => {
+                        error_msg.set(Some(format!("Failed to load calendar: {}", e)));
+                        loading.set(false);
                     }
-                    web_sys::console::log_1(&"=== END EVENTS ===".into());
-                    
-                    availability_data.set(events);
-                    loading.set(false);
                 }
-                Err(e) => {
-                    error_msg.set(Some(format!("Failed to load calendar: {}", e)));
-                    loading.set(false);
-                }
-            }
-        });
+            });
+        }
     });
 
     rsx! {
@@ -1519,7 +1491,7 @@ pub fn Cal() -> Element {
                                 if current_week_offset() <= 0 {
                                     "bg-gray-300 text-gray-500 cursor-not-allowed"
                                 } else {
-                                    "bg-red-600 text-white hover:bg-red-700"
+                                    "bg-red-600 text-white hover:bg-red-700 cursor-pointer"
                                 }
                             ),
                             disabled: current_week_offset() <= 0,
@@ -1546,15 +1518,15 @@ pub fn Cal() -> Element {
                         
                         button {
                             class: format!("flex items-center gap-2 px-3 py-2 rounded transition-colors {}",
-                                if current_week_offset() >= 5 {
+                                if current_week_offset() >= max_weeks_ahead {
                                     "bg-gray-300 text-gray-500 cursor-not-allowed"
                                 } else {
-                                    "bg-red-600 text-white hover:bg-red-700"
+                                    "bg-red-600 text-white hover:bg-red-700 cursor-pointer"
                                 }
                             ),
-                            disabled: current_week_offset() >= 5,
+                            disabled: current_week_offset() >= max_weeks_ahead,
                             onclick: move |_| {
-                                if current_week_offset() < 5 {
+                                if current_week_offset() < max_weeks_ahead {
                                     current_week_offset.set(current_week_offset() + 1);
                                 }
                             },
