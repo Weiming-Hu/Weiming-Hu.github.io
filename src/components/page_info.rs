@@ -10,7 +10,6 @@ pub fn Info() -> Element {
             div {
                 class: CSS_CONTENT_CARD,
                 
-                // Header
                 div {
                     class: "mb-8",
                     h1 {

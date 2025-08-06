@@ -4,6 +4,7 @@ use super::css_preset::*;
 const CSS_HLINE: &str = "border-b border-gray-200 pb-6";
 const CSS_SECTION: &str = "text-2xl font-bold text-red-900 mb-4";
 const GITHUB_STAT_URL: &str = "https://github-readme-stats.vercel.app/api?username=Weiming-Hu&theme=default&show_icons=true&hide_rank=true";
+const CSS_LANGUAGE_TAG: &str = "inline-flex items-center px-2 py-1 text-xs font-medium bg-red-100 text-gray-500 rounded-full";
 
 #[component]
 pub fn Code() -> Element {
@@ -45,23 +46,19 @@ pub fn Code() -> Element {
                             div {
                                 class: "flex flex-wrap gap-2",
                                 span {
-                                    class: "inline-flex items-center px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full",
-                                    span { class: "w-2 h-2 rounded-full bg-blue-600 mr-1" }
+                                    class: CSS_LANGUAGE_TAG,
                                     "Python"
                                 }
                                 span {
-                                    class: "inline-flex items-center px-2 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full",
-                                    span { class: "w-2 h-2 rounded-full bg-purple-600 mr-1" }
+                                    class: CSS_LANGUAGE_TAG,
                                     "R"
                                 }
                                 span {
-                                    class: "inline-flex items-center px-2 py-1 text-xs font-medium bg-pink-100 text-pink-700 rounded-full",
-                                    span { class: "w-2 h-2 rounded-full bg-pink-600 mr-1" }
+                                    class: CSS_LANGUAGE_TAG,
                                     "C/C++"
                                 }
                                 span {
-                                    class: "inline-flex items-center px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full",
-                                    span { class: "w-2 h-2 rounded-full bg-orange-600 mr-1" }
+                                    class: CSS_LANGUAGE_TAG,
                                     "Rust"
                                 }
                             }
@@ -170,7 +167,7 @@ fn RepositoryCard(
                     class: "flex flex-wrap gap-1",
                     for topic in topics.iter().take(3) {
                         span {
-                            class: "px-2 py-1 text-xs bg-red-100 text-red-700 rounded-full",
+                            class: CSS_LANGUAGE_TAG,
                             "{topic}"
                         }
                     }

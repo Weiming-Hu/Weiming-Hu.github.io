@@ -61,6 +61,21 @@ pub fn Header() -> Element {
                         },
                         "Code"
                     }
+                    // Link {
+                    //     to: Route::Director { pagename: "cal".to_string() },
+                    //     class: {
+                    //         let is_active = match &current_route {
+                    //             Route::Director { pagename } if pagename == "cal" => true,
+                    //             _ => false,
+                    //         };
+                    //         if is_active {
+                    //             "text-red-700 hover:text-red-900 font-extrabold"
+                    //         } else {
+                    //             "text-red-700 hover:text-red-900 font-normal"
+                    //         }
+                    //     },
+                    //     "Calendar"
+                    // }
                     // a { 
                     //     href: "#", 
                     //     class: "text-gray-700 hover:text-gray-900",
