@@ -20,5 +20,4 @@ git push
 git checkout master
 [ -d wasm ] && rm -rf wasm
 
-git pull
 echo gh-pages have been updated to $VERSION!
