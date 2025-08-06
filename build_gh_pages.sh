@@ -4,11 +4,7 @@ set -e
 VERSION=$(grep '^version' Cargo.toml | cut -d '"' -f2)
 
 dx clean
-
-# mv Dioxus.toml Dioxus.toml.bak
-# cp Dioxus.ghpages.toml Dioxus.toml
 dx bundle --platform web
-# mv Dioxus.toml.bak Dioxus.toml
 
 git checkout gh-pages
 git pull
