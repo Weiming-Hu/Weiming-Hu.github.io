@@ -823,12 +823,6 @@ fn parse_ics_datetime_with_timezone(datetime_str: &str, target_timezone: &str) -
     ("".to_string(), 0, 0)
 }
 
-fn parse_ics_datetime(datetime_str: &str) -> (String, i32, i32) {
-    // Use browser timezone as default
-    let browser_tz = get_browser_timezone();
-    parse_ics_datetime_with_timezone(datetime_str, &browser_tz)
-}
-
 // Get the user's browser timezone
 fn get_browser_timezone() -> String {
     // Use JavaScript Intl API to get timezone
