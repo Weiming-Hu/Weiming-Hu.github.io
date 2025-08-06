@@ -1,8 +1,9 @@
 use dioxus::prelude::*;
 use super::header::Header;
 use super::page_main::Home;
-use super::page_pubs::Pubs;
+use super::page_pub::Pub;
 use super::page_code::Code;
+use super::page_info::Info;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -12,9 +13,17 @@ pub enum Route {
     #[route("/")]
     Home {},
 
-    #[route("/pubs")]
-    Pubs {},
+    #[route("/:pagename")]
+    Director { pagename: String },
+}
 
-    #[route("/code")]
-    Code {},
+#[component]
+pub fn Director(pagename: String) -> Element {
+    match pagename.as_str() {
+        "home" => rsx!(Home {}),
+        "pub" => rsx!(Pub {}),
+        "code" => rsx!(Code {}),
+        "info" => rsx!(Info {}),
+        _ => rsx!(Home {}),
+    }
 }

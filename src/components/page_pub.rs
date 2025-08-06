@@ -5,7 +5,7 @@ const CSS_HLINE: &str = "border-b border-gray-200 pb-6";
 const CSS_YEAR: &str = "text-2xl font-bold text-red-900 mb-4";
 
 #[component]
-pub fn Pubs() -> Element {
+pub fn Pub() -> Element {
     rsx! {
         div {
             class: CSS_CONTENT_CONTAINER,
