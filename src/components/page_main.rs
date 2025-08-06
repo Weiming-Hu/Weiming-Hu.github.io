@@ -7,15 +7,12 @@ const SELFIE_IMG: Asset = asset!("/assets/imgs/selfie.jpg");
 pub fn Home() -> Element {
 
     rsx! {
-        // Main Content Container
         div {
             class: CSS_CONTENT_CONTAINER,
                 
-                // Content Card
                 div {
                     class: CSS_CONTENT_CARD,
 
-                    // Header Section
                     div {
                         class: "mb-8",
                         h1 {
@@ -28,11 +25,9 @@ pub fn Home() -> Element {
                         }
                     }
 
-                    // Main Content Area
                     div {
                         class: "flex flex-col lg:flex-row gap-8",
                         
-                        // Left Column: Profile Image and Address
                         div {
                             class: "lg:w-1/3 flex flex-col items-center space-y-6",
                             img {
@@ -40,7 +35,7 @@ pub fn Home() -> Element {
                                 alt: "Weiming Hu",
                                 class: "w-full h-auto rounded-lg shadow-md"
                             }
-                            // Contact Information
+
                             div {
                                 class: "mt-1 pt-4 border-t border-gray-200 w-full",
                                 div {
@@ -51,7 +46,6 @@ pub fn Home() -> Element {
                             }
                         }
 
-                        // Right Column: Text Content
                         div {
                             class: "lg:w-2/3 space-y-4",
                             
@@ -104,21 +98,6 @@ pub fn Home() -> Element {
                         }
                     }
 
-                    // Blog Link and Closing
-                    // div {
-                    //     class: "mt-6 pt-4 border-t border-gray-200",
-                    //     p {
-                    //         class: "text-gray-700 mb-4",
-                    //         "Have a look around. Checkout out my blog, "
-                    //         a {
-                    //             href: "#",
-                    //             class: "text-red-600 hover:text-red-800 underline",
-                    //             "the Wanderer's Retreat"
-                    //         }
-                    //         " and leave a comment."
-                    //     }
-                    // }
-
                     // Social Media Icons
                     div {
                         class: "flex justify-center space-x-6 mt-8 pt-6 border-t border-gray-200",
@@ -144,12 +123,6 @@ pub fn Home() -> Element {
                             i { class: "fa-solid fa-graduation-cap" }
                         }
                     }
-
-                    // Mastodon Footer
-                    // div {
-                    //     class: "text-center mt-4 text-xs text-gray-500",
-                    //     "Mastodon is awesome. See you over there."
-                    // }
                 }
             }
     }
