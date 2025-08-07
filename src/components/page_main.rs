@@ -30,7 +30,7 @@ pub fn Home() -> Element {
                         class: "flex flex-col lg:flex-row gap-8",
                         
                         div {
-                            class: "lg:w-1/3 flex flex-col items-center space-y-6 max-w-[17rem]",
+                            class: "lg:w-1/3 flex flex-col items-center space-y-6 max-w-[25rem]",
                             img {
                                 src: SELFIE_IMG,
                                 alt: "Weiming Hu",
