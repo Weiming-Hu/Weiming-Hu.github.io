@@ -25,7 +25,7 @@ pub fn Director(pagename: String) -> Element {
         "pub" => rsx!(Pub {}),
         "code" => rsx!(Code {}),
         "info" => rsx!(Info {}),
-        "cal" => rsx!(Cal {}),
+        // "cal" => rsx!(Cal {}),
         _ => rsx!(Home {}),
     }
 }
