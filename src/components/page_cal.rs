@@ -1483,12 +1483,11 @@ pub fn Cal() -> Element {
 
                     p {
                         class: "text-gray-600 text-lg mb-6",
-                        "This calendar is designed to simplify scheduling meetings with my collaborators and students. 
-                        The calendar now supports recurring events (daily, weekly, monthly, yearly) and automatically 
-                        generates all instances based on recurrence rules. Please note that this represents only a partial 
-                        view of my calendar and may not be 100% accurate. However, I hope this visualization will help you 
-                        identify potential meeting times and streamline our scheduling process. Please reach out to me 
-                        directly to confirm and finalize any meeting arrangements."
+                        "Please note that this only displays a portion of my calendar and may not be 100% accurate.
+                        However, I hope this visualization can help you identify potential times and streamline
+                        the scheduling process. Please reach out to me to confirm the details and send the invite to "
+                        em { "weiming@uga.edu" }
+                        "."
                     }
 
                     // Week navigation
