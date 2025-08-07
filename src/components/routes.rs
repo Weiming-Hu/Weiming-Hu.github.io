@@ -4,6 +4,7 @@ use super::page_main::Home;
 use super::page_pub::Pub;
 use super::page_code::Code;
 use super::page_info::Info;
+use super::page_gaim::Lab;
 use super::page_cal::Cal;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
@@ -25,6 +26,7 @@ pub fn Director(pagename: String) -> Element {
         "pub" => rsx!(Pub {}),
         "code" => rsx!(Code {}),
         "info" => rsx!(Info {}),
+        "gaim" => rsx!(Lab {}),
         // "cal" => rsx!(Cal {}),
         _ => rsx!(Home {}),
     }

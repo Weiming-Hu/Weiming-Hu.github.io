@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
 use super::css_preset::*;
+use super::routes::Route;
 
 const SELFIE_IMG: Asset = asset!("/assets/imgs/selfie.jpg");
 
@@ -113,7 +114,13 @@ pub fn Home() -> Element {
                                 span { class: "font-bold text-red-700", "weather" }
                                 ", or "
                                 span { class: "font-bold text-red-700", "climate science" }
-                                ". Please contact me if you are interested in joining my research group."
+                                ". Please contact me if you are interested in joining the " 
+                                Link { 
+                                    to: Route::Director { pagename: "gaim".to_string() },
+                                    class: "text-red-700 hover:text-red-900 font-normal",
+                                    "Lab for GAIM" 
+                                }
+                                "."
                             }
                         }
                     }

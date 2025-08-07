@@ -32,6 +32,21 @@ pub fn Header() -> Element {
                         "Main" 
                     }
                     Link { 
+                        to: Route::Director { pagename: "gaim".to_string() },
+                        class: {
+                            let is_active = match &current_route {
+                                Route::Director { pagename } if pagename == "gaim" => true,
+                                _ => false,
+                            };
+                            if is_active {
+                                "text-red-700 hover:text-red-900 font-extrabold"
+                            } else {
+                                "text-red-700 hover:text-red-900 font-normal"
+                            }
+                        },
+                        "Lab for GAIM" 
+                    }
+                    Link { 
                         to: Route::Director { pagename: "pub".to_string() },
                         class: {
                             let is_active = match &current_route {
