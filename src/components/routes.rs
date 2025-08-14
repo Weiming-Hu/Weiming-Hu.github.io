@@ -5,7 +5,7 @@ use super::page_pub::Pub;
 use super::page_code::Code;
 use super::page_info::Info;
 use super::page_gaim::Lab;
-use super::page_cal::Cal;
+use super::page_res::Resources;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -27,7 +27,7 @@ pub fn Director(pagename: String) -> Element {
         "code" => rsx!(Code {}),
         "info" => rsx!(Info {}),
         "gaim" => rsx!(Lab {}),
-        // "cal" => rsx!(Cal {}),
+        "res" => rsx!(Resources {}),
         _ => rsx!(Home {}),
     }
 }

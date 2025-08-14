@@ -3,7 +3,7 @@ mod components;
 use dioxus::prelude::*;
 use components::Route;
 
-const FAVICON: Asset = asset!("/assets/icons/favicon.svg");
+const FAVICON: Asset = asset!("/assets/icons/favicon_uga.ico");
 const TAILWIND_CSS: Asset = asset!("/assets/css/tailwind_output.css");
 const FA_CSS: &str = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
 

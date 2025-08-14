@@ -2,6 +2,8 @@ use dioxus::prelude::*;
 use super::routes::Route;
 
 const BG_IMG_LIGHT: Asset = asset!("/assets/imgs/bg_light.jpg");
+const CSS_PAGE_SELECTED: &str = "text-white hover:text-gray-200 font-extrabold";
+const CSS_PAGE_NORMAL: &str = "text-white hover:text-gray-200 font-normal";
 
 #[component]
 pub fn Header() -> Element {
@@ -19,17 +21,17 @@ pub fn Header() -> Element {
             }
 
             header {
-                class: "w-full p-2 flex justify-center fixed top-0 left-0 z-50 bg-white bg-opacity-90 shadow",
+                class: "w-full p-2 flex justify-center fixed top-0 left-0 z-50 bg-gray-600/95",
                 nav {
                     class: "flex space-x-6 text-lg",
                     Link { 
                         to: Route::Home {}, 
                         class: if matches!(current_route, Route::Home {}) {
-                            "text-red-700 hover:text-red-900 font-extrabold"
+                            CSS_PAGE_SELECTED
                         } else {
-                            "text-red-700 hover:text-red-900 font-normal"
+                            CSS_PAGE_NORMAL
                         },
-                        "Main" 
+                        "Home" 
                     }
                     Link { 
                         to: Route::Director { pagename: "gaim".to_string() },
@@ -39,9 +41,9 @@ pub fn Header() -> Element {
                                 _ => false,
                             };
                             if is_active {
-                                "text-red-700 hover:text-red-900 font-extrabold"
+                                CSS_PAGE_SELECTED
                             } else {
-                                "text-red-700 hover:text-red-900 font-normal"
+                                CSS_PAGE_NORMAL
                             }
                         },
                         "Lab for GAIM" 
@@ -54,9 +56,9 @@ pub fn Header() -> Element {
                                 _ => false,
                             };
                             if is_active {
-                                "text-red-700 hover:text-red-900 font-extrabold"
+                                CSS_PAGE_SELECTED
                             } else {
-                                "text-red-700 hover:text-red-900 font-normal"
+                                CSS_PAGE_NORMAL
                             }
                         },
                         "Pubs" 
@@ -69,12 +71,27 @@ pub fn Header() -> Element {
                                 _ => false,
                             };
                             if is_active {
-                                "text-red-700 hover:text-red-900 font-extrabold"
+                                CSS_PAGE_SELECTED
                             } else {
-                                "text-red-700 hover:text-red-900 font-normal"
+                                CSS_PAGE_NORMAL
                             }
                         },
                         "Code"
+                    }
+                    Link {
+                        to: Route::Director { pagename: "res".to_string() },
+                        class: {
+                            let is_active = match &current_route {
+                                Route::Director { pagename } if pagename == "res" => true,
+                                _ => false,
+                            };
+                            if is_active {
+                                CSS_PAGE_SELECTED
+                            } else {
+                                CSS_PAGE_NORMAL
+                            }
+                        },
+                        "Resources"
                     }
                     // Link {
                     //     to: Route::Director { pagename: "cal".to_string() },

@@ -3,7 +3,7 @@
 [web.app]
 
 # HTML title tag content
-title = "Weiming Hu @ UGA"
+title = "GAIM @ UGA"
 
 # include `assets` in web platform
 [web.resource]
