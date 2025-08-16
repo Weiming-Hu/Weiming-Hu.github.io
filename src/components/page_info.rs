@@ -26,6 +26,17 @@ pub fn Info() -> Element {
                         }
                     }
 
+                    p {
+                        class: "text-gray-600 text-lg leading-relaxed",
+                        "Oops ... You found a hidden page that I use to make"
+                        " sure my website is up to date! Since you are already here, check out the "
+                        a {
+                            href: "/res",
+                            class: CSS_LINK_TEXT,
+                            "resource page"
+                        }
+                        "!"
+                    }
                 }
             }
         }
