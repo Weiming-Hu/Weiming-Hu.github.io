@@ -131,21 +131,21 @@ pub fn Home() -> Element {
                         a {
                             href: "https://geography.uga.edu/directory/people/weiming-hu",
                             target: "_blank",
-                            class: "text-gray-600 hover:text-red-600 transition-colors text-5xl",
+                            class: "text-gray-600 hover:text-red-600 transition-colors text-3xl",
                             title: "University Profile",
                             i { class: "fa-solid fa-address-card" }
                         }
                         a {
                             href: "https://github.com/Weiming-Hu",
                             target: "_blank",
-                            class: "text-gray-600 hover:text-red-600 transition-colors text-5xl",
+                            class: "text-gray-600 hover:text-red-600 transition-colors text-3xl",
                             title: "GitHub",
                             i { class: "fa-brands fa-github" }
                         }
                         a {
                             href: "https://scholar.google.com/citations?user=2xypOLMAAAAJ&hl",
                             target: "_blank",
-                            class: "text-gray-600 hover:text-red-600 transition-colors text-5xl",
+                            class: "text-gray-600 hover:text-red-600 transition-colors text-3xl",
                             title: "Google Scholar",
                             i { class: "fa-solid fa-graduation-cap" }
                         }

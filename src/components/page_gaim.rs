@@ -1,10 +1,9 @@
-use dioxus::prelude::*;
+use dioxus::{html::li, prelude::*};
 use super::css_preset::*;
 
 const UGA_LOGO: Asset = asset!("/assets/imgs/uga_logo.png");
 const PPL_IMAGE_HU: Asset = asset!("/assets/ppl/hu.png");
 const CSS_MEMBER_TEXT: &str = "text-gray-700 leading-relaxed";
-const CSS_LINK_TEXT: &str = "underline hover:text-red-700 transition-colors";
 
 #[component]
 fn TeamMember(
@@ -95,8 +94,8 @@ pub fn Lab() -> Element {
 
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "We develop scalable, uncertainty-aware methods to understand and forecast phenomena such as
-                        extreme environmental events and renewable energy (wind and solar photovoltaic) dynamics. "
+                        "We develop scalable, uncertainty-aware methods to study and forecast phenomena such as
+                        extreme events and renewable energy (wind and solar photovoltaic) production. "
                         i {
                             class: "hover:text-red-700 transition-colors",
                             "To integrate Geoinformatics and AI is not just to interpret the Earth as it is,
@@ -121,7 +120,36 @@ pub fn Lab() -> Element {
                         }
                         span {
                             class: "text-yellow-900 font-medium text-lg",
-                            "Students and early-career scholars: check out our resources!"
+                            "Students and early-career scholars: check out "
+                            a {
+                                href: "/res",
+                                class: CSS_LINK_TEXT,
+                                "our resource page"
+                            }
+                            "!"
+                        }
+                    }
+                }
+
+                // Highlight Section
+                div {
+                    class: "mb-12 space-y-6",
+                    h2 {
+                        class: "text-3xl font-bold text-gray-800 mb-6 pb-2",
+                        "Research Themes"
+                    }
+
+                    ul { 
+                        class: "text-gray-600 text-lg leading-relaxed",
+
+                        li { 
+                            "Resilience against extreme event with better forecasts: heatwaves / precipitation" 
+                        }
+                        li { 
+                            "Future solutions for harvesting renewable energy (solar and wind)"
+                        }
+                        li { 
+                            "Sustainable accessibility in the Arctic"
                         }
                     }
                 }
@@ -145,10 +173,10 @@ pub fn Lab() -> Element {
                             description: rsx!{ 
                                 p {  
                                     class: CSS_MEMBER_TEXT,
-                                    "Weiming Hu’s research spans Geographic Information Science, Machine Learning, and environmental forecasting, "
+                                    "My research spans Geographic Information Science, Machine Learning, and environmental forecasting, "
                                     "with expertise in extreme and rare event prediction (heatwaves, precipitation, flooding), renewable energy "
                                     "forecasting (solar and wind), and uncertainty quantification in spatio-temporal big data. "
-                                    "He has developed "
+                                    "I have developed "
                                     a {
                                         href: "https://cw3e.ucsd.edu/ml_forecasts/",
                                         class: CSS_LINK_TEXT,
@@ -165,7 +193,7 @@ pub fn Lab() -> Element {
 
                                 p { 
                                     class: CSS_MEMBER_TEXT,
-                                    "Prior to joining UGA, he conducted research at the "
+                                    "Prior to joining UGA, I conducted research at the "
                                     a {
                                         href: "https://cw3e.ucsd.edu/",
                                         class: CSS_LINK_TEXT,
@@ -178,7 +206,7 @@ pub fn Lab() -> Element {
                                         "James Madison University"
                                     }
                                     ". "
-                                    "His work bridges computational problem-solving with environmental applications, "
+                                    "My work bridges computational problem-solving with environmental applications, "
                                     "often in collaboration with interdisciplinary teams and operational forecasting agencies."
                                  }
                             }

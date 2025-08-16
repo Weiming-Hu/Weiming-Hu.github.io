@@ -46,7 +46,7 @@ pub fn Header() -> Element {
                                 CSS_PAGE_NORMAL
                             }
                         },
-                        "Lab for GAIM" 
+                        "Lab" 
                     }
                     Link { 
                         to: Route::Director { pagename: "pub".to_string() },
