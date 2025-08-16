@@ -148,6 +148,7 @@ pub fn Resources() -> Element {
                         "The full list is public on "
                         a {
                             href: "https://docs.google.com/spreadsheets/d/1y-_hrRYhylnryjiOS1f4SNu_NnMP5j6231Qb8qG-0Zk/edit?usp=sharing",
+                            target: "_blank",
                             class: CSS_LINK_TEXT,
                             "Google drive"
                         }

@@ -123,6 +123,7 @@ pub fn Lab() -> Element {
                             "Students and early-career scholars: check out "
                             a {
                                 href: "/res",
+                                target: "_blank",
                                 class: CSS_LINK_TEXT,
                                 "our resource page"
                             }
@@ -179,12 +180,14 @@ pub fn Lab() -> Element {
                                     "I have developed "
                                     a {
                                         href: "https://cw3e.ucsd.edu/ml_forecasts/",
+                                        target: "_blank",
                                         class: CSS_LINK_TEXT,
                                         "Deep Learning"
                                     }
                                     " and "
                                     a {
                                         href: "http://weiming.uga.edu/AnalogsEnsemble/2018/12/14/AnEn-explained.html",
+                                        target: "_blank",
                                         class: CSS_LINK_TEXT,
                                         "Analog Ensemble"
                                     }
@@ -196,12 +199,14 @@ pub fn Lab() -> Element {
                                     "Prior to joining UGA, I conducted research at the "
                                     a {
                                         href: "https://cw3e.ucsd.edu/",
+                                        target: "_blank",
                                         class: CSS_LINK_TEXT,
                                         "Center of Western Water and Weather Extremes"
                                     }
                                     " at Scripps, UC San Diego, and then held a faculty position at "
                                     a {
                                         href: "https://www.jmu.edu/cise/index.shtml",
+                                        target: "_blank",
                                         class: CSS_LINK_TEXT,
                                         "James Madison University"
                                     }

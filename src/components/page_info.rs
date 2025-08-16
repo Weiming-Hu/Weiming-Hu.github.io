@@ -32,6 +32,7 @@ pub fn Info() -> Element {
                         " sure my website is up to date! Since you are already here, check out the "
                         a {
                             href: "/res",
+                            target: "_blank",
                             class: CSS_LINK_TEXT,
                             "resource page"
                         }

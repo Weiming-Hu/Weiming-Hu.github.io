@@ -62,12 +62,14 @@ pub fn Home() -> Element {
                                 " in the "
                                 a { 
                                     href: "https://geography.uga.edu/directory/people/weiming-hu", 
+                                    target: "_blank",
                                     class: "text-red-600 hover:text-red-800 underline",
                                     "Dept. of Geography, Univ. of Georgia"
                                 }
                                 " and a core faculty member of the "
                                 a { 
                                     href: "https://cgr.uga.edu/bio-weiminghu.html", 
+                                    target: "_blank",
                                     class: "text-red-600 hover:text-red-800 underline",
                                     "Center for Geospatial Research"
                                 }

@@ -21,6 +21,15 @@ fn App() -> Element {
         );
     });
 
+    use_effect(|| {
+        let document = web_sys::window().unwrap().document().unwrap();
+        let script = document.create_element("script").unwrap();
+        script.set_attribute("data-collect-dnt", "true").unwrap();
+        script.set_attribute("async", "").unwrap();
+        script.set_attribute("src", "https://scripts.simpleanalyticscdn.com/latest.js").unwrap();
+        document.body().unwrap().append_child(&script).unwrap();
+    });
+
     rsx! {
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
         document::Link { rel: "stylesheet", href: FA_CSS }
