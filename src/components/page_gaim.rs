@@ -1,4 +1,4 @@
-use dioxus::{html::li, prelude::*};
+use dioxus::prelude::*;
 use super::css_preset::*;
 
 const UGA_LOGO: Asset = asset!("/assets/imgs/uga_logo.png");
