@@ -48,36 +48,36 @@ pub fn Header() -> Element {
                         },
                         "Lab" 
                     }
-                    Link { 
-                        to: Route::Director { pagename: "pub".to_string() },
-                        class: {
-                            let is_active = match &current_route {
-                                Route::Director { pagename } if pagename == "pub" => true,
-                                _ => false,
-                            };
-                            if is_active {
-                                CSS_PAGE_SELECTED
-                            } else {
-                                CSS_PAGE_NORMAL
-                            }
-                        },
-                        "Pubs" 
-                    }
-                    Link {
-                        to: Route::Director { pagename: "code".to_string() },
-                        class: {
-                            let is_active = match &current_route {
-                                Route::Director { pagename } if pagename == "code" => true,
-                                _ => false,
-                            };
-                            if is_active {
-                                CSS_PAGE_SELECTED
-                            } else {
-                                CSS_PAGE_NORMAL
-                            }
-                        },
-                        "Code"
-                    }
+                    // Link { 
+                    //     to: Route::Director { pagename: "pub".to_string() },
+                    //     class: {
+                    //         let is_active = match &current_route {
+                    //             Route::Director { pagename } if pagename == "pub" => true,
+                    //             _ => false,
+                    //         };
+                    //         if is_active {
+                    //             CSS_PAGE_SELECTED
+                    //         } else {
+                    //             CSS_PAGE_NORMAL
+                    //         }
+                    //     },
+                    //     "Pubs" 
+                    // }
+                    // Link {
+                    //     to: Route::Director { pagename: "code".to_string() },
+                    //     class: {
+                    //         let is_active = match &current_route {
+                    //             Route::Director { pagename } if pagename == "code" => true,
+                    //             _ => false,
+                    //         };
+                    //         if is_active {
+                    //             CSS_PAGE_SELECTED
+                    //         } else {
+                    //             CSS_PAGE_NORMAL
+                    //         }
+                    //     },
+                    //     "Code"
+                    // }
                     Link {
                         to: Route::Director { pagename: "res".to_string() },
                         class: {

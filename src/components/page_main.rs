@@ -127,6 +127,48 @@ pub fn Home() -> Element {
                         }
                     }
 
+                    // More of my work section
+                    div {
+                        class: "mt-12 flex flex-col items-center",
+                        div {
+                            class: "flex flex-col md:flex-row gap-8 justify-center items-center",
+                            // Publication Card
+                            Link {
+                                to: Route::Director { pagename: "pub".to_string() },
+                                class: "w-64 h-40 bg-white border border-gray-200 rounded-lg shadow flex flex-col items-center justify-center hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 cursor-pointer hover:-translate-y-1",
+                                div {
+                                    class: "text-3xl text-red-700 mb-2",
+                                    i { class: "fa-solid fa-book-open" }
+                                }
+                                div {
+                                    class: "font-semibold text-lg text-gray-900 mb-1",
+                                    "Publications"
+                                }
+                                div {
+                                    class: "text-gray-600 text-sm text-center px-4",
+                                    "Explore my research papers and articles."
+                                }
+                            }
+                            // Code Card
+                            Link {
+                                to: Route::Director { pagename: "code".to_string() },
+                                class: "w-64 h-40 bg-white border border-gray-200 rounded-lg shadow flex flex-col items-center justify-center hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 cursor-pointer hover:-translate-y-1",
+                                div {
+                                    class: "text-3xl text-red-700 mb-2",
+                                    i { class: "fa-solid fa-code" }
+                                }
+                                div {
+                                    class: "font-semibold text-lg text-gray-900 mb-1",
+                                    "Code"
+                                }
+                                div {
+                                    class: "text-gray-600 text-sm text-center px-4",
+                                    "Browse my open source and research software."
+                                }
+                            }
+                        }
+                    }
+
                     // Social Media Icons
                     div {
                         class: "flex justify-center space-x-6 mt-8 pt-6 border-t border-gray-200",

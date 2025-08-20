@@ -144,21 +144,22 @@ pub fn Resources() -> Element {
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "I keep this page updated with resources that might help you with your research and study. "
-                        "The full list is public on "
+                        "I keep this page with resources that hopefully can help with "
+                        span { class: "font-semibold text-red-700", "your study, research, and career" }
+                        {format!(". I'm only showing items that do not expire or expire in {} days.", days_to_expire)}
+                        " You can check out the "
                         a {
                             href: "https://docs.google.com/spreadsheets/d/1y-_hrRYhylnryjiOS1f4SNu_NnMP5j6231Qb8qG-0Zk/edit?usp=sharing",
                             target: "_blank",
                             class: CSS_LINK_TEXT,
-                            "Google drive"
+                            "full list"
                         }
-                        {format!(". Here I'm only showing items that either do not expire or expire in {} days.", days_to_expire)}
-                        " You should check out the full list to see expired items or those expiring in the far future to get a head start!."
+                        " for expired items or those expiring in the far future to get a head start!"
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "Obviously, you should reach out to the posting agency if you have questions regarding the program. "
-                        "But I'm always open to discussions about ideas and strategies. Best of luck!"
+                        "Obviously, you need reach out to the posting agency if you have questions regarding the program. "
+                        "But I'm always open to discussing ideas and strategies. Good luck!"
                     }
                 }
 

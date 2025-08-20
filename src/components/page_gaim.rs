@@ -156,68 +156,68 @@ pub fn Lab() -> Element {
                 }
 
                 // People Section
-                div {
-                    class: "mb-12 space-y-6",
-                    h2 {
-                        class: "text-3xl font-bold text-gray-800 mb-6 pb-2",
-                        "People"
-                    }
+                // div {
+                //     class: "mb-12 space-y-6",
+                //     h2 {
+                //         class: "text-3xl font-bold text-gray-800 mb-6 pb-2",
+                //         "People"
+                //     }
 
-                    div {
-                        class: "space-y-8",
+                //     div {
+                //         class: "space-y-8",
                         
-                        TeamMember {
-                            first_name: "Weiming".to_string(),
-                            last_name: "Hu".to_string(),
-                            role: "Principal Investigator".to_string(),
-                            image_path: PPL_IMAGE_HU,
-                            description: rsx!{ 
-                                p {  
-                                    class: CSS_MEMBER_TEXT,
-                                    "My research spans Geographic Information Science, Machine Learning, and environmental forecasting, "
-                                    "with expertise in extreme and rare event prediction (heatwaves, precipitation, flooding), renewable energy "
-                                    "forecasting (solar and wind), and uncertainty quantification in spatio-temporal big data. "
-                                    "I have developed "
-                                    a {
-                                        href: "https://cw3e.ucsd.edu/ml_forecasts/",
-                                        target: "_blank",
-                                        class: CSS_LINK_TEXT,
-                                        "Deep Learning"
-                                    }
-                                    " and "
-                                    a {
-                                        href: "http://weiming.uga.edu/AnalogsEnsemble/2018/12/14/AnEn-explained.html",
-                                        target: "_blank",
-                                        class: CSS_LINK_TEXT,
-                                        "Analog Ensemble"
-                                    }
-                                    " methods to improve predictions over different time scales including weather and sub-seasonal-to-seasonal. "
-                                },
+                //         TeamMember {
+                //             first_name: "Weiming".to_string(),
+                //             last_name: "Hu".to_string(),
+                //             role: "Principal Investigator".to_string(),
+                //             image_path: PPL_IMAGE_HU,
+                //             description: rsx!{ 
+                //                 p {  
+                //                     class: CSS_MEMBER_TEXT,
+                //                     "My research spans Geographic Information Science, Machine Learning, and environmental forecasting, "
+                //                     "with expertise in extreme and rare event prediction (heatwaves, precipitation, flooding), renewable energy "
+                //                     "forecasting (solar and wind), and uncertainty quantification in spatio-temporal big data. "
+                //                     "I have developed "
+                //                     a {
+                //                         href: "https://cw3e.ucsd.edu/ml_forecasts/",
+                //                         target: "_blank",
+                //                         class: CSS_LINK_TEXT,
+                //                         "Deep Learning"
+                //                     }
+                //                     " and "
+                //                     a {
+                //                         href: "http://weiming.uga.edu/AnalogsEnsemble/2018/12/14/AnEn-explained.html",
+                //                         target: "_blank",
+                //                         class: CSS_LINK_TEXT,
+                //                         "Analog Ensemble"
+                //                     }
+                //                     " methods to improve predictions over different time scales including weather and sub-seasonal-to-seasonal. "
+                //                 },
 
-                                p { 
-                                    class: CSS_MEMBER_TEXT,
-                                    "Prior to joining UGA, I conducted research at the "
-                                    a {
-                                        href: "https://cw3e.ucsd.edu/",
-                                        target: "_blank",
-                                        class: CSS_LINK_TEXT,
-                                        "Center of Western Water and Weather Extremes"
-                                    }
-                                    " at Scripps, UC San Diego, and then held a faculty position at "
-                                    a {
-                                        href: "https://www.jmu.edu/cise/index.shtml",
-                                        target: "_blank",
-                                        class: CSS_LINK_TEXT,
-                                        "James Madison University"
-                                    }
-                                    ". "
-                                    "My work bridges computational problem-solving with environmental applications, "
-                                    "often in collaboration with interdisciplinary teams and operational forecasting agencies."
-                                 }
-                            }
-                        }
-                    }
-                }
+                //                 p { 
+                //                     class: CSS_MEMBER_TEXT,
+                //                     "Prior to joining UGA, I conducted research at the "
+                //                     a {
+                //                         href: "https://cw3e.ucsd.edu/",
+                //                         target: "_blank",
+                //                         class: CSS_LINK_TEXT,
+                //                         "Center of Western Water and Weather Extremes"
+                //                     }
+                //                     " at Scripps, UC San Diego, and then held a faculty position at "
+                //                     a {
+                //                         href: "https://www.jmu.edu/cise/index.shtml",
+                //                         target: "_blank",
+                //                         class: CSS_LINK_TEXT,
+                //                         "James Madison University"
+                //                     }
+                //                     ". "
+                //                     "My work bridges computational problem-solving with environmental applications, "
+                //                     "often in collaboration with interdisciplinary teams and operational forecasting agencies."
+                //                  }
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
     }
