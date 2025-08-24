@@ -18,6 +18,7 @@ if [ ! -d "$SOURCE_DIR" ]; then
 fi
 
 echo "Checking out $TARGET_BRANCH branch..."
+git worktree prune
 git fetch origin
 git worktree add -B $TARGET_BRANCH $TMP_DIR origin/$TARGET_BRANCH
 
@@ -32,8 +33,13 @@ cp index.html 404.html
 
 echo "Committing and pushing to $TARGET_BRANCH..."
 git add --all
-git commit -m "web release for version $VERSION" || echo "No changes to commit."
-git push origin $TARGET_BRANCH
+
+if ! git diff --quiet; then
+    git commit -m "web release for version $VERSION"
+    git push origin $TARGET_BRANCH
+else
+    echo "No changes to publish."
+fi
 
 # Clean up
 cd -
