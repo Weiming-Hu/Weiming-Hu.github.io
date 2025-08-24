@@ -2,9 +2,9 @@
 
 # Exit on error
 set -e
-VERSION=$(grep '^version' Cargo.toml | cut -d '"' -f2)
 
 # Define variables
+VERSION=$(grep '^version' Cargo.toml | cut -d '"' -f2)
 TARGET_BRANCH="gh-pages"
 SOURCE_DIR="./target/dx/personal_website/release/web/public"
 TMP_DIR=$(mktemp -d)
@@ -22,7 +22,7 @@ git fetch origin
 git worktree add -B $TARGET_BRANCH $TMP_DIR origin/$TARGET_BRANCH
 
 echo "Copying files from $SOURCE_DIR to $TARGET_BRANCH..."
-rm -rf $TMP_DIR/*
+rm -rf $TMP_DIR/* --force
 cp -r $SOURCE_DIR/* $TMP_DIR/
 
 cd $TMP_DIR
@@ -30,10 +30,9 @@ cd $TMP_DIR
 echo Copying index.html to 404.html...
 cp index.html 404.html
 
-echo "Committing and pushing to $TARGET_BRANCH..."
-git add --all
-
 if ! git diff --quiet; then
+    echo "Committing and pushing to $TARGET_BRANCH..."
+    git add --all
     git commit -m "web release for version $VERSION"
     git push origin $TARGET_BRANCH
 else
