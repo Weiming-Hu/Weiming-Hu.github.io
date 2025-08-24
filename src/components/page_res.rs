@@ -14,7 +14,10 @@ struct ResourceRow {
 }
 
 fn parse_keywords(s: &str) -> Vec<String> {
-    s.split(',').map(|kw| kw.trim().to_string()).filter(|kw| !kw.is_empty()).collect()
+    s.split(',')
+    .map(|kw| kw.trim().to_string())
+    .filter(|kw| !kw.is_empty())
+    .collect()
 }
 
 fn parse_expiration(s: &str) -> Option<NaiveDate> {
@@ -28,8 +31,16 @@ fn parse_expiration(s: &str) -> Option<NaiveDate> {
 async fn fetch_resources() -> Option<Vec<ResourceRow>> {
     let url = "https://docs.google.com/spreadsheets/d/1y-_hrRYhylnryjiOS1f4SNu_NnMP5j6231Qb8qG-0Zk/export?format=csv";
     let client = Client::new();
-    let resp = client.get(url).send().await.ok()?.text().await.ok()?;
-    let mut rdr = ReaderBuilder::new().has_headers(true).from_reader(resp.as_bytes());
+    let resp = client.get(url)
+        .send()
+        .await
+        .ok()?
+        .text()
+        .await
+        .ok()?;
+    let mut rdr = ReaderBuilder::new()
+        .has_headers(true)
+        .from_reader(resp.as_bytes());
     let mut rows = Vec::new();
     for result in rdr.records() {
         if let Ok(record) = result {

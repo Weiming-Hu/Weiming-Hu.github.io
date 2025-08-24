@@ -52,7 +52,7 @@ pub fn Cal() -> Element {
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
                         "You do not have to book from here. Feel free to use the calendar to find available "
-                        "times and manage the meeting yourself. Only 30-minute meetings are supported if you book here."
+                        "times and manage the meeting yourself. If you book here, only 30-minute meetings are supported."
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
