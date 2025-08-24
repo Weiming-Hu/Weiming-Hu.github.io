@@ -22,10 +22,13 @@ git fetch origin
 git worktree add -B $TARGET_BRANCH $TMP_DIR origin/$TARGET_BRANCH
 
 echo "Copying files from $SOURCE_DIR to $TARGET_BRANCH..."
-rm -rf $TMP_DIR/* --force
+rm -rf $TMP_DIR/*
+
 cp -r $SOURCE_DIR/* $TMP_DIR/
+echo "weiming.uga.edu" > "$TMP_DIR/CNAME"
 
 cd $TMP_DIR
+
 
 echo Copying index.html to 404.html...
 cp index.html 404.html
