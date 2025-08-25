@@ -29,7 +29,7 @@ pub fn Director(pagename: String) -> Element {
         "info" => rsx!(Info {}),
         "gaim" => rsx!(Lab {}),
         "res" => rsx!(Resources {}),
-        // "meet" => rsx!(Cal {}),
+        "meet" => rsx!(Cal {}),
         _ => rsx!(Home {}),
     }
 }

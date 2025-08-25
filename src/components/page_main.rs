@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use super::css_preset::*;
 use super::routes::Route;
 
-const SELFIE_IMG: Asset = asset!("/assets/imgs/selfie.jpg");
+const SELFIE_IMG: Asset = asset!("/assets/imgs/selfie.png");
 
 #[component]
 pub fn Home() -> Element {

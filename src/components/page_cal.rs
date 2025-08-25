@@ -51,20 +51,26 @@ pub fn Cal() -> Element {
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "You do not have to book from here. Feel free to use the calendar to find available "
-                        "times and manage the meeting yourself. If you book here, only 30-minute meetings are supported."
-                    }
-                    p {
-                        class: "text-gray-600 text-lg leading-relaxed",
-                        "Simply find an available timeslot here and send your calendar invite to "
+                        b {
+                            "You do not have to book from here."
+                        }
+                        " Simply find an available timeslot here and send your calendar invite to "
                         i {
                             class: "hover:text-red-700 transition-colors",
                             "weiming@uga.edu"
                         }
-                        " with your preferred meeting options, e.g., "
-                        "room # for in-person meetings or Google/Zoom/Team links. "
+                        " with topics/agenda and your preferred meeting options, e.g., "
+                        "room # for in-person meetings (my office at is GGY 312) or Google/Zoom/Team links. "
+
+                    }
+                    p{
+                        class: "text-gray-600 text-lg leading-relaxed",
                         "If it is urgent and no available time can be found, please reach "
                         "out to me directly so we can figure out something else."
+                    }
+                    p {
+                        class: "text-gray-600 text-lg leading-relaxed",
+                        "If you book from here, only 30-minute meetings are allowed."
                     }
                     // Cal.com element-click embed button
                     button {
