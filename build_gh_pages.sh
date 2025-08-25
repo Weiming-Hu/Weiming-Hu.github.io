@@ -44,5 +44,5 @@ fi
 
 # Clean up
 cd -
-git worktree remove $TMP_DIR
+git worktree remove $TMP_DIR --force
 echo gh-pages have been updated to $VERSION!
