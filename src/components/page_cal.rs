@@ -40,7 +40,8 @@ pub fn Cal() -> Element {
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "I share my calendar here with the hope that it will make our scheduling easier, thanks to "
+                        "I share my calendar here with the hope that technologies can make"
+                        " our lives easier. Curious how this is done? Check out "
                         a {
                             href: "https://cal.com/",
                             target: "_blank",
@@ -54,23 +55,30 @@ pub fn Cal() -> Element {
                         b {
                             "You do not have to book from here."
                         }
-                        " Simply find an available timeslot here and send your calendar invite to "
+                        " Simply find an available time period and send your calendar invite to "
                         i {
                             class: "hover:text-red-700 transition-colors",
                             "weiming@uga.edu"
                         }
                         " with topics/agenda and your preferred meeting options, e.g., "
-                        "room # for in-person meetings (my office at is GGY 312) or Google/Zoom/Team links. "
-
+                        "room # for in-person meetings (if my office, GGY 312) or Google/Zoom/Team links. "
+                        "If you book from here, only 30-minute meetings are allowed."
                     }
                     p{
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "If it is urgent and no available time can be found, please reach "
+                        b { 
+                            "If it is urgent and no available time can be found",
+                         }
+                        ", please reach "
                         "out to me directly so we can figure out something else."
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
-                        "If you book from here, only 30-minute meetings are allowed."
+                        b {
+                            "The calendar updates itself after any scheduling changes."
+                        }
+                        " So you might see your booked slots turn busy right after you send me the invite. "
+                        "I will decline any meetings if I cannot make it but I will make sure to communicate this with you."
                     }
                     // Cal.com element-click embed button
                     button {
