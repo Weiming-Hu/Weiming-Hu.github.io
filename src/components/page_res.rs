@@ -165,7 +165,7 @@ pub fn Resources() -> Element {
                             class: CSS_LINK_TEXT,
                             "full list"
                         }
-                        " for expired items or those expiring in the far future to get a head start!"
+                        " for other items that might be helpful!"
                     }
                     p {
                         class: "text-gray-600 text-lg leading-relaxed",
