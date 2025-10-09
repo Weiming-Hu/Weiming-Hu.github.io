@@ -18,6 +18,7 @@ if [ ! -d "$SOURCE_DIR" ]; then
 fi
 
 echo "Checking out $TARGET_BRANCH branch..."
+git worktree prune
 git fetch origin
 git worktree add -B $TARGET_BRANCH $TMP_DIR origin/$TARGET_BRANCH
 
@@ -44,5 +45,5 @@ fi
 
 # Clean up
 cd -
-git worktree remove $TMP_DIR --force
+git worktree remove $TMP_DIR
 echo gh-pages have been updated to $VERSION!
