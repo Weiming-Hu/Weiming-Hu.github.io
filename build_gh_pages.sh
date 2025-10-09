@@ -30,7 +30,6 @@ echo "weiming.uga.edu" > "$TMP_DIR/CNAME"
 
 cd $TMP_DIR
 
-
 echo Copying index.html to 404.html...
 cp index.html 404.html
 
@@ -39,6 +38,7 @@ if ! git diff --quiet; then
     git add --all
     git commit -m "web release for version $VERSION"
     git push origin $TARGET_BRANCH
+    echo gh-pages have been updated to $VERSION!
 else
     echo "No changes to publish."
 fi
@@ -46,4 +46,3 @@ fi
 # Clean up
 cd -
 git worktree remove $TMP_DIR
-echo gh-pages have been updated to $VERSION!
