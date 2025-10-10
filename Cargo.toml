@@ -1,6 +1,6 @@
 [package]
 name = "personal_website"
-version = "0.1.9"
+version = "0.1.10"
 authors = ["Weiming Hu <weiming@uga.edu>"]
 edition = "2021"
 
