@@ -2,6 +2,15 @@ use dioxus::prelude::*;
 use super::css_preset::*;
 
 const UGA_LOGO: Asset = asset!("/assets/imgs/uga_logo.png");
+const RESEACH_IMG_AR: Asset = asset!("/assets/imgs/research_bg_AR.png");
+const RESEACH_IMG_Arc: Asset = asset!("/assets/imgs/research_bg_Arctic.jpg");
+const RESEACH_IMG_Power: Asset = asset!("/assets/imgs/research_bg_Power.jpg");
+
+const CSS_RESEARCH_CARD: &str = 
+    "block mb-4 p-4 border-l-4 border-red-400 rounded-r-lg bg-white \
+     hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 \
+     cursor-pointer transform hover:-translate-y-1 relative overflow-hidden min-h-[120px]";
+
 const PPL_IMAGE_HU: Asset = asset!("/assets/ppl/hu.png");
 const CSS_MEMBER_TEXT: &str = "text-gray-700 leading-relaxed";
 
@@ -123,7 +132,6 @@ pub fn Lab() -> Element {
                             "Students and early-career scholars: check out "
                             a {
                                 href: "/res",
-                                target: "_blank",
                                 class: CSS_LINK_TEXT,
                                 "our resource page"
                             }
@@ -147,36 +155,17 @@ pub fn Lab() -> Element {
                         a {
                             href: "https://doi.org/10.1175/MWR-D-22-0268.1",
                             target: "_blank",
-                            class: "block mb-4 p-4 border-l-4 border-red-400 rounded-r-lg bg-white hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 cursor-pointer transform hover:-translate-y-1",
+                            class: CSS_RESEARCH_CARD,
+                            img {
+                                src: RESEACH_IMG_AR,
+                                alt: "Extreme Events Research",
+                                class: "absolute inset-0 w-full h-full object-cover rounded-r-lg opacity-30"
+                            }
                             div {
-                                class: "flex items-center gap-4",
-                                div {
-                                    class: "flex-shrink-0 w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center",
-                                    svg {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        class: "w-6 h-6 text-gray-600",
-                                        fill: "none",
-                                        view_box: "0 0 24 24",
-                                        stroke: "currentColor",
-                                        stroke_width: "2",
-                                        path {
-                                            stroke_linecap: "round",
-                                            stroke_linejoin: "round",
-                                            d: "M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"
-                                        }
-                                        path {
-                                            stroke_linecap: "round",
-                                            stroke_linejoin: "round",
-                                            d: "M11 19l-2 3m4-3l-2 3m4-3l-2 3"
-                                        }
-                                    }
-                                }
-                                div {
-                                    class: "flex-1",
-                                    span {
-                                        class: "text-lg font-medium text-gray-800",
-                                        "Resilience against extreme events with better forecasts: heatwaves and precipitation"
-                                    }
+                                class: "relative z-10 flex items-center justify-center h-full",
+                                span {
+                                    class: "text-lg font-medium text-gray-800 text-center px-4",
+                                    "Resilience against extreme events with better forecasts: heatwaves and precipitation"
                                 }
                             }
                         }
@@ -185,31 +174,17 @@ pub fn Lab() -> Element {
                         a {
                             href: "https://www.sciencedirect.com/science/article/pii/S2352340922000361",
                             target: "_blank",
-                            class: "block mb-4 p-4 border-l-4 border-red-400 rounded-r-lg bg-white hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 cursor-pointer transform hover:-translate-y-1",
+                            class: CSS_RESEARCH_CARD,
+                            img {
+                                src: RESEACH_IMG_Power,
+                                alt: "Energy Market Research",
+                                class: "absolute inset-0 w-full h-full object-cover rounded-r-lg opacity-30"
+                            }
                             div {
-                                class: "flex items-center gap-4",
-                                div {
-                                    class: "flex-shrink-0 w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center",
-                                    svg {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        class: "w-6 h-6 text-gray-600",
-                                        fill: "none",
-                                        view_box: "0 0 24 24",
-                                        stroke: "currentColor",
-                                        stroke_width: "2",
-                                        path {
-                                            stroke_linecap: "round",
-                                            stroke_linejoin: "round",
-                                            d: "M13 10V3L4 14h7v7l9-11h-7z"
-                                        }
-                                    }
-                                }
-                                div {
-                                    class: "flex-1",
-                                    span {
-                                        class: "text-lg font-medium text-gray-800",
-                                        "AI for energy market forecasting and renewable energy production optimization"
-                                    }
+                                class: "relative z-10 flex items-center justify-center h-full",
+                                span {
+                                    class: "text-lg font-medium text-gray-800 text-center px-4",
+                                    "AI for energy market forecasting and renewable energy production optimization"
                                 }
                             }
                         }
@@ -218,31 +193,17 @@ pub fn Lab() -> Element {
                         a {
                             href: "https://doi.org/10.1080/19475683.2024.2380678",
                             target: "_blank",
-                            class: "block mb-4 p-4 border-l-4 border-red-400 rounded-r-lg bg-white hover:bg-gray-50 hover:shadow-lg hover:border-red-500 transition-all duration-200 cursor-pointer transform hover:-translate-y-1",
+                            class: CSS_RESEARCH_CARD,
+                            img {
+                                src: RESEACH_IMG_Arc,
+                                alt: "Arctic Sustainability Research",
+                                class: "absolute inset-0 w-full h-full object-cover rounded-r-lg opacity-30"
+                            }
                             div {
-                                class: "flex items-center gap-4",
-                                div {
-                                    class: "flex-shrink-0 w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center",
-                                    svg {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        class: "w-6 h-6 text-gray-600",
-                                        fill: "none",
-                                        view_box: "0 0 24 24",
-                                        stroke: "currentColor",
-                                        stroke_width: "2",
-                                        path {
-                                            stroke_linecap: "round",
-                                            stroke_linejoin: "round",
-                                            d: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        }
-                                    }
-                                }
-                                div {
-                                    class: "flex-1",
-                                    span {
-                                        class: "text-lg font-medium text-gray-800",
-                                        "Sustainable accessibility in the Arctic with geospatial modeling"
-                                    }
+                                class: "relative z-10 flex items-center justify-center h-full",
+                                span {
+                                    class: "text-lg font-medium text-gray-800 text-center px-4",
+                                    "Sustainable accessibility in the Arctic with geospatial modeling"
                                 }
                             }
                         }
