@@ -5,6 +5,7 @@ const UGA_LOGO: Asset = asset!("/assets/imgs/uga_logo.png");
 const RESEACH_IMG_AR: Asset = asset!("/assets/imgs/research_bg_AR.png");
 const RESEACH_IMG_Arc: Asset = asset!("/assets/imgs/research_bg_Arctic.jpg");
 const RESEACH_IMG_Power: Asset = asset!("/assets/imgs/research_bg_Power.jpg");
+const GROUP_PHOTO: Asset = asset!("/assets/imgs/group.jpeg");
 
 const CSS_RESEARCH_CARD: &str = 
     "block mb-4 p-4 border-l-4 border-red-400 rounded-r-lg bg-white \
@@ -90,6 +91,30 @@ pub fn Lab() -> Element {
                     h2 {
                         class: "text-3xl font-bold text-gray-800",
                         "About Us"
+                    }
+
+                    div {
+                        class: "w-full rounded-lg shadow-md overflow-hidden group",
+                        style: "aspect-ratio: 28/9;",
+                        div {
+                            class: "w-full h-full relative",
+                            img {
+                                src: GROUP_PHOTO,
+                                alt: "GAIM group photo",
+                                class: "w-full h-full object-cover transform transition-all duration-500 ease-out group-hover:scale-102",
+                                style: format!("object-position: center {}%; filter: contrast(1.06) saturate(1.08) brightness(1.02);", 0),
+                            }
+
+                            div {
+                                class: "absolute inset-0 pointer-events-none rounded-lg",
+                                style: "background: linear-gradient(120deg, rgba(13,102,146,0.18), rgba(234,96,54,0.18)); mix-blend-mode: soft-light;",
+                            }
+
+                            div {
+                                class: "absolute inset-0 pointer-events-none rounded-lg",
+                                style: "background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.32) 100%);",
+                            }
+                        }
                     }
                     
                     p {
